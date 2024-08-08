@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -54,18 +54,17 @@ nav ul li a:hover {
 
 /*왼쪽 맨위 */
 .navbar-brand {
-    color : white;
+    color: white;
     font-family: 'HS-Regular';
 }
 
 /*바 아래 구분선 */
-.navbar-custom{
+.navbar-custom {
     background-color: #3baee5;
     border-bottom: 1px solid #1f4284;
     transition: background-color 0.5s ease; /* 배경색 변화에 부드러운 애니메이션 */
 
 }
-
 
 
 /* 관람안내 등등 공지사항 bar css*/
@@ -75,7 +74,8 @@ nav ul li a:hover {
     font-weight: normal;
     font-style: normal;
 }
-.nav-item{
+
+.nav-item {
     font-family: "레시피코리아", sans-serif;
     font-size: 16px;
     border-left: 1px solid #1f4284;
@@ -85,10 +85,10 @@ nav ul li a:hover {
 
 
 /* header 두번째 바 */
-.var_bottom{
+.var_bottom {
     background-color: #3baee5;
-    padding-top : 15px;
-    padding-left : 30px;
+    padding-top: 15px;
+    padding-left: 30px;
     border-bottom: 1px solid #1f4284;
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,8 @@ nav ul li a:hover {
 
 
 }
-.v_bot{
+
+.v_bot {
     color: white;
     font-size: 16px;
     padding-left: 5px;
@@ -105,10 +106,12 @@ nav ul li a:hover {
     padding-right: 30px; /* 구분선과 텍스트 사이의 여백 설정 */
     margin-right: 20px;
 }
-.v_bot3{
-    color:white;
+
+.v_bot3 {
+    color: white;
 }
-.right-button{
+
+.right-button {
     margin-left: auto;
     margin-right: 30px;
     margin-bottom: 15px;
@@ -121,22 +124,21 @@ nav ul li a:hover {
     font-size: 12px; /* 글자 크기 */
     cursor: pointer; /* 마우스 커서 모양 */
 }
+
 .var_bottom.scrolled {
     background-color: #4169E1; /* 스크롤 시 배경색 */
 }
+
 .navbar-custom.scrolled {
     background-color: #4169E1; /* 스크롤 시 배경색 */
 }
 
 
-
 /*===============================================================================*/
 
 
-
-
 main {
-    background: #3baee5 ;
+    background: #3baee5;
     flex: 1; /* 메인 콘텐츠가 가능한 공간을 모두 차지하도록 설정 */
     padding-top: 8rem;
 }
@@ -187,7 +189,6 @@ form button:hover {
 }
 
 
-
 /* Hero 섹션 스타일 */
 @font-face {
     font-family: 'HS-Regular';
@@ -196,7 +197,7 @@ form button:hover {
     font-style: normal;
 }
 
-#h_top{
+#h_top {
     padding-top: 4rem;
 }
 
@@ -213,7 +214,7 @@ form button:hover {
 
 
 /*이미지 + 효과 (미디어쿼리 할 시 대폭 수정 예정)*/
-.img_main{
+.img_main {
     text-align: center;
     width: 70%;
     margin: 0 auto;
@@ -221,12 +222,15 @@ form button:hover {
     -webkit-animation: fadein 3s forwards;
     position: relative;
 }
-.img_main img{
-    width: 70%;
+
+.m1-img {
+    max-width: 80%;
+    width: 512px;
     opacity: 0;
     animation: fadein 1s ease 0s forwards;
     -webkit-animation: fadein 1s ease 0s forwards;
 }
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -248,10 +252,11 @@ form button:hover {
         -webkit-transform: scale(1);
     }
 }
+
 /*여기까지 (살짝 실험만 한 내용들)*/
 
 
-.h_bot{
+.h_bot {
     text-align: center;
     color: #ffffff;
 }
@@ -261,16 +266,30 @@ form button:hover {
 }
 
 
-
-
 /*메인 2 - 바로예매하기 css*/
-.main2{
+.main2 {
     position: relative;
-    border :0px
+    border: 0px
 }
-.main_img{
+
+.m2_video {
+    width: 100%; /* 컨테이너 너비를 부모 요소에 맞춤 */
+    height: 600px; /* 비디오의 높이를 고정 */
+    overflow: hidden;
+}
+
+.main2_video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_img {
+    width: 100%;
+    padding-top: 56.25%;
 }
 
 .m2_ment {
@@ -284,10 +303,11 @@ form button:hover {
 
 .m2_ment1 {
     font-family: "레시피코리아";
-    top: 35%; /* 이미지의 상단에서 10% 위치 */
+    top: 140px; /* 이미지의 상단에서 10% 위치 */
     left: 50%; /* 이미지의 중앙에서부터 50% 위치 */
     transform: translateX(-50%); /* 중앙 정렬 */
     font-size: 50px;
+    line-height: 70px;
 
 }
 
@@ -300,19 +320,16 @@ form button:hover {
 
 .m2_ment2 {
     font-family: 'GmarketSansMedium';
-    top: 50%; /* 이미지의 상단에서 40% 위치 */
+    top: 290px; /* 이미지의 상단에서 40% 위치 */
     left: 50%; /* 이미지의 중앙에서부터 50% 위치 */
     transform: translateX(-50%); /* 중앙 정렬 */
 }
 
-.main2_img{
-    width :100%;
-}
 
-.main2-button{
+.main2-button {
     position: absolute;
     font-family: 'GmarketSansMedium';
-    top: 60%;
+    top: 380px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #3baee5;
@@ -327,31 +344,38 @@ form button:hover {
 
 
 /*메인 3 css*/
-.main3_first{
+.main3_first {
     width: 100%;
     background-color: #4169E1;
-    height : 650px;
+    height: 650px;
 
 }
-.main3_left{
-    display: flex;          /* Flexbox 사용 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center;    /* 세로 중앙 정렬 */
+
+.main3_left {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
     float: left;
     height: 650px;
     width: 50%;
     box-sizing: border-box;
     background: #4169E1;
+    position: relative;
+    justify-content: flex-end;    /* 가로 방향 정렬: 오른쪽 정렬 */
+    align-items: center;          /* 세로 방향 정렬: 중앙 정렬 */
+    box-sizing: border-box;
 }
 
-.main3_left_img{
+.main3_left_img {
+    max-width: 100%; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
+    max-height: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 0px;
     border-radius: 40%;
-    width : 80%;
-    vertical-align: middle;
+    object-fit: contain;
+
 }
-.main3_right{
+
+.main3_right {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -362,40 +386,38 @@ form button:hover {
     box-sizing: border-box;
     background: #4169E1;
     vertical-align: middle;
-    margin:0 auto;
+    margin: 0 auto;
     padding: 20px;
 }
-.m3_mmm1{
+
+.m3_mmm1 {
     color: #ffffff;
     font-family: "레시피코리아";
     font-size: 50px;
 }
-.m3_mmm2{
+
+.m3_mmm2 {
     color: #ffffff;
 }
 
 
-
-.m3_mmm3_1{
+.m3_mmm3_1 {
     color: #ffffff;
-    padding-left : 10%;
+    padding-left: 10%;
 
 }
-.m3_mmm3{
+
+.m3_mmm3 {
     color: #ffffff;
-    padding-left : 10%;
+    padding-left: 10%;
 }
-
-
-
-
 
 
 .main3_second {
     width: 100%;
     background-color: #4169E1;
-    height : 160vh;
-    border : 0;
+    height: 160vh;
+    border: 0;
     overflow: hidden;
 }
 
@@ -409,7 +431,7 @@ form button:hover {
 }
 
 
-.main3_sec_right{
+.main3_sec_right {
     height: 100vh; /* 화면 높이 전체 사용 */
     float: right;
     width: 50%;
@@ -417,25 +439,27 @@ form button:hover {
     background: #4169E1;
     vertical-align: middle;
 }
-.main3_right_img{
+
+.main3_right_img {
     display: block;
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 10%;
     max-width: 100%;
-    width : 80%;
+    width: 80%;
     height: auto;
 
 }
 
 
 /*메인4 css*/
-.main4{
-    padding : 10vh;
+.main4 {
+    padding: 10vh;
     text-align: center;
 
 }
-#m4_title{
+
+#m4_title {
     font-family: "레시피코리아", sans-serif;
 }
 
@@ -456,41 +480,49 @@ th, td {
 tr:nth-child(2) {
     background-color: #3baee5; /* 두 번째 행 배경색 */
 }
+
 td:nth-child(2) {
     background-color: #ffffff; /* 두 번째 열 배경색 */
 }
+
 th:nth-child(2) {
     background-color: #ffffff; /* 두 번째 열 배경색 */
 }
+
 tr:nth-child(2) td:nth-child(2) {
     background-color: #3baee5; /* 기본 배경색으로 복원 */
 }
 
 
-
 /*main5 css*/
-.m5_left{
+.m5_left {
     float: left;
     width: 30%;
 }
-.m5_left_img{
-    width : 80%;
+
+.m5_left_img {
+    padding-left: 40px;
+    width: 90%;
 
 }
-.m5_right{
+
+.m5_right {
     float: right;
-    width : 70%;
-    border-left: 1px solid #ffffff;
+    width: 70%;
+    border-left: 1px solid #000000;
 
 }
-#m5_title{
+
+#m5_title {
     font-family: "레시피코리아", sans-serif;
     text-align: left;
 }
-.m5_title-small{
+
+.m5_title-small {
     font-family: "레시피코리아", sans-serif;
     text-align: left;
 }
+
 .m5_right_imghead {
     display: flex;
     flex-direction: column; /* 수직 방향으로 배치 */
@@ -517,6 +549,7 @@ tr:nth-child(2) td:nth-child(2) {
 }
 
 .m5_right_text {
+    font-family: 'GmarketSansMedium';
     width: 30%; /* 텍스트 너비를 30%로 설정 */
     font-size: 16px; /* 텍스트 크기 설정 */
     color: #000; /* 텍스트 색상 설정 */
@@ -524,17 +557,17 @@ tr:nth-child(2) td:nth-child(2) {
 }
 
 
-
 /*메인 6 css*/
-.m6_mmm1{
-    float:none;
+.m6_mmm1 {
+    float: none;
     color: #ffffff;
     font-family: "레시피코리아";
     font-size: 50px;
 }
-.m6_img{
-    width : 100%;
-    height : auto;
+
+.m6_img {
+    width: 100%;
+    height: auto;
 }
 
 .main6 {
@@ -572,7 +605,7 @@ tr:nth-child(2) td:nth-child(2) {
 
 .main6-button {
     margin-top: 20px;
-    padding: 10px ;
+    padding: 10px;
     color: white; /* 버튼 글자색 */
     border: none;
     border-radius: 20px;
@@ -582,13 +615,6 @@ tr:nth-child(2) td:nth-child(2) {
     font-size: 13px;
     cursor: pointer;
 }
-
-
-
-
-
-
-
 
 
 /* 사용자 프로필 및 Q&A 스타일 */
@@ -664,21 +690,24 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
-.footer_left{
+
+.footer_left {
     float: left;
     height: 10vh; /* 화면 높이 전체 사용 */
     width: 30%;
     box-sizing: border-box;
     background: #fff8e6;
 }
-.footer_cen{
+
+.footer_cen {
     float: none;
     height: 10vh; /* 화면 높이 전체 사용 */
     width: 100%;
     box-sizing: border-box;
     background: #fff8e6;
 }
-.footer_right{
+
+.footer_right {
     float: right;
     height: 10vh; /* 화면 높이 전체 사용 */
     width: 30%;
