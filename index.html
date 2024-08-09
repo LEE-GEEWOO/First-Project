@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="jpg/var_logo.png" style="height: 40px; width:40px">
+                <img src="jpg/var_logo.png" alt style="height: 40px; width:40px">
                 2024 부산 해산물 마켓
             </a>
 
@@ -69,15 +69,18 @@
 </header>
 
 
+<!--메인 시작!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
 <main>
     <div id="h_top" style="text-align: center;">
-    <span style="font-size: 30px; font-weight: bold; color: white;">
+    <span class=m1-top style="font-size: 30px; font-weight: bold; color: white;">
         2024. AUG. 21 (WED)</span>
     </div>
-    <section class="hero">
+    <section class="m1">
         <span>붓싼</br>해산물 마켓</span>
     </section>
-    <section class="h_bot">
+    <section class="m1_bot">
     <span>24년 8월 21일 단 하루! 부산 해산물 마켓에 여러분들을 초대합니다.</br>
         부산에서만 만날 수 있는 싱싱하고 빛나는 안전한 해산물을 확인해보세요.</span></br>
     </section>
@@ -87,7 +90,7 @@
     </div>
 
     <section class="hero_bottom">
-        <div style="font-weight: bold; text-align: center; color:white;">부산 해산물 마켓은 언제나<br/>
+        <div class="h-b">부산 해산물 마켓은 언제나<br/>
             좋은 해산물, 싱싱한 해산물의 중심에 있습니다.
         </div>
     </section>
@@ -107,17 +110,38 @@
         <button class="main2-button">바로 예매하기</button>
     </section>
 
-    <!--메인 3-->
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.m2_ment1');
+            const viewportHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+
+                if (elementTop < viewportHeight) {
+                    element.classList.add('animate');
+                } else {
+                    element.classList.remove('animate');
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!--메인 3 first-->
     <section>
         <div class="main3_first">
             <div class="main3_left">
-                <img src="jpg/main3_01.png" class="main3_left_img">
+                <img src="jpg/main3_01.png" alt class="m3_left_img">
             </div>
 
             <div class="main3_right">
                 <div class="m3_mmm1">01</div>
-                <div class="m3_mmm1">해산물</br>금메달 프로그램</div>
-                <div class="m3_mmm2"><b>금메달을 선정하고 지원금을 전달하는 프로그램</b></br></br>
+                <div class="m3_mmm1">해산물 월척<p>금메달 프로그램</div>
+                <div class="m3_mmm2">금메달을 선정하고 지원금을 전달하는 프로그램</br></br>
                     부산의 소상공인과 자영업자 부흥을 위한 축제의 장을 마련합니다.</br>
                     S급 아름다운 물고기와 월척 부분으로 구분, 하루동안 진행되는</br>
                     아름다운 물고기 부분은 소비자들의 투표를 통해</br>
@@ -127,6 +151,8 @@
             </div>
         </div>
     </section>
+
+    <!--    메인 3 second-->
     <section>
         <div class="main3_second">
             <div class="main3_sec_left">
@@ -137,22 +163,22 @@
                 </div>
 
             </div>
-            <div class="main3_sec_right">
-                <img src="jpg/main3_2.jpg" class="main3_right_img">
+            <div class="m3_sec_right">
+                <img src="jpg/main3_2.jpg" alt class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>싱싱한 생선</strong></div>
                 </br>
                 <div class="m3_mmm3">부산에서 갓 잡은 싱싱한 물고기를 숯불에 구워서</br>
                     뜯어먹는 재미와 불향을 맛보세요!
                 </div>
                 </br></br>
-                <img src="jpg/main3_3.jpg" class="main3_right_img">
+                <img src="jpg/main3_3.jpg" alt class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>제철 해산물</strong></div>
                 </br>
                 <div class="m3_mmm3">제철로 잡은 물고기를 칼잡이 회 전문가가</br>
                     회를 야무지게 만들어 드리니 젓가락만 드세요!
                 </div>
                 </br></br>
-                <img src="jpg/main3_4.jpg" class="main3_right_img">
+                <img src="jpg/main3_4.jpg" class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>해산물 음식 전문가</strong></div>
                 </br>
                 <div class="m3_mmm3">자신이 낚고 잡은 해산물들로 라면도 먹고~</br>

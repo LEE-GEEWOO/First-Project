@@ -201,16 +201,7 @@ form button:hover {
     padding-top: 4rem;
 }
 
-.hero {
-    font-family: 'HS-Regular';
-    font-size: 7rem;
-    color: #ffffff;
-    padding-top: 1rem;
-    text-align: center;
-    margin-bottom: 0rem;
-    line-height: 120px;
-    word-spacing: -10px;
-}
+
 
 
 /*이미지 + 효과 (미디어쿼리 할 시 대폭 수정 예정)*/
@@ -218,8 +209,8 @@ form button:hover {
     text-align: center;
     width: 70%;
     margin: 0 auto;
-    animation: fadein 5s ease 3s forwards;
-    -webkit-animation: fadein 3s forwards;
+    animation: fadein-img_main 5s ease 3s forwards;
+    -webkit-animation: fadein-img_main 3s forwards;
     position: relative;
 }
 
@@ -227,25 +218,15 @@ form button:hover {
     max-width: 80%;
     width: 512px;
     opacity: 0;
-    animation: fadein 1s ease 0s forwards;
-    -webkit-animation: fadein 1s ease 0s forwards;
+    animation: fadein-img_main 1s ease 0s forwards;
+    -webkit-animation: fadein-img_main 1s ease 0s forwards;
+    animation-delay: 1s;
 }
 
-@keyframes fadein {
+@keyframes fadein-img_main {
     from {
         opacity: 0;
-        transform: scale(0.3); /* 중앙에서 확대되는 효과 */
-    }
-    to {
-        opacity: 1;
-        transform: scale(1); /* 최종 크기 */
-    }
-}
-
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity: 0;
-        -webkit-transform: scale(0.3); /* Safari와 Chrome의 transform */
+        -webkit-transform: scale(0.3);
     }
     to {
         opacity: 1;
@@ -256,13 +237,48 @@ form button:hover {
 /*여기까지 (살짝 실험만 한 내용들)*/
 
 
-.h_bot {
+@keyframes fadeIn-m1 {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.m1 {
+    font-family: 'HS-Regular';
+    font-size: 7rem;
+    color: #ffffff;
+    padding-top: 1rem;
+    text-align: center;
+    margin-bottom: 0rem;
+    line-height: 120px;
+    word-spacing: -10px;
+    -webkit-animation: fadeIn-m1 1s forwards;
+}
+.m1-top{
+    animation: fadeIn-m1 1.2s forwards;
+}
+
+.m1_bot {
+    font-family: 'GmarketSansMedium';
     text-align: center;
     color: #ffffff;
+    -webkit-animation: fadeIn-m1 2.5s forwards;
 }
 
 .hero_bottom {
+    font-family: 'GmarketSansMedium';
     margin-bottom: 8rem;
+
+   }
+.h-b{
+    -webkit-animation: fadeIn-m1 3s forwards;
+    text-align: center;
+    color:white;
+
 }
 
 
@@ -273,7 +289,7 @@ form button:hover {
 }
 
 .m2_video {
-    width: 100%; /* 컨테이너 너비를 부모 요소에 맞춤 */
+    width: 100%;
     height: 600px; /* 비디오의 높이를 고정 */
     overflow: hidden;
 }
@@ -287,27 +303,37 @@ form button:hover {
     object-fit: cover;
 }
 
-.main_img {
-    width: 100%;
-    padding-top: 56.25%;
+
+
+@keyframes fadeIn-m2 {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .m2_ment {
     color: #ffffff;
     text-align: center;
     position: absolute;
-    width: 80%; /* 글자의 너비를 조정하여 이미지 안에서 잘 보이게 설정 */
-    padding: 10px; /* 글자와 이미지 사이의 여백을 설정 */
-    box-sizing: border-box; /* 패딩과 보더가 요소의 전체 크기에 포함되도록 설정 */
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .m2_ment1 {
     font-family: "레시피코리아";
     top: 140px; /* 이미지의 상단에서 10% 위치 */
-    left: 50%; /* 이미지의 중앙에서부터 50% 위치 */
+    left: 10%;
     transform: translateX(-50%); /* 중앙 정렬 */
     font-size: 50px;
     line-height: 70px;
+    -webkit-animation: fadeIn-m2 2s forwards;
+
 
 }
 
@@ -347,26 +373,23 @@ form button:hover {
 .main3_first {
     width: 100%;
     background-color: #4169E1;
-    height: 650px;
+    height: 700px;
 
 }
-
 .main3_left {
     display: flex; /* Flexbox 사용 */
-    align-items: center; /* 세로 중앙 정렬 */
     float: left;
-    height: 650px;
+    height: 700px;
     width: 50%;
-    box-sizing: border-box;
     background: #4169E1;
     position: relative;
-    justify-content: flex-end;    /* 가로 방향 정렬: 오른쪽 정렬 */
-    align-items: center;          /* 세로 방향 정렬: 중앙 정렬 */
+    justify-content: flex-end; /* 가로 방향 정렬: 오른쪽 정렬 */
+    align-items: center; /* 세로 방향 정렬: 중앙 정렬 */
     box-sizing: border-box;
 }
 
-.main3_left_img {
-    max-width: 100%; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
+.m3_left_img {
+    max-width: 512px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
     max-height: 100%;
     display: block;
     margin: 0px;
@@ -376,11 +399,12 @@ form button:hover {
 }
 
 .main3_right {
+
     display: flex;
     flex-direction: column;
     text-align: left;
     justify-content: center; /* 왼쪽 정렬 */
-    height: 650px; /* 화면 높이 전체 사용 */
+    height: 700px; /* 화면 높이 전체 사용 */
     float: right;
     width: 50%;
     box-sizing: border-box;
@@ -390,10 +414,40 @@ form button:hover {
     padding: 20px;
 }
 
+.main3_second {
+    padding-top: 70px;
+    width: 100%;
+    height: 1850px;
+    border: 0;
+    overflow: hidden;
+    background: #4169E1;
+
+}
+
+.main3_sec_left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    padding-top: 20px;
+    padding-right: 90px;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.m3_sec_right {
+    height: 100vh; /* 화면 높이 전체 사용 */
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+}
+
 .m3_mmm1 {
     color: #ffffff;
     font-family: "레시피코리아";
     font-size: 50px;
+
 }
 
 .m3_mmm2 {
@@ -403,50 +457,22 @@ form button:hover {
 
 .m3_mmm3_1 {
     color: #ffffff;
-    padding-left: 10%;
+    padding-left: 20px;
 
 }
 
 .m3_mmm3 {
     color: #ffffff;
-    padding-left: 10%;
+    padding-left: 20px;
 }
 
 
-.main3_second {
-    width: 100%;
-    background-color: #4169E1;
-    height: 160vh;
-    border: 0;
-    overflow: hidden;
-}
-
-.main3_sec_left {
-    height: 100vh; /* 화면 높이 전체 사용 */
-    padding: 20px;
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    background: #4169E1;
-}
-
-
-.main3_sec_right {
-    height: 100vh; /* 화면 높이 전체 사용 */
-    float: right;
-    width: 50%;
-    box-sizing: border-box;
-    background: #4169E1;
-    vertical-align: middle;
-}
-
-.main3_right_img {
-    display: block;
+.m3_right_img {
+    padding-left: 20px;
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 10%;
-    max-width: 100%;
-    width: 80%;
+    max-width: 450px;
     height: auto;
 
 }
