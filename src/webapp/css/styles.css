@@ -66,11 +66,18 @@ nav ul li a:hover {
 
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* 관람안내 등등 공지사항 bar css*/
 @font-face {
     font-family: "레시피코리아";
-    src: url("../font/recipeKorea.ttf") format("truetype");
+    src: url("../../../font/recipeKorea.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -202,8 +209,6 @@ form button:hover {
 }
 
 
-
-
 /*이미지 + 효과 (미디어쿼리 할 시 대폭 수정 예정)*/
 .img_main {
     text-align: center;
@@ -247,6 +252,7 @@ form button:hover {
         transform: translateY(0px);
     }
 }
+
 .m1 {
     font-family: 'HS-Regular';
     font-size: 7rem;
@@ -258,7 +264,8 @@ form button:hover {
     word-spacing: -10px;
     -webkit-animation: fadeIn-m1 1s forwards;
 }
-.m1-top{
+
+.m1-top {
     animation: fadeIn-m1 1.2s forwards;
 }
 
@@ -273,11 +280,14 @@ form button:hover {
     font-family: 'GmarketSansMedium';
     margin-bottom: 8rem;
 
-   }
-.h-b{
-    -webkit-animation: fadeIn-m1 3s forwards;
+}
+
+.h-b {
     text-align: center;
-    color:white;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
 
 }
 
@@ -304,11 +314,10 @@ form button:hover {
 }
 
 
-
 @keyframes fadeIn-m2 {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -332,32 +341,19 @@ form button:hover {
     transform: translateX(-50%); /* 중앙 정렬 */
     font-size: 50px;
     line-height: 70px;
-    -webkit-animation: fadeIn-m2 2s forwards;
-
-
 }
 
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .m2_ment2 {
     font-family: 'GmarketSansMedium';
     top: 290px; /* 이미지의 상단에서 40% 위치 */
-    left: 50%; /* 이미지의 중앙에서부터 50% 위치 */
+    left: 10%; /* 이미지의 중앙에서부터 50% 위치 */
     transform: translateX(-50%); /* 중앙 정렬 */
 }
-
 
 .main2-button {
     position: absolute;
     font-family: 'GmarketSansMedium';
-    top: 380px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #3baee5;
     color: #ffffff;
     border: none;
@@ -365,8 +361,23 @@ form button:hover {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: -68px;
+    top: 74%; /* 부모 요소의 수직 중앙에 위치 */
+    left: 50%; /* 부모 요소의 수평 중앙에 위치 */
+    transform: translate(-50%, -50%); /* 버튼의 중앙을 기준으로 위치 조정 */
 }
+
+
+/* 초기 상태 설정: 요소를 숨김 */
+.m2_ment1,
+.m2_ment2,
+.main2-button {
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
+}
+
+
 
 
 /*메인 3 css*/
@@ -376,6 +387,7 @@ form button:hover {
     height: 700px;
 
 }
+
 .main3_left {
     display: flex; /* Flexbox 사용 */
     float: left;
@@ -389,17 +401,32 @@ form button:hover {
 }
 
 .m3_left_img {
+    position: relative;
     max-width: 512px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
     max-height: 100%;
     display: block;
     margin: 0px;
     border-radius: 40%;
     object-fit: contain;
-
+}
+.m3_left_img2 {
+    position: absolute;
+    max-width: 200px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
+    display: block;
+    margin-bottom: -70px;
+    opacity: 0;
+    transform: translateY(30px) translateX(-10px)  ;
+    transition: opacity 1s ease, transform 1s ease;
+}
+.m3_left_img3 {
+    position: absolute;
+    max-width: 200px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
+    display: block;
+    margin-bottom: -70px;
+    transform: translateY(250px) translateX(400px);
 }
 
 .main3_right {
-
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -412,6 +439,7 @@ form button:hover {
     vertical-align: middle;
     margin: 0 auto;
     padding: 20px;
+
 }
 
 .main3_second {
@@ -419,7 +447,6 @@ form button:hover {
     width: 100%;
     height: 1850px;
     border: 0;
-    overflow: hidden;
     background: #4169E1;
 
 }
@@ -431,9 +458,14 @@ form button:hover {
     align-content: flex-end;
     padding-top: 20px;
     padding-right: 90px;
+    padding-bottom: 200px;
     float: left;
     width: 50%;
     box-sizing: border-box;
+    position: sticky;
+    top: 200px;
+
+
 }
 
 .m3_sec_right {
@@ -447,23 +479,38 @@ form button:hover {
     color: #ffffff;
     font-family: "레시피코리아";
     font-size: 50px;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 
 }
 
 .m3_mmm2 {
+    font-family: 'GmarketSansMedium';
     color: #ffffff;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 }
 
 
 .m3_mmm3_1 {
+    font-family: 'GmarketSansMedium';
     color: #ffffff;
     padding-left: 20px;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 
 }
 
 .m3_mmm3 {
+    font-family: 'GmarketSansMedium';
     color: #ffffff;
     padding-left: 20px;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 }
 
 
@@ -474,6 +521,9 @@ form button:hover {
     border-radius: 10%;
     max-width: 450px;
     height: auto;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(80px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 
 }
 
@@ -487,6 +537,10 @@ form button:hover {
 
 #m4_title {
     font-family: "레시피코리아", sans-serif;
+}
+#m4_ment{
+    font-family: 'GmarketSansMedium';
+
 }
 
 /*메인4 표*/
@@ -741,3 +795,12 @@ footer {
     background: #fff8e6;
 }
 
+/* 요소가 화면에 나타날 때 애니메이션 적용 */
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fadeIn-m3_left2 {
+    opacity: 1;
+    transform: translateX(20px) translateY(0) rotate(-15deg);
+}

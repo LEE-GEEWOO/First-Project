@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산 해산물 마켓</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="src/webapp/css/styles.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="jpg/var_logo.png" alt style="height: 40px; width:40px">
+                <img src="src/webapp/jpg/var_logo.png" alt style="height: 40px; width:40px">
                 2024 부산 해산물 마켓
             </a>
 
@@ -39,7 +39,7 @@
         </div>
     </nav>
     <div class="var_bottom">
-        <p class="v_bot">일시 2024.08.21 (수)</p>
+        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
         <p class="v_bot">시간 9AM - 5PM</p>
         <p class="v_bot3">장소 부산 부산진구 중앙대로 708 부산파이낸스센터 4층</p>
         <button type="button" name="myButton" class="right-button">바로 예매하기</button>
@@ -75,7 +75,7 @@
 <main>
     <div id="h_top" style="text-align: center;">
     <span class=m1-top style="font-size: 30px; font-weight: bold; color: white;">
-        2024. AUG. 21 (WED)</span>
+        2024. AUG. 23-25 (FRI-SUN)</span>
     </div>
     <section class="m1">
         <span>붓싼</br>해산물 마켓</span>
@@ -86,7 +86,7 @@
     </section>
 
     <div class="img_main">
-        <img class="m1-img" src="jpg/ex.png" alt="ex">
+        <img class="m1-img" src="src/webapp/jpg/ex.png" alt="ex">
     </div>
 
     <section class="hero_bottom">
@@ -95,12 +95,31 @@
         </div>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.h-b');
 
-    <!--메인 2-->
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 요소가 화면에 보이면 fadeIn 클래스를 추가
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, {threshold: 0.1});
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+
+    <!--메인 2======================================================================-->
     <section class="main2">
         <div class="m2_video">
             <video class="main2_video" loop autoplay muted>
-                <source src="jpg/m2.mp4" type="video/mp4">
+                <source src="src/webapp/jpg/m2.mp4" type="video/mp4">
             </video>
         </div>
         <p class="m2_ment m2_ment1">오직 부산에서만 열리는<br/>
@@ -112,31 +131,33 @@
 
 
     <script>
-        document.addEventListener('scroll', function() {
-            const elements = document.querySelectorAll('.m2_ment1');
-            const viewportHeight = window.innerHeight;
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.m2_ment1, .m2_ment2, .main2-button');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, {threshold: 0.1});
 
             elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-
-                if (elementTop < viewportHeight) {
-                    element.classList.add('animate');
-                } else {
-                    element.classList.remove('animate');
-                }
+                observer.observe(element);
             });
         });
     </script>
-
-
 
 
     <!--메인 3 first-->
     <section>
         <div class="main3_first">
             <div class="main3_left">
-                <img src="jpg/main3_01.png" alt class="m3_left_img">
+                <img src="src/webapp/jpg/main3_01.png" alt class="m3_left_img">
+                <img src="src/webapp/jpg/goldmedal.png" alt class="m3_left_img2">
+                <img src="src/webapp/jpg/m3-img-bac.png" alt class="m3_left_img3">
             </div>
+
 
             <div class="main3_right">
                 <div class="m3_mmm1">01</div>
@@ -152,7 +173,7 @@
         </div>
     </section>
 
-    <!--    메인 3 second-->
+    <!--메인 3 second-->
     <section>
         <div class="main3_second">
             <div class="main3_sec_left">
@@ -164,21 +185,21 @@
 
             </div>
             <div class="m3_sec_right">
-                <img src="jpg/main3_2.jpg" alt class="m3_right_img">
+                <img src="src/webapp/jpg/main3_2.jpg" alt class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>싱싱한 생선</strong></div>
                 </br>
                 <div class="m3_mmm3">부산에서 갓 잡은 싱싱한 물고기를 숯불에 구워서</br>
                     뜯어먹는 재미와 불향을 맛보세요!
                 </div>
                 </br></br>
-                <img src="jpg/main3_3.jpg" alt class="m3_right_img">
+                <img src="src/webapp/jpg/main3_3.jpg" alt class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>제철 해산물</strong></div>
                 </br>
                 <div class="m3_mmm3">제철로 잡은 물고기를 칼잡이 회 전문가가</br>
                     회를 야무지게 만들어 드리니 젓가락만 드세요!
                 </div>
                 </br></br>
-                <img src="jpg/main3_4.jpg" class="m3_right_img">
+                <img src="src/webapp/jpg/main3_4.jpg" class="m3_right_img">
                 <div class="m3_mmm3_1"><strong>해산물 음식 전문가</strong></div>
                 </br>
                 <div class="m3_mmm3">자신이 낚고 잡은 해산물들로 라면도 먹고~</br>
@@ -189,42 +210,83 @@
         </div>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.m3_mmm1, .m3_mmm2,' +
+                ' .m3_mmm3_1, .m3_mmm3, .m3_right_img');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, {threshold: 0.5});
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.m3_left_img2');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn-m3_left2');
+                    }
+                });
+            }, {threshold: 0.7});
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+
 
     <!--    메인 4-->
     <section class="main4">
         <h1 id="m4_title">행사 일정</h1>
         <p></p>
-        <p>부산의 소상공인과 자영업자 부흥을 위한 축제의 장을 마련합니다.</br>
-            어류 부분, 개류 부분으로 구분하여 n일동안 진행되는 부산 마켓을 즐겨보세요.</p></br>
+        <p id="m4_ment">부산의 소상공인과 자영업자 부흥을 위한 축제의 장을 마련합니다.</br>
+            어류 부분, 개류 부분으로 구분하여 3일동안 진행되는 부산 마켓을 즐겨보세요.</p></br>
 
         <table>
             <thead>
             <tr>
                 <th></th>
-                <th>nn.nn (n) ~ nn.nn(n)</th>
-                <th>nn.nn (n)</th>
+                <th>08.23(금) ~ 08.24(토)</th>
+                <th>08.25(일)</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>09:00 ~ 11:00</td>
-                <td></td>
-                <td>데이터 3</td>
+                <td>09:00 ~ 11:30</td>
+                <td>제철 어패류 활용</br>제품 시식 및 시연</td>
+                <td>제철 어종 활용</br>제품 시식 및 시연</td>
             </tr>
             <tr>
-                <td>11:00 ~ 12:00</td>
-                <td>데이터 5</td>
-                <td>데이터 6</td>
+                <td>11:30 ~ 12:30</td>
+                <td colspan="2">휴식 시간</td>
             </tr>
             <tr>
-                <td>12:00 ~ 14:00</td>
-                <td>데이터 5</td>
-                <td>데이터 6</td>
+                <td>12:30 ~ 14:00</td>
+                <td>큰 풀장에서 손으로</br>물고기 잡기 체험</td>
+                <td>참치 해체쇼 및 먹방</td>
             </tr>
             <tr>
                 <td>14:00 ~ 17:00</td>
-                <td>데이터 5</td>
-                <td>데이터 6</td>
+                <td>잡은 어패류 식사 및 잔치</td>
+                <td>해산물 월척 금메달</br>선정 및 시상</td>
             </tr>
             </tbody>
         </table>
@@ -233,7 +295,7 @@
     <!--    메인5-->
     <section style="padding-top:70px; height: 1100px; background-color: #fdf5e6">
         <div class="m5_left">
-            <img src="jpg/m5-left-img.png" class="m5_left_img">
+            <img src="src/webapp/jpg/m5-left-img.png" class="m5_left_img">
 
         </div>
         <div class="m5_right">
@@ -242,9 +304,9 @@
             <p class="m5_title-small" style="padding-left : 20px">부산 해산물 브랜드</p>
             <div class="m5_right_imghead">
                 <div class="m5_right_images" style="padding-bottom: 7px">
-                    <img src="jpg/m5-right-geewoo.png" class="m5_right_img" alt="Image 1">
-                    <img src="jpg/m5-right-GM.png" class="m5_right_img" alt="Image 2">
-                    <img src="jpg/m5-right-MJ.png" class="m5_right_img" alt="Image 3">
+                    <img src="src/webapp/jpg/m5-right-geewoo.png" class="m5_right_img" alt="Image 1">
+                    <img src="src/webapp/jpg/m5-right-GM.png" class="m5_right_img" alt="Image 2">
+                    <img src="src/webapp/jpg/m5-right-MJ.png" class="m5_right_img" alt="Image 3">
                 </div>
                 <div class="m5_right_texts">
                     <p class="m5_right_text">낚시지우 (FishingGW)</br>낚시지우는</br>낚시의 재미를 느끼게 하는
@@ -265,21 +327,21 @@
             </br>
             <p class="m5_title-small" style="padding-left : 20px">부산 마켓 후원 기업</p>
             <div class="m5_right_images" style="margin-bottom: 13px">
-                <img src="jpg/m5-right-netflix.png" class="m5_right_img" alt="Image 1">
-                <img src="jpg/m5-right-coucou.png" class="m5_right_img" alt="Image 2">
-                <img src="jpg/m5-right-kia.png" class="m5_right_img" alt="Image 3">
+                <img src="src/webapp/jpg/m5-right-netflix.png" class="m5_right_img" alt="Image 1">
+                <img src="src/webapp/jpg/m5-right-coucou.png" class="m5_right_img" alt="Image 2">
+                <img src="src/webapp/jpg/m5-right-kia.png" class="m5_right_img" alt="Image 3">
             </div>
             <div class="m5_right_images">
-                <img src="jpg/m5-right-samsung.png" class="m5_right_img" alt="Image 3">
-                <img src="jpg/m5-right-naver.png" class="m5_right_img" alt="Image 3">
-                <img src="jpg/m5-right-facebook.png" class="m5_right_img" alt="Image 3">
+                <img src="src/webapp/jpg/m5-right-samsung.png" class="m5_right_img" alt="Image 3">
+                <img src="src/webapp/jpg/m5-right-naver.png" class="m5_right_img" alt="Image 3">
+                <img src="src/webapp/jpg/m5-right-facebook.png" class="m5_right_img" alt="Image 3">
             </div>
         </div>
     </section>
 
     <!--메인 6-->
     <section class="main6">
-        <img src="jpg/m6_img.jpg" class="m6_img">
+        <img src="src/webapp/jpg/m6_img.jpg" class="m6_img">
         <div class="overlay">
             <p class="m6_mmm1">오직 부산에서만 열리는<br/>
                 싱싱한 부산 마켓</p>
