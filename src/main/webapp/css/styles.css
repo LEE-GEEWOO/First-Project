@@ -77,7 +77,7 @@ nav ul li a:hover {
 /* 관람안내 등등 공지사항 bar css*/
 @font-face {
     font-family: "레시피코리아";
-    src: url("../../../font/recipeKorea.ttf") format("truetype");
+    src: url("../font/recipeKorea.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -445,10 +445,9 @@ form button:hover {
 .main3_second {
     padding-top: 70px;
     width: 100%;
-    height: 1850px;
+    height: 2000px;
     border: 0;
     background: #4169E1;
-
 }
 
 .main3_sec_left {
@@ -469,7 +468,6 @@ form button:hover {
 }
 
 .m3_sec_right {
-    height: 100vh; /* 화면 높이 전체 사용 */
     float: right;
     width: 50%;
     box-sizing: border-box;
@@ -532,7 +530,7 @@ form button:hover {
 .main4 {
     padding: 10vh;
     text-align: center;
-
+    margin : 10vh;
 }
 
 #m4_title {
@@ -540,20 +538,36 @@ form button:hover {
 }
 #m4_ment{
     font-family: 'GmarketSansMedium';
-
 }
 
 /*메인4 표*/
+
+
 table {
     width: 100%;
     border-collapse: collapse; /* 테두리 겹침 방지 */
+    margin: 0 auto;
+}
 
+.m4-table-3line{
+    width: 25%;
+}
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.m4-font{
+    font-family: 'Binggrae';
 }
 
 th, td {
     border: 1px solid #ddd; /* 테두리 색상 */
     padding: 8px; /* 셀 내 여백 */
     text-align: center;
+    border-left: none;
+    border-right: none;
 }
 
 /* 두 번째 행에만 다른 색상 적용 */
@@ -562,11 +576,11 @@ tr:nth-child(2) {
 }
 
 td:nth-child(2) {
-    background-color: #ffffff; /* 두 번째 열 배경색 */
+    background-color: #a6d2e8; /* 두 번째 열 배경색 */
 }
 
 th:nth-child(2) {
-    background-color: #ffffff; /* 두 번째 열 배경색 */
+    background-color: #a6d2e8; /* 두 번째 열 배경색 */
 }
 
 tr:nth-child(2) td:nth-child(2) {
@@ -577,7 +591,11 @@ tr:nth-child(2) td:nth-child(2) {
 /*main5 css*/
 .m5_left {
     float: left;
-    width: 30%;
+    width: 25%;
+    position: sticky;
+    top: 150px;
+    z-index: 1;
+    padding-bottom: 300px;
 }
 
 .m5_left_img {
@@ -587,41 +605,51 @@ tr:nth-child(2) td:nth-child(2) {
 }
 
 .m5_right {
-    float: right;
-    width: 70%;
     border-left: 1px solid #000000;
-
+    display: flex;
+    flex-direction : column;
+    padding-left: 45px;
 }
 
-#m5_title {
+.m5_title {
     font-family: "레시피코리아", sans-serif;
     text-align: left;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 }
 
 .m5_title-small {
     font-family: "레시피코리아", sans-serif;
     text-align: left;
+    font-size :25px;
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
 }
 
 .m5_right_imghead {
     display: flex;
     flex-direction: column; /* 수직 방향으로 배치 */
-    align-items: flex-start; /* 좌측 정렬 */
 }
 
 .m5_right_images,
 .m5_right_texts {
     display: flex;
     justify-content: space-between; /* 항목 간의 간격을 균등하게 분배 */
-    width: 90%; /* 전체 너비를 90%로 설정하여 중앙 정렬 */
+    width: 80%; /* 전체 너비를 90%로 설정하여 중앙 정렬 */
     max-width: 1024px; /* 최대 너비 설정 (옵션) */
-    margin: 0 auto; /* 중앙 정렬 */
+    opacity: 0; /* 요소를 투명하게 설정 */
+    transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
+    transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
+
 }
 
-.m5_right_images img {
+.m5_right_img {
     width: 32%; /* 이미지 너비를 30%로 설정 */
     height: 32%; /* 이미지 높이 자동 조정 */
     border-radius: 15px; /* 이미지 모서리 둥글게 설정 */
+
 }
 
 .m5_right_texts {
@@ -647,7 +675,8 @@ tr:nth-child(2) td:nth-child(2) {
 
 .m6_img {
     width: 100%;
-    height: auto;
+    height: 600px; /* 비디오의 높이를 고정 */
+    overflow: hidden;
 }
 
 .main6 {

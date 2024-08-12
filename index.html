@@ -242,11 +242,6 @@
                 observer.observe(element);
             });
         });
-
-
-
-
-
     </script>
 
 
@@ -259,49 +254,51 @@
         <p></p>
         <p id="m4_ment">부산의 소상공인과 자영업자 부흥을 위한 축제의 장을 마련합니다.</br>
             어류 부분, 개류 부분으로 구분하여 3일동안 진행되는 부산 마켓을 즐겨보세요.</p></br>
+        <p></p>
 
         <table>
             <thead>
             <tr>
-                <th></th>
+                <th class="m4-table-3line"></th>
                 <th>08.23(금) ~ 08.24(토)</th>
-                <th>08.25(일)</th>
+                <th class="m4-table-3line">08.25(일)</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>09:00 ~ 11:30</td>
-                <td>제철 어패류 활용</br>제품 시식 및 시연</td>
-                <td>제철 어종 활용</br>제품 시식 및 시연</td>
+                <td><b>09:00 ~ 11:30</b></td>
+                <td class="m4-font">제철 어패류 활용</br>제품 시식 및 시연</td>
+                <td class="m4-font">제철 어종 활용</br>제품 시식 및 시연</td>
             </tr>
             <tr>
-                <td>11:30 ~ 12:30</td>
-                <td colspan="2">휴식 시간</td>
+                <td><b>11:30 ~ 12:30</b></td>
+                <td colspan="2" class="m4-font" >휴식 시간</td>
             </tr>
             <tr>
-                <td>12:30 ~ 14:00</td>
-                <td>큰 풀장에서 손으로</br>물고기 잡기 체험</td>
-                <td>참치 해체쇼 및 먹방</td>
+                <td><b>12:30 ~ 14:00</b></td>
+                <td class="m4-font">큰 풀장에서 손으로</br>물고기 잡기 체험</td>
+                <td class="m4-font">참치 해체쇼 및 먹방</td>
             </tr>
             <tr>
-                <td>14:00 ~ 17:00</td>
-                <td>잡은 어패류 식사 및 잔</td>
-                <td>해산물 월척 금메달</br>선정 및 시상</td>
+                <td><b>14:00 ~ 17:00</b></td>
+                <td class="m4-font">잡은 어패류 요리 및 식사 맛보기 체험</td>
+                <td class="m4-font">해산물 월척 금메달</br>선정 및 시상</td>
             </tr>
             </tbody>
         </table>
     </section>
 
     <!--    메인5-->
-    <section style="padding-top:70px; height: 1100px; background-color: #fdf5e6">
+    <section style="padding-top:70px; height: 1300px; background-color: #fdf5e6">
         <div class="m5_left">
             <img src="src/main/webapp/jpg/m5-left-img.png" class="m5_left_img">
 
         </div>
         <div class="m5_right">
-            <h1 id="m5_title" style="padding-left : 20px">부산 마켓에서 만날 수 있는</br>주요 브랜드를 소개합니다.</h1>
-            </br></br>
-            <p class="m5_title-small" style="padding-left : 20px">부산 해산물 브랜드</p>
+            <h1 class="m5_title">부산 마켓에서 만날 수 있는</br>주요 브랜드를 소개합니다.</h1>
+            </br></br></br></br></br></br>
+            <p class="m5_title-small">부산 해산물 브랜드</p>
+
             <div class="m5_right_imghead">
                 <div class="m5_right_images" style="padding-bottom: 7px">
                     <img src="src/main/webapp/jpg/m5-right-geewoo.png" class="m5_right_img" alt="Image 1">
@@ -324,8 +321,9 @@
                 </div>
             </div>
             </br>
+            </br></br></br></br>
             </br>
-            <p class="m5_title-small" style="padding-left : 20px">부산 마켓 후원 기업</p>
+            <p class="m5_title-small">부산 마켓 후원 기업</p>
             <div class="m5_right_images" style="margin-bottom: 13px">
                 <img src="src/main/webapp/jpg/m5-right-netflix.png" class="m5_right_img" alt="Image 1">
                 <img src="src/main/webapp/jpg/m5-right-coucou.png" class="m5_right_img" alt="Image 2">
@@ -338,6 +336,27 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.m5_title, .m5_title-small, .m5_right_images, .m5_right_texts');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, {threshold: 0.5});
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+    </script>
+
+
 
     <!--메인 6-->
     <section class="main6">
