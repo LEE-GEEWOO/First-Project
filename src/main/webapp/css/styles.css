@@ -378,8 +378,6 @@ form button:hover {
 }
 
 
-
-
 /*메인 3 css*/
 .main3_first {
     width: 100%;
@@ -409,15 +407,17 @@ form button:hover {
     border-radius: 40%;
     object-fit: contain;
 }
+
 .m3_left_img2 {
     position: absolute;
     max-width: 200px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
     display: block;
     margin-bottom: -70px;
     opacity: 0;
-    transform: translateY(30px) translateX(-10px)  ;
+    transform: translateY(30px) translateX(-10px);
     transition: opacity 1s ease, transform 1s ease;
 }
+
 .m3_left_img3 {
     position: absolute;
     max-width: 200px; /* 이미지가 컨테이너 너비를 초과하지 않도록 설정 */
@@ -530,13 +530,14 @@ form button:hover {
 .main4 {
     padding: 10vh;
     text-align: center;
-    margin : 10vh;
+    margin: 10vh;
 }
 
 #m4_title {
     font-family: "레시피코리아", sans-serif;
 }
-#m4_ment{
+
+#m4_ment {
     font-family: 'GmarketSansMedium';
 }
 
@@ -549,16 +550,18 @@ table {
     margin: 0 auto;
 }
 
-.m4-table-3line{
+.m4-table-3line {
     width: 25%;
 }
+
 @font-face {
     font-family: 'Binggrae';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-.m4-font{
+
+.m4-font {
     font-family: 'Binggrae';
 }
 
@@ -607,7 +610,7 @@ tr:nth-child(2) td:nth-child(2) {
 .m5_right {
     border-left: 1px solid #000000;
     display: flex;
-    flex-direction : column;
+    flex-direction: column;
     padding-left: 45px;
 }
 
@@ -622,7 +625,7 @@ tr:nth-child(2) td:nth-child(2) {
 .m5_title-small {
     font-family: "레시피코리아", sans-serif;
     text-align: left;
-    font-size :25px;
+    font-size: 25px;
     opacity: 0; /* 요소를 투명하게 설정 */
     transform: translateY(30px); /* 요소를 아래쪽으로 이동 */
     transition: opacity 1s ease, transform 1s ease; /* 애니메이션 설정 */
@@ -791,44 +794,62 @@ tr:nth-child(2) td:nth-child(2) {
 
 /* 상품 등록 페이지와 동일한 푸터 스타일 */
 footer {
-    display: flex;
-    width: 100%;
-    background: #fff8e6;
+    background: #3baee5;
     color: #1f4284;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    font-family: 'Binggrae';
 }
+
+.footer {
+    margin: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
 
 .footer_left {
-    float: left;
-    height: 10vh; /* 화면 높이 전체 사용 */
-    width: 30%;
     box-sizing: border-box;
-    background: #fff8e6;
+    background: #3baee5;
+    color: #000000;
+}
+.footer_left a{
+    color: black;
+    text-decoration: none;
+}
+.footer_left a:hover{
+    color: black;
+    text-decoration: none;
 }
 
+
 .footer_cen {
-    float: none;
-    height: 10vh; /* 화면 높이 전체 사용 */
-    width: 100%;
     box-sizing: border-box;
-    background: #fff8e6;
+    background: #3baee5;
+    line-height: 15px;
+    text-align: center;
 }
 
 .footer_right {
-    float: right;
-    height: 10vh; /* 화면 높이 전체 사용 */
-    width: 30%;
+    font-size: 10px;
     box-sizing: border-box;
-    background: #fff8e6;
+    background: #3baee5;
+    text-align: left;
 }
+.footer_left,
+.footer_right {
+    flex: 1; /* 왼쪽과 오른쪽이 함께 공간을 차지 */
+}
+
 
 /* 요소가 화면에 나타날 때 애니메이션 적용 */
 .fadeIn {
     opacity: 1;
     transform: translateY(0);
 }
+
 .fadeIn-m3_left2 {
     opacity: 1;
     transform: translateX(20px) translateY(0) rotate(-15deg);
