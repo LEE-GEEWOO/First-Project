@@ -20,7 +20,7 @@ function checkId(input) {
             }
         });
 }
-//
+
 
 // 비밀번호 유효성 검사
 function checkPwd(input) {
