@@ -77,7 +77,7 @@ nav ul li a:hover {
 /* 관람안내 등등 공지사항 bar css*/
 @font-face {
     font-family: "레시피코리아";
-    src: url("../font/recipeKorea.ttf") format("truetype");
+    src: url("../font/Recipekorea.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
