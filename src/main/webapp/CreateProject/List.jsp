@@ -1,8 +1,6 @@
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="com.example.common.DBConnPool1" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -47,74 +45,202 @@
 
         String param = "";
         if (!searchValue.equals("")) {
-            param = "?searchKey=" + searchKey + "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
+            param = "searchKey=" + searchKey + "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
         }
 
-        String listUrl = "List.jsp" + param;
+        String listUrl = "List.jsp";
+        if (!param.equals("")) {
+            listUrl += "?" + param + "&";
+        } else {
+            listUrl += "?";
+        }
+
         String articleUrl = cp + "/CreateProject/Article.jsp";
         if (param.equals("")) {
             articleUrl += "?pageNum=" + currentPage;
         } else {
-            articleUrl += param + "&pageNum=" + currentPage;
+            articleUrl += "?" + param + "&pageNum=" + currentPage;
         }
+
+        // 페이징 관련 변수
+        int numPerBlock = 5; // 한 블록당 표시할 페이지 수
+        int currentPageSetup = (currentPage / numPerBlock) * numPerBlock;
+        if (currentPage % numPerBlock == 0) currentPageSetup = currentPageSetup - numPerBlock;
 %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/CreateProject/css/styles.css"/>
+    <link rel="stylesheet" href="<%=cp%>../src/main/webapp/css/styles.css">
+    <!-- Bootstrap CSS 링크 추가 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="bbsList">
-    <div id="bbsList_title">공지사항</div>
-    <div id="bbsList_header">
-        <div id="leftHeader">
-            <form name="searchForm" method="get" action="">
-                <select name="searchKey" class="selectField">
-                    <option value="title" <%= "title".equals(searchKey) ? "selected" : "" %>>제목</option>
-                    <option value="content" <%= "content".equals(searchKey) ? "selected" : "" %>>내용</option>
-                </select>
-                <input type="text" name="searchValue" class="textField" value="<%= searchValue %>"/>
-                <input type="submit" value=" 검색 " class="btn2"/>
-            </form>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/main/webapp/jpg/var_logo.png" alt style="height: 40px; width:40px">
+                2024 부산 해산물 마켓
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=cp%>/info.html">관람 안내</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=cp%>/post.html">공지사항</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=cp%>/QNA.html">Q&A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=cp%>../9999/login.jsp">로그인</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="rightHeader">
-            <input type="button" value=" 글쓰기 " class="btn2" onclick="location.href='<%=cp%>/CreateProject/Write.jsp';"/>
-        </div>
+    </nav>
+    <div class="var_bottom">
+        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
+        <p class="v_bot">시간 9AM - 5PM</p>
+        <p class="v_bot3">장소 부산 부산진구 중앙대로 708 부산파이낸스센터 4층</p>
+        <button type="button" name="myButton" class="right-button">바로 예매하기</button>
     </div>
-    <div id="bbsList_list">
-        <div id="title">
-            <dl>
-                <dt class="num">번호</dt>
-                <dt class="subject">제목</dt>
-                <dt class="name">작성자</dt>
-                <dt class="created">작성일</dt>
-                <dt class="hitCount">조회수</dt>
-            </dl>
+
+
+    <script>
+        document.addEventListener('scroll', function () {
+            let navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        document.addEventListener('scroll', function () {
+            let navbar = document.querySelector('.var_bottom');
+            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+    </script>
+    <h1 class="text-center my-4">공지사항</h1>
+</header>
+
+<main class="container my-4">
+    <section class="notification-list">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <form name="searchForm" method="get" action="">
+                    <div class="input-group">
+                        <select name="searchKey" class="form-control">
+                            <option value="title" <%= "title".equals(searchKey) ? "selected" : "" %>>제목</option>
+                            <option value="content" <%= "content".equals(searchKey) ? "selected" : "" %>>내용</option>
+                        </select>
+                        <input type="text" name="searchValue" class="form-control" value="<%= searchValue %>"/>
+                        <div class="input-group-append">
+                            <input type="submit" value=" 검색 " class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 text-right">
+                <a class="btn btn-success" href="<%=cp%>/CreateProject/Write.jsp">글쓰기</a>
+            </div>
         </div>
-        <div id="lists">
+
+        <div class="list-group">
             <% if (lists != null && !lists.isEmpty()) { %>
             <% for (BoardDTO dto : lists) { %>
-            <dl>
-                <dd class="num"><%= dto.getIdx() %></dd>
-                <dd class="subject">
-                    <a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>"><%= dto.getTitle() %></a>
-                </dd>
-                <dd class="name"><%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %></dd>
-                <dd class="created"><%= dto.getPostdate() %></dd>
-                <dd class="hitCount"><%= dto.getViews() %></dd>
-            </dl>
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>"><%= dto.getTitle() %></a></h5>
+                    <small><%= dto.getPostdate() %></small>
+                </div>
+                <p class="mb-1"><%= dto.getContent() %></p>
+                <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %></small>
+            </div>
             <% } %>
             <% } else { %>
-            <p>게시물이 없습니다.</p>
+            <div class="alert alert-warning" role="alert">
+                게시물이 없습니다.
+            </div>
             <% } %>
         </div>
-        <div id="footer">
-            <!-- 페이지 네비게이션 여기에 추가 -->
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <%
+                    if (dataCount != 0) {
+                        // 페이지 네비게이션
+                        // 처음 페이지
+                        if (currentPageSetup > 0) {
+                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=1'>처음</a></li>");
+                        }
+
+                        // 이전 블록
+                        int n = currentPage - numPerBlock;
+                        if (n > 0) {
+                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + n + "'>이전</a></li>");
+                        }
+
+                        // 페이지 번호
+                        for (int i = currentPageSetup + 1; i <= currentPageSetup + numPerBlock && i <= totalPage; i++) {
+                            if (i == currentPage) {
+                                out.println("<li class='page-item active'><span class='page-link'>" + i + "</span></li>");
+                            } else {
+                                out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + i + "'>" + i + "</a></li>");
+                            }
+                        }
+
+                        // 다음 블록
+                        n = currentPage + numPerBlock;
+                        if (n <= totalPage) {
+                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + n + "'>다음</a></li>");
+                        }
+
+                        // 마지막 페이지
+                        if (totalPage - currentPageSetup > numPerBlock) {
+                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + totalPage + "'>끝</a></li>");
+                        }
+                    }
+                %>
+            </ul>
+        </nav>
+    </section>
+</main>
+
+<footer>
+    <div class="footer">
+        <div class="footer_left">
+            <a href="info.html">관람안내</a>
+            <a href="post.html">공지사항</a>
+            <a href="http://localhost:8080/9999/reservation.jsp">예매하기</a>
+        </div>
+        <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
+        <div class="footer_right">
+            <div>붓싼 해산물 마켓 | 대표자 김민주 | 123-45-6789 [사업자정보확인] | +82 2 123-4567</div>
+            <p></p>
+            <div>BusanSeaMarket@gmailmilk.com | 이용약관 | 개인정보처리방침</div>
         </div>
     </div>
-</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"><script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</script>
 </body>
 </html>
 <%
