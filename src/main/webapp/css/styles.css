@@ -226,7 +226,6 @@ form select {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
 form button {
     background: #333;
     color: #fff;
@@ -236,11 +235,9 @@ form button {
     cursor: pointer;
     font-size: 1rem;
 }
-
 form button:hover {
     background: #555;
 }
-
 
 /* Hero 섹션 스타일 */
 @font-face {
@@ -253,9 +250,6 @@ form button:hover {
 #h_top {
     padding-top: 4rem;
 }
-
-
-/*이미지 + 효과 (미디어쿼리 할 시 대폭 수정 예정)*/
 .img_main {
     text-align: center;
     width: 70%;
@@ -284,10 +278,6 @@ form button:hover {
         -webkit-transform: scale(1);
     }
 }
-
-/*여기까지 (살짝 실험만 한 내용들)*/
-
-
 @keyframes fadeIn-m1 {
     from {
         opacity: 0;
@@ -325,7 +315,6 @@ form button:hover {
 .hero_bottom {
     font-family: 'GmarketSansMedium';
     margin-bottom: 8rem;
-
 }
 
 .h-b {
@@ -334,10 +323,7 @@ form button:hover {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1s ease, transform 1s ease;
-
 }
-
-
 /*메인 2 - 바로예매하기 css*/
 .main2 {
     position: relative;
@@ -638,6 +624,12 @@ tr:nth-child(2) td:nth-child(2) {
 
 
 /*main5 css*/
+.main5 {
+    padding-top: 70px;
+    height: 1300px;
+    background-color: #fdf5e6;
+}
+
 .m5_left {
     float: left;
     width: 25%;
@@ -932,7 +924,7 @@ footer {
 @media (max-width: 768px) and (min-width: 425px) {
     .navbar-brand {
         width: 5%;
-        right : 100px;
+        right: 100px;
     }
 
     .nav ul {
@@ -941,7 +933,7 @@ footer {
 
     .navbar-toggler {
         float: right;
-        margin-top:5px;
+        margin-top: 5px;
     }
 
     .navbar-nav {
@@ -959,45 +951,49 @@ footer {
         padding-right: 60px;
         display: block !important;
     }
-
     .main3_right
     .main3_left {
         height: 580px;
     }
-
     .m3_left_img {
         width: 97%;
     }
-
     .m3_left_img2 {
         width: 45%;
     }
-
     .m3_left_img3 {
         top: 32%;
         right: 8%;
     }
-
     .m3_mmm1 {
         font-size: 32px;
     }
-
     .m3_mmm2 {
         font-size: 11px;
     }
-
     .main3_second {
         padding: 0;
         height: 1500px;
     }
-
     .m3_right_img {
         max-width: 88%;
     }
-
-
+    .main4 {
+        padding: 0;
+        margin: 8vh;
+    }
+    .m5_left_img {
+        padding-top: 50px;
+    }
+    .m5_right_text {
+        font-size: 10px;
+    }
+    .main5{
+        height: 1050px;
+    }
 }
-@media (max-width: 425px){
+
+@media (max-width: 425px) {
     .v-bot3-del {
         display: none;
     }
