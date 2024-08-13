@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산 해산물 마켓 관람안내</title>
-    <link rel="stylesheet" href="../src/main/webapp/css/info_style.css"> <!-- 스타일시트 연결 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- 부트스트랩 CSS 추가 -->
+    <link rel="stylesheet" href="/css/info_style.css"> <!-- 스타일시트 연결 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
@@ -41,7 +42,7 @@
 <main>
     <section id="event" class="event-section">
         <h2>체험 프로그램</h2>
-        <p class="description">
+        <p>
             체험 프로그램은 참가자들에게 즐거운 시간을 제공하고, 해산물과 관련된 다양한 활동을 통해 재미와 교육적 가치를 동시에 제공합니다. 물고기 잡기와 해산물 아트 체험은 모두 가족과 친구들과 함께 참여할 수 있어 더욱 흥미진진한 경험이 될 것입니다.
         </p>
 
@@ -60,7 +61,7 @@
 
         <article id="art" class="article event-article">
             <img src="/gif/event2.jpg" alt="해산물 아트 체험" class="event-image">
-            <div class="details event-details">
+            <div>
                 <h3>해산물 아트 체험 🎨</h3>
                 <p>해산물 테마로 나만의 예술 작품을 만들어 보세요!</p>
                 <ul>
@@ -74,13 +75,13 @@
 
     <section id="awards" class="awards-section">
         <h2>수상 부문</h2>
-        <p class="description">
+        <p>
             3일 동안 진행되는 투표를 통해 참가자 여러분의 소중한 의견을 반영하여 최고의 마켓과 맛집을 선정합니다. 참여하시고 직접 확인해 보세요! 여러분의 한 표가 축제의 결과를 좌우할 수 있습니다.
         </p>
 
         <article id="best-market" class="article award-article">
             <img src="/gif/goldmedal.png" alt="베스트 마켓" class="award-image">
-            <div class="details award-details">
+            <div>
                 <h3>베스트 마켓 🏆</h3>
                 <ul>
                     <li><strong>신선함 배틀</strong>: 최상의 신선함과 품질</li>
@@ -91,7 +92,7 @@
 
         <article id="best-restaurant" class="article award-article">
             <img src="/gif/goldmedal.png" alt="베스트 맛집" class="award-image">
-            <div class="details award-details">
+            <div>
                 <h3>베스트 맛집 🍽️</h3>
                 <ul>
                     <li><strong>미각의 제왕</strong>: 뛰어난 맛과 풍미</li>
@@ -100,6 +101,47 @@
             </div>
         </article>
     </section>
+
+    <!--    메인 4-->
+    <section class="main4">
+        <h1 id="m4_title">행사 일정</h1>
+        <p></p>
+        <p id="m4_ment">부산의 소상공인과 자영업자 부흥을 위한 축제의 장을 마련합니다.</br>
+            어류 부분, 개류 부분으로 구분하여 3일동안 진행되는 부산 마켓을 즐겨보세요.</p></br>
+        <p></p>
+
+        <table>
+            <thead>
+            <tr>
+                <th class="m4-table-3line"></th>
+                <th>08.23(금) ~ 08.24(토)</th>
+                <th class="m4-table-3line">08.25(일)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><b>09:00 ~ 11:30</b></td>
+                <td class="m4-font">제철 어패류 활용</br>제품 시식 및 시연</td>
+                <td class="m4-font">제철 어종 활용</br>제품 시식 및 시연</td>
+            </tr>
+            <tr>
+                <td><b>11:30 ~ 12:30</b></td>
+                <td colspan="2" class="m4-font">휴식 시간</td>
+            </tr>
+            <tr>
+                <td><b>12:30 ~ 14:00</b></td>
+                <td class="m4-font">큰 풀장에서 손으로</br>물고기 잡기 체험</td>
+                <td class="m4-font">참치 해체쇼 및 먹방</td>
+            </tr>
+            <tr>
+                <td><b>14:00 ~ 17:00</b></td>
+                <td class="m4-font">잡은 어패류 요리 및 <br>식사 맛보기 체험</td>
+                <td class="m4-font">해산물 월척 금메달</br>선정 및 시상</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
 </main>
 
 <footer>
@@ -107,7 +149,7 @@
         <div class="footer_left">
             <a href="info.html">관람안내</a>
             <a href="post.html">공지사항</a>
-            <a href="">예매하기</a>
+            <a href="/9999/reservation.jsp">예매하기</a>
         </div>
         <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
         <div class="footer_right">

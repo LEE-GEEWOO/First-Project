@@ -159,36 +159,31 @@ nav ul li a:hover {
 
 /* info_style 메인 시작*/
 main {
-    padding-top: 100px;
+    padding-top: 10vh;
     margin: 0 auto;
     flex: 1; /* 푸터를 아래로 밀기 위해 flex-grow 설정 */
     font-family: 'GmarketSansMedium', sans-serif;
-}
-
-h2 {
-    color: #333;
+    background: #3baee5;
     text-align: center;
-    margin-bottom: 2rem;
+
 }
 
-.description {
+
+section > h2 {
+    color: #3baee5;
+    font-family: '레시피코리아', sans-serif;
+
+}
+
+section > p {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.2rem;
     color : #1f4284;
+    font-family: 'GmarketSansMedium';
 }
 
-.article ul{
-    color : #1f4284;
-}
 
-.article > h3{
-    color: #3baee5;
-}
-
-section > h2 {
-    color: #3baee5;
-}
 
 .event-section {
     margin: 0 auto;
@@ -201,6 +196,7 @@ section > h2 {
     background-color: #e2f3fa;
     padding: 2rem 0;
 }
+
 
 .article {
     display: flex;
@@ -238,10 +234,52 @@ section > h2 {
     margin-bottom: 1rem;
 }
 
-.details {
-    font-size: 1rem;
-    color: #333;
+/*메인4 css 표부분 그대로 가져옴! */
+.main4 {
+    padding: 10vh;
+    text-align: center;
+    background: #3baee5;
 }
+
+#m4_title {
+    font-family: "레시피코리아", sans-serif;
+}
+#m4_ment{
+    font-family: 'GmarketSansMedium';
+
+}
+
+/*메인4 표*/
+table {
+    width: 100%;
+    border-collapse: collapse; /* 테두리 겹침 방지 */
+
+}
+
+th, td {
+    border: 1px solid #ddd; /* 테두리 색상 */
+    padding: 8px; /* 셀 내 여백 */
+    text-align: center;
+}
+
+/* 두 번째 행에만 다른 색상 적용 */
+tr:nth-child(2) {
+    background-color: #3baee5; /* 두 번째 행 배경색 */
+}
+
+td:nth-child(2) {
+    background-color: #ffffff; /* 두 번째 열 배경색 */
+}
+
+th:nth-child(2) {
+    background-color: #ffffff; /* 두 번째 열 배경색 */
+}
+
+tr:nth-child(2) td:nth-child(2) {
+    background-color: #3baee5; /* 기본 배경색으로 복원 */
+}
+
+
 
 /* 푸터 (main과 동일) */
 footer {
