@@ -52,10 +52,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+
 /*왼쪽 맨위 */
 .navbar-brand {
     color: white;
     font-family: 'HS-Regular';
+}
+
+.n-b-img {
+    height: 40px;
+    width: 40px;
 }
 
 /*바 아래 구분선 */
@@ -157,9 +163,11 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
     z-index: 1000;
 }
+
 .floating-button:hover {
     background-color: #2980b9;
 }
+
 .floating-button-up {
     position: fixed;
     bottom: 19px;
@@ -180,9 +188,6 @@ nav ul li a:hover {
 .floating-button-up:hover {
     background-color: #2980b9;
 }
-
-
-
 
 
 main {
@@ -856,11 +861,13 @@ footer {
     color: #000000;
     flex: 1;
 }
-.footer_left a{
+
+.footer_left a {
     color: black;
     text-decoration: none;
 }
-.footer_left a:hover{
+
+.footer_left a:hover {
     color: black;
     text-decoration: none;
 }
@@ -882,7 +889,6 @@ footer {
 }
 
 
-
 /* 요소가 화면에 나타날 때 애니메이션 적용 */
 .fadeIn {
     opacity: 1;
@@ -892,4 +898,107 @@ footer {
 .fadeIn-m3_left2 {
     opacity: 1;
     transform: translateX(20px) translateY(0) rotate(-15deg);
+}
+
+
+/*미디어 쿼리*/
+
+
+@media (max-width: 770px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: BLOCK !important;
+    }
+
+    .collapse:not(.show) {
+        display: none !important;
+    }
+
+    .navbar-expand-sm .navbar-toggler {
+        display: BLOCK !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .navbar-expand-sm .navbar-toggler {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 425px) {
+    .navbar-brand {
+        width: 5%;
+        right : 100px;
+    }
+
+    .nav ul {
+        padding-right: 20px;
+    }
+
+    .navbar-toggler {
+        float: right;
+        margin-top:5px;
+    }
+
+    .navbar-nav {
+        width: 70%;
+        padding-right: 0;
+        flex-direction: column !important;
+    }
+
+    .v-bot3-del {
+        display: none;
+    }
+
+
+    .container-fluid {
+        padding-right: 60px;
+        display: block !important;
+    }
+
+    .main3_right
+    .main3_left {
+        height: 580px;
+    }
+
+    .m3_left_img {
+        width: 97%;
+    }
+
+    .m3_left_img2 {
+        width: 45%;
+    }
+
+    .m3_left_img3 {
+        top: 32%;
+        right: 8%;
+    }
+
+    .m3_mmm1 {
+        font-size: 32px;
+    }
+
+    .m3_mmm2 {
+        font-size: 11px;
+    }
+
+    .main3_second {
+        padding: 0;
+        height: 1500px;
+    }
+
+    .m3_right_img {
+        max-width: 88%;
+    }
+
+
+}
+@media (max-width: 425px){
+    .v-bot3-del {
+        display: none;
+    }
 }
