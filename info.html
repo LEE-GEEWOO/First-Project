@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산 해산물 마켓 관람안내</title>
-    <link rel="stylesheet" href="/css/info_style.css"> <!-- 스타일시트 연결 -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/main/webapp/css/info_style.css"> <!-- 스타일시트 연결 -->
 </head>
 <body>
 
@@ -13,42 +13,53 @@
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="src/main/webapp/jpg/var_logo.png" alt style="height: 40px; width:40px">
-                2024 부산 해산물 마켓
+                <img class="n-b-img" src="src/main/webapp/jpg/var_logo.png">
+                <span class="n-b-ment">2024 부산 해산물 마켓</span>
             </a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="info.html">관람 안내</a>
+                        <a class="nav-link" style="color: white" href="info.html">관람 안내</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="post.html">공지사항</a>
+                        <a class="nav-link" style="color: white" href="post.html">공지사항</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="QNA.html">Q&A</a>
+                        <a class="nav-link" style="color: white" href="QNA.html">Q&A</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="9999/login.jsp">로그인</a>
+                        <a class="nav-link" style="color: white" href="http://localhost:8080/9999/login.jsp">로그인</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="var_bottom">
+        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
+        <p class="v_bot">시간 9AM - 5PM</p>
+        <p class="v_bot3">장소 부산 부산진구 중앙대로 708 <span class="v-bot3-del">부산파이낸스센터 4층</span></p>
+        <button onclick="button()" name="myButton" class="right-button">바로 예매하기</button>
+    </div>
 </header>
 
 <main>
     <section id="event" class="event-section">
         <h2>체험 프로그램</h2>
         <p>
-            체험 프로그램은 참가자들에게 즐거운 시간을 제공하고, 해산물과 관련된 다양한 활동을 통해 재미와 교육적 가치를 동시에 제공합니다. 물고기 잡기와 해산물 아트 체험은 모두 가족과 친구들과 함께 참여할 수 있어 더욱 흥미진진한 경험이 될 것입니다.
+            체험 프로그램은 참가자들에게 즐거운 시간을 제공하고,</br> 해산물과 관련된 다양한 활동을 통해 재미와 교육적 가치를 동시에 제공합니다.</br>
+            물고기 잡기와 해산물 아트 체험은 모두 가족과 친구들과 함께
+            참여할 수 있어 더욱 흥미진진한 경험이 될 것입니다.
         </p>
+        </br>
 
         <article id="fish-catching" class="article event-article">
-            <img src="/gif/event1.png" alt="물고기 잡기 체험" class="event-image">
-            <div class="details event-details">
+            <img src="/jpg/event1.png" alt="물고기 잡기 체험" class="event-image">
+            <div class="details1 event-details">
                 <h3>물고기 잡기 체험 🐟</h3>
                 <p>물고기를 직접 잡아보는 신나는 체험!</p>
                 <ul>
@@ -59,28 +70,33 @@
             </div>
         </article>
 
-        <article id="art" class="article event-article">
-            <img src="/gif/event2.jpg" alt="해산물 아트 체험" class="event-image">
-            <div>
-                <h3>해산물 아트 체험 🎨</h3>
+        <article id="art" class="article2 event-article">
+            <div class="details2 event-details">
+                <h3>🎨 해산물 아트 체험</h3>
                 <p>해산물 테마로 나만의 예술 작품을 만들어 보세요!</p>
                 <ul>
-                    <li>해산물 이미지를 활용한 아트 스테이션</li>
-                    <li>체험 키트 제공 및 전시 기회</li>
-                    <li>완성 작품 기념품으로 제공</li>
+                    <li>해산물 이미지를 활용한 아트 스테이션 ·</li>
+                    <li>체험 키트 제공 및 전시 기회 ·</li>
+                    <li>완성 작품 기념품으로 제공 ·</li>
                 </ul>
             </div>
+            <img src="/jpg/event2.jpg" alt="해산물 아트 체험" class="event-image">
         </article>
     </section>
+
+<!--    수상-->
 
     <section id="awards" class="awards-section">
         <h2>수상 부문</h2>
         <p>
-            3일 동안 진행되는 투표를 통해 참가자 여러분의 소중한 의견을 반영하여 최고의 마켓과 맛집을 선정합니다. 참여하시고 직접 확인해 보세요! 여러분의 한 표가 축제의 결과를 좌우할 수 있습니다.
+            3일 동안 진행되는 투표를 통해 참가자 여러분의 소중한 의견을 반영하여 최고의 마켓과 맛집을 선정합니다.
+            </br>참여하시고 직접 확인해 보세요! 여러분의 한 표가 축제의 결과를 좌우할 수 있습니다.
         </p>
+        </br>
+        </br>
 
-        <article id="best-market" class="article award-article">
-            <img src="/gif/goldmedal.png" alt="베스트 마켓" class="award-image">
+        <article id="best-market" class="article3 award-article">
+            <img src="/jpg/goldmedal.png" alt="베스트 마켓" class="award-image">
             <div>
                 <h3>베스트 마켓 🏆</h3>
                 <ul>
@@ -90,8 +106,8 @@
             </div>
         </article>
 
-        <article id="best-restaurant" class="article award-article">
-            <img src="/gif/goldmedal.png" alt="베스트 맛집" class="award-image">
+        <article id="best-restaurant" class="article3 award-article">
+            <img src="/jpg/goldmedal.png" alt="베스트 맛집" class="award-image">
             <div>
                 <h3>베스트 맛집 🍽️</h3>
                 <ul>
@@ -149,7 +165,7 @@
         <div class="footer_left">
             <a href="info.html">관람안내</a>
             <a href="post.html">공지사항</a>
-            <a href="/9999/reservation.jsp">예매하기</a>
+            <a href="http://localhost:8080/9999/reservation.jsp">예매하기</a>
         </div>
         <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
         <div class="footer_right">

@@ -27,6 +27,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'TTLaundryGothicB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /*여기부분은 styles.css와 동일 (성민님 헤더 그대로 가져옴)*/
 * {
     margin: 0;
@@ -59,6 +66,11 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
+.n-b-img {
+    height: 40px;
+    width: 40px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -82,11 +94,18 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+
 /*왼쪽 맨위 */
 .navbar-brand {
     color: white;
     font-family: 'HS-Regular';
 }
+
+.n-b-img {
+    height: 40px;
+    width: 40px;
+}
+
 
 /*바 아래 구분선 */
 .navbar-custom {
@@ -154,13 +173,14 @@ nav ul li a:hover {
 .navbar-custom.scrolled {
     background-color: #4169E1; /* 스크롤 시 배경색 */
 }
+
 /*여기까지 그대로!!! */
 
 
 /* info_style 메인 시작*/
 main {
     padding-top: 10vh;
-    margin: 0 auto;
+    margin: 0 ;
     flex: 1; /* 푸터를 아래로 밀기 위해 flex-grow 설정 */
     font-family: 'GmarketSansMedium', sans-serif;
     background: #3baee5;
@@ -172,23 +192,22 @@ main {
 section > h2 {
     color: #3baee5;
     font-family: '레시피코리아', sans-serif;
-
+    font-size: 50px;
 }
 
 section > p {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.2rem;
-    color : #1f4284;
+    color: #1f4284;
     font-family: 'GmarketSansMedium';
 }
-
-
 
 .event-section {
     margin: 0 auto;
     background-color: #f7f7f7;
-    padding: 2rem 0;
+    padding: 8rem 0;
+    height: 1000px;
 }
 
 .awards-section {
@@ -199,17 +218,67 @@ section > p {
 
 
 .article {
+    float: left;
+    width: 65%;
     display: flex;
+    margin-left: 60px;
     align-items: center;
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 5rem;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.article2 {
+    float: right;
+    width: 65%;
+    display: flex;
+    margin-right: 60px;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: flex-end;
+}
+
+.article ul li {
+    text-align: left;
+    font-family: 'TTLaundryGothicB';
+}
+
+.article2 ul li {
+    text-align: right;
+    font-family: 'TTLaundryGothicB';
+    list-style-type: none;
+}
+
+.details1 {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.details2 {
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+
 .event-article {
     flex-direction: row;
+}
+
+/*수상부문*/
+#awards {
+    height: 1000px;
+    clear: both;
+    padding-top: 120px;
 }
 
 .award-article {
@@ -224,6 +293,7 @@ section > p {
     object-fit: cover;
     border-radius: 8px;
     margin-right: 1rem;
+
 }
 
 .award-image {
@@ -234,32 +304,66 @@ section > p {
     margin-bottom: 1rem;
 }
 
+.article3 {
+
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: flex-end;
+}
+
+
 /*메인4 css 표부분 그대로 가져옴! */
 .main4 {
     padding: 10vh;
     text-align: center;
-    background: #3baee5;
+    margin: 10vh;
 }
 
 #m4_title {
     font-family: "레시피코리아", sans-serif;
 }
-#m4_ment{
-    font-family: 'GmarketSansMedium';
 
+#m4_ment {
+    font-family: 'GmarketSansMedium';
 }
 
 /*메인4 표*/
+
+
 table {
     width: 100%;
     border-collapse: collapse; /* 테두리 겹침 방지 */
+    margin: 0 auto;
+}
 
+.m4-table-3line {
+    width: 25%;
+}
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.m4-font {
+    font-family: 'Binggrae';
 }
 
 th, td {
     border: 1px solid #ddd; /* 테두리 색상 */
     padding: 8px; /* 셀 내 여백 */
     text-align: center;
+    border-left: none;
+    border-right: none;
 }
 
 /* 두 번째 행에만 다른 색상 적용 */
@@ -268,17 +372,16 @@ tr:nth-child(2) {
 }
 
 td:nth-child(2) {
-    background-color: #ffffff; /* 두 번째 열 배경색 */
+    background-color: #a6d2e8; /* 두 번째 열 배경색 */
 }
 
 th:nth-child(2) {
-    background-color: #ffffff; /* 두 번째 열 배경색 */
+    background-color: #a6d2e8; /* 두 번째 열 배경색 */
 }
 
 tr:nth-child(2) td:nth-child(2) {
     background-color: #3baee5; /* 기본 배경색으로 복원 */
 }
-
 
 
 /* 푸터 (main과 동일) */
@@ -304,11 +407,13 @@ footer {
     color: #000000;
     flex: 1;
 }
-.footer_left a{
+
+.footer_left a {
     color: black;
     text-decoration: none;
 }
-.footer_left a:hover{
+
+.footer_left a:hover {
     color: black;
     text-decoration: none;
 }
@@ -328,7 +433,6 @@ footer {
     text-align: right;
     flex: 1;
 }
-
 
 
 /* 요소가 화면에 나타날 때 애니메이션 적용 */

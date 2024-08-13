@@ -723,6 +723,8 @@ tr:nth-child(2) td:nth-child(2) {
 .main6 {
     position: relative;
     text-align: left;
+    padding-top: 60px;
+    background-color: #fdf5e6;
 
 }
 
@@ -742,7 +744,7 @@ tr:nth-child(2) td:nth-child(2) {
     justify-content: center;
     align-items: flex-start;
     color: white; /* 글자 색상 */
-    background: rgba(0, 0, 0, 0.5); /* 투명도 있는 배경 색상 */
+    background: rgba(0, 0, 0, 0.0); /* 투명도 있는 배경 색상 */
     padding-left: 50px;
     padding-bottom: 30px;
     box-sizing: border-box;
