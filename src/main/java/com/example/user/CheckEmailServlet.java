@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/9999/checkEmail.do")
+@WebServlet("/CreateProject/checkEmail.do")
 public class CheckEmailServlet extends HttpServlet {
 
     @Override

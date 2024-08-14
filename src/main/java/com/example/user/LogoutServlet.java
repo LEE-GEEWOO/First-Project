@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet("/9999/logout.do")
+@WebServlet("/CreateProject/logout.do")
 public class LogoutServlet extends HttpServlet {
 
     @Override
