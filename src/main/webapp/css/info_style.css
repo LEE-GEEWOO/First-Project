@@ -280,6 +280,19 @@ section > p {
     transition-delay: 1.7s;
 }
 
+.a-e-shark{
+    width: 27%;
+    rotate: -33deg;
+    position: absolute;
+    left: -16px;
+}
+.a-e-fish{
+    width: 15%;
+    rotate: -42deg;
+    position: absolute;
+    left: 660px;
+}
+
 .article ul li {
     text-align: left;
     font-family: 'TTLaundryGothicB';
