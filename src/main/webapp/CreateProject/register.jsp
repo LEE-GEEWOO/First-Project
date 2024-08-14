@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-<form action="/9999/register.do" method="post" onsubmit="return validateForm(this)">
+<form action="/CreateProject/register.do" method="post" onsubmit="return validateForm(this)">
     <h2>회원가입</h2>
 
     <!-- 오류 메시지 출력 -->

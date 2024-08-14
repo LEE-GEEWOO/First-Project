@@ -13,7 +13,7 @@
   <p>아래 내용을 기재해주시면, 연락처를 통해 입장권이 발송됩니다.</p>
   <p>그외 문의사항은 부산 해산물 마켓 고객센터를 이용해주세요.</p>
 
-  <form action="/9999/reservation.do" method="post" class="reservation-form">
+  <form action="/CreateProject/reservation.do" method="post" class="reservation-form">
     <div class="form-group">
       <label>행사참여일</label>
       <div class="radio-group">

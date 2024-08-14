@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="login.do" method="post" onsubmit="return validateLoginForm(this)">
+    <form action="login.do" method="post" onsubmit="return validateForm(this)">
         <h2>로그인</h2>
         <div class="form-group">
             <input type="text" name="userId" placeholder="아이디" required>

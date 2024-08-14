@@ -3,16 +3,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>회원가입 성공</title>
+    <title>로그인 성공</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>회원가입이 완료되었습니다!</h1>
-        <p>회원가입이 성공적으로 완료되었습니다.</p>
-        <p>이제 로그인하여 서비스를 이용해보세요.</p>
+        <h1>로그인이 완료되었습니다!</h1>
+        <p>부산 해산물 마켓의 다양한 정보를 확인해보세요.</p>
         <div class="additional-info">
-            <a href="login.jsp" class="btn">로그인 페이지로 이동</a>
+            <a href="../index.html" class="btn">홈페이지 구경하기</a>
         </div>
 
     </div>

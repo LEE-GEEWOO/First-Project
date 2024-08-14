@@ -1,6 +1,8 @@
 <%@ page import="com.example.user.UserDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
          pageEncoding="UTF-8" %>
+
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -11,7 +13,7 @@
 <div class="container">
   <!-- 중앙 정렬된 제목과 로그아웃 버튼 -->
   <div class="container-central">
-    <h1>마이 페이지</h1>
+    <h1>마이페이지</h1>
     <%
       // 세션에서 사용자 정보 가져오기
       UserDTO user = (UserDTO) session.getAttribute("user");
@@ -23,7 +25,7 @@
       <p>이름 : <%= user.getName() %></p>
       <p>이메일 : <%= user.getEmail() %></p>
     </div>
-    <a href="logout.do" class="btn">Logout</a>
+    <a href="../index.html" class="btn">홈페이지 구경하기</a>
     <%
     } else {
     %>
