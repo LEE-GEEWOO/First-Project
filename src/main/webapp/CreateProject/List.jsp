@@ -5,16 +5,16 @@
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<%--이부분 추가됌--%>
 <%@ page import="com.example.user.UserDTO" %>
 <%
     UserDTO user = (UserDTO) session.getAttribute("user");
     String userName = (user != null) ? user.getName() : "";
 %>
-<%--여기까지--%>
+
 
 <%
     request.setCharacterEncoding("UTF-8");
+
     String cp = request.getContextPath();
     BoardDAO dao = null;
     List<BoardDTO> lists = null;
@@ -82,52 +82,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" href="<%=cp%>../css/styles.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%=cp%>../css/styles.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="src/main/webapp/jpg/var_logo.png" alt style="height: 40px; width:40px">
+            <a class="navbar-brand" href="../html/index.html">
+                <img alt src="../jpg/var_logo.png" style="height: 40px; width:40px">
                 2024 부산 해산물 마켓
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav" >
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="./info.html">관람 안내</a>
+                        <a class="nav-link" href="../html/info.html" style="color: white">관람 안내</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="./CreateProject/List.jsp">공지사항</a>
+                        <a class="nav-link" href="List.jsp" style="color: white">공지사항</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="QNA.html">Q&A</a>
+                        <a class="nav-link" href="QNA.html" style="color: white">Q&A</a>
                     </li>
-                    <%-- 자바스크립트를 li안으로 넣어버림 --%>
                     <li class="nav-item dropdown" id="navbarUser">
-                        <% if (userName != null && !userName.isEmpty()) { %>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-                            안녕하세요, <%= userName %>님
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/mypage.jsp">마이페이지</a>
-                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/logout.do">로그아웃</a>
-                        </div>
-                        <% } else { %>
-                        <a class="nav-link" style="color: white" href="<%=request.getContextPath()%>/CreateProject/login.jsp">로그인</a>
-                        <% } %>
+
                     </li>
-                    <%--여기까지 --%>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="var_bottom">
+        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
+        <p class="v_bot">시간 9AM - 5PM</p>
+        <p class="v_bot3">장소 부산 부산진구 중앙대로 708 <span class="v-bot3-del">부산파이낸스센터 4층</span></p>
+        <button class="right-button" name="myButton" onclick="button()">바로 예매하기</button>
+    </div>
 
 
     <script>
@@ -153,10 +147,54 @@
 
     <script>
         function button() {
-            window.location.href = "CreateProject/reservation.jsp";
+            window.location.href = "../CreateProject/reservation.jsp";
         }
     </script>
+
+
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function updateNavbar(user) {
+            var navbarUser = document.getElementById("navbarUser");
+            navbarUser.innerHTML = ""; // 기존 내용을 지웁니다.
+
+            if (user) {
+                // 로그인 상태일 때
+                navbarUser.innerHTML = `
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                        안녕하세요, ${userName.userName}님
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../CreateProject/mypage.jsp">마이페이지</a>
+                        <a class="dropdown-item" href="/CreateProject/logout.do">로그아웃</a>
+                    </div>
+                `;
+            } else {
+                // 로그인하지 않은 상태일 때
+                navbarUser.innerHTML = `
+                    <a class="nav-link" style="color: white" href="../CreateProject/login.jsp">로그인</a>
+                `;
+            }
+        }
+
+        // fetch로 세션 정보 확인
+        fetch("/checkSession")
+            .then(response => response.json())
+            .then(data => {
+                updateNavbar(data.loggedIn ? {userName: data.userName} : null);
+            })
+            .catch(error => console.error("세션 정보를 가져오는 중 오류가 발생했습니다.", error));
+    });
+</script>
+
+
+
+
+
+
+
 
 <main class="container my-4">
     <section class="notification-list">
@@ -176,7 +214,9 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
+                <% if (session.getAttribute("userType") != null && ((Integer)session.getAttribute("userType") == 1)) { %>
                 <a class="btn btn-success" href="<%=cp%>/CreateProject/Write.jsp">글쓰기</a>
+                <% } %>
             </div>
         </div>
 
@@ -260,7 +300,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</script>
 </body>
 </html>
 <%
