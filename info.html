@@ -84,7 +84,7 @@
         </article>
     </section>
 
-<!--    수상-->
+    <!--    수상-->
 
     <section id="awards" class="awards-section">
         <h2>수상 부문</h2>
@@ -158,6 +158,31 @@
         </table>
     </section>
 
+    <!--map-->
+    <div id="map"></div>
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID">
+        // 지도 생성
+        var map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(37.3595704, 127.105399), // 중심 좌표 설정
+            zoom: 10 // 줌 레벨 설정
+        });
+
+        // 마커 추가
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(37.3595704, 127.105399),
+            map: map
+        });
+
+        // 지도에 정보창 추가
+        var infoWindow = new naver.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:10px;">여기에 정보창 내용</div>'
+        });
+
+        naver.maps.Event.addListener(marker, 'click', function () {
+            infoWindow.open(map, marker);
+        });
+    </script>
 </main>
 
 <footer>

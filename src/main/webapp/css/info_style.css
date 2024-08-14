@@ -204,6 +204,7 @@ section > p {
 }
 
 .event-section {
+    display: flow-root;
     margin: 0 auto;
     background-color: #f7f7f7;
     padding: 8rem 0;
@@ -219,7 +220,7 @@ section > p {
 
 .article {
     float: left;
-    width: 65%;
+    width: 700px;
     display: flex;
     margin-left: 60px;
     align-items: center;
@@ -234,7 +235,7 @@ section > p {
 
 .article2 {
     float: right;
-    width: 65%;
+    width: 700px;
     display: flex;
     margin-right: 60px;
     align-items: center;
@@ -246,6 +247,7 @@ section > p {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     justify-content: flex-end;
+
 }
 
 .article ul li {
@@ -305,9 +307,9 @@ section > p {
 }
 
 .article3 {
-
     width: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
     padding-top: 1rem;
@@ -315,7 +317,7 @@ section > p {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    justify-content: flex-end;
+    transform: translateX(50%);
 }
 
 
@@ -324,6 +326,7 @@ section > p {
     padding: 10vh;
     text-align: center;
     margin: 10vh;
+    color: ghostwhite;
 }
 
 #m4_title {
@@ -332,6 +335,7 @@ section > p {
 
 #m4_ment {
     font-family: 'GmarketSansMedium';
+    color: ghostwhite;
 }
 
 /*메인4 표*/
@@ -341,6 +345,7 @@ table {
     width: 100%;
     border-collapse: collapse; /* 테두리 겹침 방지 */
     margin: 0 auto;
+    color:ghostwhite;
 }
 
 .m4-table-3line {
@@ -382,6 +387,14 @@ th:nth-child(2) {
 tr:nth-child(2) td:nth-child(2) {
     background-color: #3baee5; /* 기본 배경색으로 복원 */
 }
+
+#map {
+    width: 100%;
+    height: 500px; /* 지도의 높이 설정 */
+}
+
+
+
 
 
 /* 푸터 (main과 동일) */
