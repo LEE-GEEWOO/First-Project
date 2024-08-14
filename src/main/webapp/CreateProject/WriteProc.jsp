@@ -1,7 +1,9 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page import="com.example.common1.BoardDTO" %>
-<%@ page import="com.example.common.DBConnPool1" %><%
+<%@ page import="com.example.common.DBConnPool1" %>
+//11
+<%
     request.setCharacterEncoding("UTF-8");
     String title = request.getParameter("title");
     String content = request.getParameter("content");

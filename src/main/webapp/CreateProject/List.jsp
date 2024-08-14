@@ -4,8 +4,10 @@
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+//11
 <%
     request.setCharacterEncoding("UTF-8");
+
     String cp = request.getContextPath();
     BoardDAO dao = null;
     List<BoardDTO> lists = null;
@@ -114,7 +116,6 @@
         <button type="button" name="myButton" class="right-button">바로 예매하기</button>
     </div>
 
-
     <script>
         document.addEventListener('scroll', function () {
             let navbar = document.querySelector('.navbar-custom');
@@ -132,7 +133,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
     </script>
     <h1 class="text-center my-4">공지사항</h1>
 </header>
@@ -155,7 +155,9 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
+                <% if (session.getAttribute("userType") != null && ((Integer)session.getAttribute("userType") == 1)) { %>
                 <a class="btn btn-success" href="<%=cp%>/CreateProject/Write.jsp">글쓰기</a>
+                <% } %>
             </div>
         </div>
 
@@ -239,7 +241,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</script>
 </body>
 </html>
 <%

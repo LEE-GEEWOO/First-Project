@@ -1,7 +1,7 @@
 package com.example.common1;
 
 import java.util.Date;
-
+//11
 public class BoardDTO {
     private int idx;         // 게시글 ID
     private String title;    // 게시글 제목

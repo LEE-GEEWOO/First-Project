@@ -1,11 +1,15 @@
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+//11
 <%
     request.setCharacterEncoding("UTF-8");
     String cp = request.getContextPath();
     BoardDAO dao = null;
     BoardDTO dto = null;
+
+    String userID = (String) session.getAttribute("userID");
+    boolean isAdmin = (userID != null);
 
     int idx = 0;
     String pageNum = request.getParameter("pageNum");
@@ -46,19 +50,13 @@
             out.println("</script>");
             return;
         }
-
-        // 사용자 타입 확인
-        Integer userType = (Integer) session.getAttribute("userType");
-        userType = (userType == null) ? 0 : userType; // 기본값 설정
-        boolean canEditOrDelete = dto.getType() == 1 && userType == 1; // 타입 1이면 수정 및 삭제 가능
-
 %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>게시글 보기</title>
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/src/main/webapp/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=cp%>src/main/webapp/css/styles.css"/>
 </head>
 <body>
 <div id="bbsView">
@@ -75,7 +73,7 @@
     </div>
     <div id="bbsView_footer">
         <input type="button" value="목록" class="btn" onclick="location.href='List.jsp?pageNum=<%=pageNum%>'"/>
-        <% if (canEditOrDelete) { %>
+        <% if (isAdmin) { %>
         <input type="button" value="수정" class="btn" onclick="location.href='Edit.jsp?idx=<%=idx%>&pageNum=<%=pageNum%>'"/>
         <form action="DeleteAction.jsp" method="post" style="display:inline;" onsubmit="return confirm('정말로 이 게시글을 삭제하시겠습니까?');">
             <input type="hidden" name="idx" value="<%=idx%>"/>

@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//11
+
 public class BoardDAO {
     private Connection conn;
 

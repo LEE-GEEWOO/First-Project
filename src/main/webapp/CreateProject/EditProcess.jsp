@@ -3,6 +3,7 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="com.example.common.DBConnPool1" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+//11
 <%
     request.setCharacterEncoding("UTF-8");
     int idx = Integer.parseInt(request.getParameter("idx"));

@@ -1,6 +1,7 @@
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+//11
 <%
     request.setCharacterEncoding("UTF-8");
     String cp = request.getContextPath();
@@ -70,6 +71,7 @@
                    onclick="javascript:location.href='<%=cp%>/CreateProject/List.jsp'"/>
             <input type="reset" value="다시 입력" class="btn2"/>
             <input type="submit" value="<%= isEditMode ? "수정하기" : "저장" %>" class="btn2"/>
+        </div>
     </form>
 </div>
 </body>
