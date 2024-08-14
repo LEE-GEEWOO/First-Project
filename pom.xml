@@ -77,6 +77,12 @@
             <version>20210307</version>
         </dependency>
 
+        <!-- Jackson Databind 의존성 추가 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version> <!-- 현재 최신 버전을 사용하세요 -->
+        </dependency>
     </dependencies>
 
     <build>
