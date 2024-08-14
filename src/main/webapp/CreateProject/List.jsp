@@ -9,12 +9,12 @@
 <%
     UserDTO user = (UserDTO) session.getAttribute("user");
     String userName = (user != null) ? user.getName() : "";
+    Integer userType = (user != null) ? user.getType() : 0; // 로그인된 사용자의 타입
 %>
 
 
 <%
     request.setCharacterEncoding("UTF-8");
-
     String cp = request.getContextPath();
     BoardDAO dao = null;
     List<BoardDTO> lists = null;
@@ -110,7 +110,21 @@
                         <a class="nav-link" href="QNA.html" style="color: white">Q&A</a>
                     </li>
                     <li class="nav-item dropdown" id="navbarUser">
-
+                        <% if (userName != null && !userName.isEmpty()) { %>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                            안녕하세요, <%= userName %>님
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"
+                               href="<%=request.getContextPath()%>/CreateProject/mypage.jsp">마이페이지</a>
+                            <a class="dropdown-item"
+                               href="<%=request.getContextPath()%>/CreateProject/logout.do">로그아웃</a>
+                        </div>
+                        <% } else { %>
+                        <a class="nav-link" style="color: white"
+                           href="<%=request.getContextPath()%>/CreateProject/login.jsp">로그인</a>
+                        <% } %>
                     </li>
                 </ul>
             </div>
@@ -154,47 +168,6 @@
 
 </header>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function updateNavbar(user) {
-            var navbarUser = document.getElementById("navbarUser");
-            navbarUser.innerHTML = ""; // 기존 내용을 지웁니다.
-
-            if (user) {
-                // 로그인 상태일 때
-                navbarUser.innerHTML = `
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-                        안녕하세요, ${userName.userName}님
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../CreateProject/mypage.jsp">마이페이지</a>
-                        <a class="dropdown-item" href="/CreateProject/logout.do">로그아웃</a>
-                    </div>
-                `;
-            } else {
-                // 로그인하지 않은 상태일 때
-                navbarUser.innerHTML = `
-                    <a class="nav-link" style="color: white" href="../CreateProject/login.jsp">로그인</a>
-                `;
-            }
-        }
-
-        // fetch로 세션 정보 확인
-        fetch("/checkSession")
-            .then(response => response.json())
-            .then(data => {
-                updateNavbar(data.loggedIn ? {userName: data.userName} : null);
-            })
-            .catch(error => console.error("세션 정보를 가져오는 중 오류가 발생했습니다.", error));
-    });
-</script>
-
-
-
-
-
-
-
 
 <main class="container my-4">
     <section class="notification-list">
@@ -214,8 +187,8 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                <% if (session.getAttribute("userType") != null && ((Integer)session.getAttribute("userType") == 1)) { %>
-                <a class="btn btn-success" href="<%=cp%>/CreateProject/Write.jsp">글쓰기</a>
+                <% if (userType == 1) { %> <!-- 관리자 타입일 때만 글쓰기 버튼 표시 -->
+                <a class="btn btn-success" href="<%= cp %>/CreateProject/Write.jsp">글쓰기</a>
                 <% } %>
             </div>
         </div>
@@ -225,11 +198,15 @@
             <% for (BoardDTO dto : lists) { %>
             <div class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>"><%= dto.getTitle() %></a></h5>
-                    <small><%= dto.getPostdate() %></small>
+                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>"><%= dto.getTitle() %>
+                    </a></h5>
+                    <small><%= dto.getPostdate() %>
+                    </small>
                 </div>
-                <p class="mb-1"><%= dto.getContent() %></p>
-                <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %></small>
+                <p class="mb-1"><%= dto.getContent() %>
+                </p>
+                <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %>
+                </small>
             </div>
             <% } %>
             <% } else { %>

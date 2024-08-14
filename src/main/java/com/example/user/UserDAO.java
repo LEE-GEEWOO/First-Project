@@ -1,7 +1,6 @@
 package com.example.user;
 
 import com.example.common.DBConnPool;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +14,7 @@ public class UserDAO extends DBConnPool {
     // 사용자 추가 메서드
     public int addUser(UserDTO user) {
         int result = 0;
-        String query = "INSERT INTO USERS (ID, PWD, NAME, EMAIL) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO USERS (ID, PWD, NAME, EMAIL, type) VALUES (?, ?, ?, ?, ?)";
 
         try {
             // PreparedStatement 객체 생성
@@ -24,6 +23,7 @@ public class UserDAO extends DBConnPool {
             psmt.setString(2, user.getPwd());
             psmt.setString(3, user.getName());
             psmt.setString(4, user.getEmail());
+            psmt.setInt(5, user.getType());  // type 값 설정 (2: 일반 회원)
 
             // 쿼리 실행
             result = psmt.executeUpdate();
@@ -35,7 +35,6 @@ public class UserDAO extends DBConnPool {
         }
         return result;
     }
-
 
     // 사용자 인증 메서드
     public UserDTO getUser(String userId, String password) {
@@ -55,6 +54,7 @@ public class UserDAO extends DBConnPool {
                 user.setPwd(rs.getString("PWD"));
                 user.setName(rs.getString("NAME"));
                 user.setEmail(rs.getString("EMAIL"));
+                user.setType(rs.getInt("type"));  // type 값도 가져옴
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,8 +65,6 @@ public class UserDAO extends DBConnPool {
 
         return user;
     }
-
-
 
     // ID 중복 검사
     public boolean checkIdExists(String id) {

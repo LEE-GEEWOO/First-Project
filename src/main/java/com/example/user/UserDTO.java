@@ -5,18 +5,21 @@ public class UserDTO {
     private String pwd;
     private String name;
     private String email;
+    private int type;  // 사용자 권한 타입 (1: 관리자, 2: 일반 회원)
 
     // 기본 생성자
-    public UserDTO() {
-    }
+    public UserDTO() {}
 
     // 파라미터가 있는 생성자
-    public UserDTO(String id, String pwd, String name, String email) {
+    public UserDTO(String id, String pwd, String name, String email, int type) {
         this.id = id;
         this.pwd = pwd;
         this.name = name;
         this.email = email;
+        this.type = type;
     }
+
+
 
     // Getter 및 Setter 메서드
     public String getId() {
@@ -51,7 +54,13 @@ public class UserDTO {
         this.email = email;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+
 }
-
-
-

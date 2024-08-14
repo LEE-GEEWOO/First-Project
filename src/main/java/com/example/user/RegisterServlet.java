@@ -48,8 +48,8 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        // UserDTO 객체 생성
-        UserDTO user = new UserDTO(id, pwd, name, email);
+        // UserDTO 객체 생성 (일반 회원으로 가입하므로 type = 2)
+        UserDTO user = new UserDTO(id, pwd, name, email, 2);
 
         // DAO 객체를 통해 DB에 사용자 정보 저장
         UserDAO userDAO = new UserDAO();
@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
 
         // 결과에 따라 페이지 리디렉션 또는 포워드
         if (result > 0) {
-            res.sendRedirect("success.jsp"); // 성공 페이지로 리디렉션
+            res.sendRedirect("registerSuccess.jsp"); // 성공 페이지로 리디렉션
         } else {
             req.setAttribute("error", "회원가입에 실패했습니다. 중복된 아이디나 이메일이 있을 수 있습니다.");
             req.getRequestDispatcher("register.jsp").forward(req, res);

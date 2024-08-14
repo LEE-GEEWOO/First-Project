@@ -9,8 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//11
-
 public class BoardDAO {
     private Connection conn;
 
@@ -30,7 +28,7 @@ public class BoardDAO {
         dto.setPostdate(rs.getDate("POSTDATE"));
         dto.setViews(rs.getInt("VIEWS"));
         dto.setLikes(rs.getInt("LIKES"));
-        dto.setType(rs.getInt("TYPE")); // Assuming 'TYPE' is an integer.
+        dto.setType(rs.getInt("TYPE"));
         return dto;
     }
 
@@ -121,9 +119,8 @@ public class BoardDAO {
         }
     }
 
-
-    public int updateArticle(BoardDTO dto) {
-        if (dto.getType() != 1) {
+    public int updateArticle(BoardDTO dto, int userType) {
+        if (userType != 1) {
             throw new RuntimeException("수정 권한이 없습니다.");
         }
         String sql = "UPDATE SCOTT.COMMUNITY SET TITLE = ?, CONTENT = ?, AUTHOR = ? WHERE IDX = ?";
@@ -139,8 +136,8 @@ public class BoardDAO {
         }
     }
 
-    public int delete(int idx, int type) {
-        if (type != 1) {
+    public int delete(int idx, int userType) {
+        if (userType != 1) {
             throw new RuntimeException("삭제 권한이 없습니다.");
         }
         String sql = "DELETE FROM SCOTT.COMMUNITY WHERE IDX = ?";
@@ -181,5 +178,10 @@ public class BoardDAO {
     public BoardDTO getArticleWithViewIncrement(int idx) {
         incrementViews(idx);
         return getArticle(idx);
+    }
+
+    // 사용자 권한 검사 메서드 추가
+    public boolean hasEditPermission(int userType) {
+        return userType == 1;
     }
 }
