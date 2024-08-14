@@ -25,7 +25,7 @@
       <p>이름 : <%= user.getName() %></p>
       <p>이메일 : <%= user.getEmail() %></p>
     </div>
-    <a href="../index.html" class="btn">홈페이지 구경하기</a>
+    <a href="../html/index.html" class="btn">홈페이지 구경하기</a>
     <%
     } else {
     %>
