@@ -284,9 +284,9 @@
 <footer>
     <div class="footer">
         <div class="footer_left">
-            <a href="info.html">관람안내</a>
-            <a href="post.html">공지사항</a>
-            <a href="http://localhost:8080/9999/reservation.jsp">예매하기</a>
+            <a href="../html/info.html">관람안내</a>
+            <a href="List.jsp">공지사항</a>
+            <a href="reservation.jsp">예매하기</a>
         </div>
         <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
         <div class="footer_right">
