@@ -9,6 +9,7 @@
 
     int idx = 0;
     String pageNum = request.getParameter("pageNum");
+    pageNum = (pageNum == null || pageNum.isEmpty()) ? "1" : pageNum;
     String idxParam = request.getParameter("idx");
 
     if (idxParam != null && !idxParam.isEmpty()) {
@@ -31,14 +32,33 @@
 
     try {
         dao = new BoardDAO();
+
+        // 조회수 증가
+        dao.incrementViews(idx);
+
+        // 게시글 정보 가져오기
         dto = dao.getArticle(idx);
+
+        if(dto == null) {
+            out.println("<script>");
+            out.println("alert('존재하지 않는 게시글입니다.');");
+            out.println("location.href='List.jsp';");
+            out.println("</script>");
+            return;
+        }
+
+        // 사용자 타입 확인
+        Integer userType = (Integer) session.getAttribute("userType");
+        userType = (userType == null) ? 0 : userType; // 기본값 설정
+        boolean canEditOrDelete = dto.getType() == 1 && userType == 1; // 타입 1이면 수정 및 삭제 가능
+
 %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>게시글 보기</title>
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/CreateProject/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=cp%>/src/main/webapp/css/styles.css"/>
 </head>
 <body>
 <div id="bbsView">
@@ -46,21 +66,23 @@
     <div id="bbsView_content">
         <div class="form-group">
             <label for="title">제목</label>
-            <div id="title"><%= dto != null ? dto.getTitle() : "제목 없음" %></div>
+            <div id="title"><%= dto.getTitle() %></div>
         </div>
         <div class="form-group">
             <label for="content">내용</label>
-            <div id="content"><%= dto != null ? dto.getContent() : "내용 없음" %></div>
+            <div id="content"><%= dto.getContent() %></div>
         </div>
     </div>
     <div id="bbsView_footer">
         <input type="button" value="목록" class="btn" onclick="location.href='List.jsp?pageNum=<%=pageNum%>'"/>
+        <% if (canEditOrDelete) { %>
         <input type="button" value="수정" class="btn" onclick="location.href='Edit.jsp?idx=<%=idx%>&pageNum=<%=pageNum%>'"/>
-        <form action="Delete.jsp" method="get" style="display:inline;">
+        <form action="DeleteAction.jsp" method="post" style="display:inline;" onsubmit="return confirm('정말로 이 게시글을 삭제하시겠습니까?');">
             <input type="hidden" name="idx" value="<%=idx%>"/>
             <input type="hidden" name="pageNum" value="<%=pageNum%>"/>
             <input type="submit" value="삭제" class="btn"/>
         </form>
+        <% } %>
     </div>
 </div>
 </body>

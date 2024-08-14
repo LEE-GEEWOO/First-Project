@@ -73,8 +73,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" href="<%=cp%>../src/main/webapp/css/styles.css">
-    <!-- Bootstrap CSS 링크 추가 -->
+    <link rel="stylesheet" href="<%=cp%>../css/styles.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>

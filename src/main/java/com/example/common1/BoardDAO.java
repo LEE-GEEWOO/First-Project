@@ -1,7 +1,6 @@
 package com.example.common1;
 
 import com.example.common.DBConnPool1;
-import oracle.jdbc.proxy.annotation.Pre;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +11,6 @@ import java.util.List;
 
 public class BoardDAO {
     private Connection conn;
-    private BoardDTO dto;
 
     public BoardDAO() {
         this.conn = DBConnPool1.getConnection();
@@ -25,16 +23,15 @@ public class BoardDAO {
         BoardDTO dto = new BoardDTO();
         dto.setIdx(rs.getInt("IDX"));
         dto.setTitle(rs.getString("TITLE"));
+        dto.setContent(rs.getString("CONTENT"));
+        dto.setAuthor(rs.getString("AUTHOR"));
         dto.setPostdate(rs.getDate("POSTDATE"));
         dto.setViews(rs.getInt("VIEWS"));
         dto.setLikes(rs.getInt("LIKES"));
-        dto.setType(rs.getString("TYPE"));
-        dto.setContent(rs.getString("CONTENT"));
-        dto.setAuthor(rs.getString("AUTHOR"));
+        dto.setType(rs.getInt("TYPE")); // Assuming 'TYPE' is an integer.
         return dto;
     }
 
-    //검색 기능
     public int getDataCount(String searchKey, String searchValue) {
         String sql = "SELECT COUNT(*) FROM SCOTT.COMMUNITY WHERE " + searchKey + " LIKE ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -46,13 +43,12 @@ public class BoardDAO {
                     throw new RuntimeException("결과가 없습니다.");
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("getDataCount 오류: " + e.getMessage(), e);
         }
     }
 
-    //페이징 처리에 사용되며, 검색 키(searchKey)와 검색 값(searchValue)을 기반으로 start부터 end까지의 데이터를 가져옴
     public List<BoardDTO> getDataList(int start, int end, String searchKey, String searchValue) {
         String sql = "SELECT * FROM (SELECT ROWNUM rnum, data.* FROM (SELECT * FROM SCOTT.COMMUNITY WHERE "
                 + searchKey + " LIKE ? ORDER BY IDX ASC) data) WHERE rnum BETWEEN ? AND ?";
@@ -67,7 +63,7 @@ public class BoardDAO {
                 }
                 return list;
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("getDataList 오류: " + e.getMessage(), e);
         }
@@ -84,7 +80,7 @@ public class BoardDAO {
                     return null;
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("getArticle 오류: " + e.getMessage(), e);
         }
@@ -95,19 +91,20 @@ public class BoardDAO {
             if (conn != null && !conn.isClosed()) {
                 conn.close();
             }
-        } catch (Exception e) {
-            throw new RuntimeException("DB 연결 닫기 오류"+ e.getMessage(), e);
-        }finally {
+        } catch (SQLException e) {
+            throw new RuntimeException("DB 연결 닫기 오류: " + e.getMessage(), e);
+        } finally {
             this.conn = null;
         }
     }
 
     public int insertArticle(BoardDTO dto) throws SQLException {
-        String sql = "INSERT INTO SCOTT.COMMUNITY (TITLE, CONTENT, AUTHOR, POSTDATE) VALUES (?, ?, ?, SYSDATE)";
+        String sql = "INSERT INTO SCOTT.COMMUNITY (TITLE, CONTENT, AUTHOR, POSTDATE, TYPE) VALUES (?, ?, ?, SYSDATE, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, dto.getTitle());
             pstmt.setString(2, dto.getContent());
-            pstmt.setString(3, dto.getAuthor() != null ? dto.getAuthor() : "Anonymous");
+            pstmt.setString(3, dto.getAuthor() != null ? dto.getAuthor() : "Anonymous"); // 기본값 설정
+            pstmt.setInt(4, dto.getType()); // 기본값 설정
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows == 0) {
                 throw new SQLException("게시글 생성 실패, 영향받은 행이 없습니다.");
@@ -121,7 +118,12 @@ public class BoardDAO {
             }
         }
     }
+
+
     public int updateArticle(BoardDTO dto) {
+        if (dto.getType() != 1) {
+            throw new RuntimeException("수정 권한이 없습니다.");
+        }
         String sql = "UPDATE SCOTT.COMMUNITY SET TITLE = ?, CONTENT = ?, AUTHOR = ? WHERE IDX = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, dto.getTitle());
@@ -129,9 +131,23 @@ public class BoardDAO {
             pstmt.setString(3, dto.getAuthor() != null ? dto.getAuthor() : "Anonymous");
             pstmt.setInt(4, dto.getIdx());
             return pstmt.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("updateArticle 오류: " + e.getMessage(), e);
+        }
+    }
+
+    public int delete(int idx, int type) {
+        if (type != 1) {
+            throw new RuntimeException("삭제 권한이 없습니다.");
+        }
+        String sql = "DELETE FROM SCOTT.COMMUNITY WHERE IDX = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, idx);
+            return pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("delete 오류: " + e.getMessage(), e);
         }
     }
 
@@ -163,17 +179,5 @@ public class BoardDAO {
     public BoardDTO getArticleWithViewIncrement(int idx) {
         incrementViews(idx);
         return getArticle(idx);
-    }
-
-    public int delete(int idx) {
-        String sql = "DELETE FROM SCOTT.COMMUNITY WHERE IDX = ?";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, idx);
-            return pstmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("delete 오류: " + e.getMessage(), e);
-        }
-
     }
 }

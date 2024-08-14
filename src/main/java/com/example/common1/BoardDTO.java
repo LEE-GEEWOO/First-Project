@@ -3,25 +3,32 @@ package com.example.common1;
 import java.util.Date;
 
 public class BoardDTO {
-    private int idx;
-    private String title;
-    private String author = "담당자";  // 기본값으로 고정
-    private String content;
-    private Date postdate;
-    private int views;
-    private int likes;
-    private String type;
+    private int idx;         // 게시글 ID
+    private String title;    // 게시글 제목
+    private String content;  // 게시글 내용
+    private String author;   // 게시글 작성자
+    private Date postdate;   // 게시글 작성일
+    private int views;       // 게시글 조회수
+    private int likes;       // 게시글 좋아요 수
+    private int type;        // 게시글 유형
 
-    // Getters and Setters
-
-    public String getAuthor() {
-        return author;
+    // 기본 생성자
+    public BoardDTO() {
     }
 
-    public void setAuthor(String author) {
+    // 모든 필드를 초기화하는 생성자
+    public BoardDTO(int idx, String title, String content, String author, Date postdate, int views, int likes, int type) {
+        this.idx = idx;
+        this.title = title;
+        this.content = content;
         this.author = author;
+        this.postdate = postdate;
+        this.views = views;
+        this.likes = likes;
+        this.type = type;
     }
 
+    // Getter 및 Setter 메서드
     public int getIdx() {
         return idx;
     }
@@ -44,6 +51,14 @@ public class BoardDTO {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Date getPostdate() {
@@ -70,11 +85,17 @@ public class BoardDTO {
         this.likes = likes;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "BoardDTO [idx=" + idx + ", title=" + title + ", content=" + content + ", author=" + author + ", postdate="
+                + postdate + ", views=" + views + ", likes=" + likes + ", type=" + type + "]";
     }
 }
