@@ -21,7 +21,7 @@ public class LogoutServlet extends HttpServlet {
         }
 
         // 로그아웃 후 리다이렉트
-        res.sendRedirect("login.jsp");
+        res.sendRedirect("../html/index.html");
     }
 
     @Override

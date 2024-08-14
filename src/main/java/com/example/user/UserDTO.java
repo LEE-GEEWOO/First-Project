@@ -7,7 +7,8 @@ public class UserDTO {
     private String email;
 
     // 기본 생성자
-    public UserDTO() {}
+    public UserDTO() {
+    }
 
     // 파라미터가 있는 생성자
     public UserDTO(String id, String pwd, String name, String email) {
@@ -49,4 +50,8 @@ public class UserDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
+
+
+

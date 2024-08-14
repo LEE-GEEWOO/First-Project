@@ -4,10 +4,17 @@
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-//11
+
+<%--이부분 추가됌--%>
+<%@ page import="com.example.user.UserDTO" %>
+<%
+    UserDTO user = (UserDTO) session.getAttribute("user");
+    String userName = (user != null) ? user.getName() : "";
+%>
+<%--여기까지--%>
+
 <%
     request.setCharacterEncoding("UTF-8");
-
     String cp = request.getContextPath();
     BoardDAO dao = null;
     List<BoardDTO> lists = null;
@@ -92,29 +99,36 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" >
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=cp%>/info.html">관람 안내</a>
+                        <a class="nav-link" style="color: white" href="./info.html">관람 안내</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=cp%>/post.html">공지사항</a>
+                        <a class="nav-link" style="color: white" href="./CreateProject/List.jsp">공지사항</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=cp%>/QNA.html">Q&A</a>
+                        <a class="nav-link" style="color: white" href="QNA.html">Q&A</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<%=cp%>../9999/login.jsp">로그인</a>
+                    <%-- 자바스크립트를 li안으로 넣어버림 --%>
+                    <li class="nav-item dropdown" id="navbarUser">
+                        <% if (userName != null && !userName.isEmpty()) { %>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                            안녕하세요, <%= userName %>님
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/mypage.jsp">마이페이지</a>
+                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/logout.do">로그아웃</a>
+                        </div>
+                        <% } else { %>
+                        <a class="nav-link" style="color: white" href="<%=request.getContextPath()%>/CreateProject/login.jsp">로그인</a>
+                        <% } %>
                     </li>
+                    <%--여기까지 --%>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="var_bottom">
-        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
-        <p class="v_bot">시간 9AM - 5PM</p>
-        <p class="v_bot3">장소 부산 부산진구 중앙대로 708 부산파이낸스센터 4층</p>
-        <button type="button" name="myButton" class="right-button">바로 예매하기</button>
-    </div>
+
 
     <script>
         document.addEventListener('scroll', function () {
@@ -133,8 +147,15 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
     </script>
-    <h1 class="text-center my-4">공지사항</h1>
+
+
+    <script>
+        function button() {
+            window.location.href = "CreateProject/reservation.jsp";
+        }
+    </script>
 </header>
 
 <main class="container my-4">
@@ -155,9 +176,7 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                <% if (session.getAttribute("userType") != null && ((Integer)session.getAttribute("userType") == 1)) { %>
                 <a class="btn btn-success" href="<%=cp%>/CreateProject/Write.jsp">글쓰기</a>
-                <% } %>
             </div>
         </div>
 
@@ -241,6 +260,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</script>
 </body>
 </html>
 <%

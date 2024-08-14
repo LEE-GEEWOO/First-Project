@@ -1,7 +1,7 @@
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-//11
+
 <%
     request.setCharacterEncoding("UTF-8");
     String cp = request.getContextPath();
