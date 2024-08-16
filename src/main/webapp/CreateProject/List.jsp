@@ -76,6 +76,7 @@
         int currentPageSetup = (currentPage / numPerBlock) * numPerBlock;
         if (currentPage % numPerBlock == 0) currentPageSetup = currentPageSetup - numPerBlock;
 %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -83,7 +84,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<%=cp%>../css/styles.css">
+    <link rel="stylesheet" href="<%=cp%>../css/list-styles.css">
 </head>
 <body>
 <header>
