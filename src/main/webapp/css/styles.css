@@ -172,8 +172,8 @@ nav ul li a:hover {
     position: fixed;
     bottom: 19px;
     right: 65px;
-    background-color: #3498db;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     border: none;
     border-radius: 50%;
     padding: 3px 8px;
@@ -183,10 +183,11 @@ nav ul li a:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
     z-index: 1000;
+    display: none;
 }
 
 .floating-button-up:hover {
-    background-color: #2980b9;
+    background-color: #ffffff;
 }
 
 

@@ -138,28 +138,6 @@
         <button class="right-button" name="myButton" onclick="button()">바로 예매하기</button>
     </div>
 
-
-    <script>
-        document.addEventListener('scroll', function () {
-            let navbar = document.querySelector('.navbar-custom');
-            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        document.addEventListener('scroll', function () {
-            let navbar = document.querySelector('.var_bottom');
-            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-    </script>
-
-
     <script>
         function button() {
             window.location.href = "../CreateProject/reservation.jsp";
@@ -170,7 +148,7 @@
 </header>
 
 
-<main class="container my-4">
+<main class="container">
     <section class="notification-list">
         <div class="row mb-3">
             <div class="col-md-6">
@@ -204,7 +182,7 @@
                     <small><%= dto.getPostdate() %>
                     </small>
                 </div>
-                <p class="mb-1"><%= dto.getContent() %>
+                <p class="mb-1-1"><%= dto.getContent() %>
                 </p>
                 <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %>
                 </small>
