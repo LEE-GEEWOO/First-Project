@@ -28,6 +28,7 @@
 }
 
 /* 기본 리셋 및 레이아웃 설정 */
+
 * {
     margin: 0;
     padding: 0;
@@ -222,7 +223,6 @@ form button:hover {
 .mb-1-1 {
     font-family: 'GmarketSansMedium';
 }
-
 
 .pagination {
     padding-top: 30px;

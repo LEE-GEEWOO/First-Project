@@ -177,7 +177,8 @@
             <% for (BoardDTO dto : lists) { %>
             <div class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>"><%= dto.getTitle() %>
+                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>">
+                        <span class="article-ti" style="color: #950714">[공지] </span> <%= dto.getTitle() %>
                     </a></h5>
                     <small><%= dto.getPostdate() %>
                     </small>
