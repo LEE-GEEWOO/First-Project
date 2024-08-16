@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="login.do" method="post" onsubmit="return validateForm(this)">
+    <form action="/CreateProject/login.do" method="post" onsubmit="return validateForm(this)">
         <h2>로그인</h2>
         <div class="form-group">
             <input type="text" name="userId" placeholder="아이디" required>
@@ -22,6 +22,18 @@
         <div class="form-group">
             <input type="submit" value="로그인">
         </div>
+
+        <%
+            String error = (String) request.getAttribute("error");
+            if (error != null) {
+        %>
+        <div class="error-message">
+            <p><%= error %></p>
+        </div>
+        <%
+            }
+        %>
+
     </form>
 
     <div class="additional-info">

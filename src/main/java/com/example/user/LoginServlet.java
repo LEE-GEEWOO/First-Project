@@ -34,8 +34,8 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
 
-            // 마이페이지로 리디렉션
-            res.sendRedirect("mypage.jsp");
+            // 로그인 성공 페이지로 리디렉션
+            res.sendRedirect("loginSuccess.jsp");
         } else {
             // 로그인 실패 시 에러 메시지 표시
             req.setAttribute("error", "아이디 또는 비밀번호가 잘못되었습니다.");
