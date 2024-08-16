@@ -491,6 +491,8 @@ footer {
     background: #3baee5;
     line-height: 15px;
     text-align: center;
+    font-family: 'HS-Regular';
+    color: white;
 }
 
 .footer_right {

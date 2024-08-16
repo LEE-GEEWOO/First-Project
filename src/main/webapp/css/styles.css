@@ -227,6 +227,7 @@ form select {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
 form button {
     background: #333;
     color: #fff;
@@ -236,6 +237,7 @@ form button {
     cursor: pointer;
     font-size: 1rem;
 }
+
 form button:hover {
     background: #555;
 }
@@ -251,6 +253,7 @@ form button:hover {
 #h_top {
     padding-top: 4rem;
 }
+
 .img_main {
     text-align: center;
     width: 70%;
@@ -279,6 +282,7 @@ form button:hover {
         -webkit-transform: scale(1);
     }
 }
+
 @keyframes fadeIn-m1 {
     from {
         opacity: 0;
@@ -325,6 +329,7 @@ form button:hover {
     transform: translateY(30px);
     transition: opacity 1s ease, transform 1s ease;
 }
+
 /*메인 2 - 바로예매하기 css*/
 .main2 {
     position: relative;
@@ -874,6 +879,8 @@ footer {
     background: #3baee5;
     line-height: 15px;
     text-align: center;
+    font-family: 'HS-Regular';
+    color: white;
 }
 
 .footer_right {
@@ -955,50 +962,266 @@ footer {
         padding-right: 60px;
         display: block !important;
     }
+
     .main3_right
     .main3_left {
         height: 580px;
     }
+
     .m3_left_img {
         width: 97%;
     }
+
     .m3_left_img2 {
         width: 45%;
     }
+
     .m3_left_img3 {
         top: 32%;
         right: 8%;
     }
+
     .m3_mmm1 {
         font-size: 32px;
     }
+
     .m3_mmm2 {
         font-size: 11px;
     }
+
     .main3_second {
         padding: 0;
         height: 1500px;
     }
+
     .m3_right_img {
         max-width: 88%;
     }
+
     .main4 {
         padding: 0;
         margin: 8vh;
     }
+
     .m5_left_img {
         padding-top: 50px;
     }
+
     .m5_right_text {
         font-size: 10px;
     }
-    .main5{
+
+    .main5 {
         height: 1050px;
     }
 }
 
 @media (max-width: 425px) {
+    .v_bot {
+        font-size: 14px;
+    }
+
+    .v_bot3 {
+        font-size: 12px;
+    }
+
     .v-bot3-del {
         display: none;
     }
+
+    .right-button {
+        margin-right: 41px;
+        padding: 3px 28px;
+        font-size: 11px;
+    }
+
+    .m1 {
+        font-size: 6rem;
+        line-height: 90px;
+    }
+
+    .m1_bot {
+        font-size: 13px;
+        -webkit-animation: fadeIn-m1 1s forwards;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .m1-img {
+        max-width: 100%;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .m2_ment1 {
+        font-size: 1.9rem;
+        line-height: 40px;
+    }
+
+    .m2_ment2 {
+        font-size: 1.2rem;
+        top: 38%;
+    }
+
+    .main3_first {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 800px;
+    }
+
+    .m3_mmm1 {
+        font-size: 38px;
+    }
+
+    .main3_left {
+        width: 100%;
+    }
+
+    .main3_right {
+        width: 100%;
+        text-align: center;
+        height: 800px;
+        justify-content: normal;
+        padding: 0px;
+    }
+
+    .m3_left_img3 {
+        display: none;
+    }
+
+
+    .main3_second {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 2400px;
+    }
+
+    .main3_sec_left {
+        width: 100%;
+        padding-top: 150px;
+        position: static;
+        text-align: center;
+        padding-bottom: 100px;
+        padding-right: 74px;
+    }
+
+    .m3_sec_right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .m3_right_img {
+        max-width: 95%;
+        padding: 0;
+        margin-left: 10px;
+
+    }
+
+    .m3_mmm3_1 {
+        margin-top: 50px;
+        text-align: center;
+        padding: 0;
+
+    }
+
+    .m3_mmm3 {
+        text-align: center;
+        padding: 0;
+    }
+
+    .main4 {
+        margin: 0px auto;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #m4_ment {
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    .main5 {
+        height: 1600px;
+    }
+
+    .m5_left {
+        float: none;
+        width: 100%;
+        position: static;
+        padding-bottom: 150px;
+    }
+
+    .m5_right {
+        border-left: 0px;
+        padding-left: 0px;
+    }
+
+    .m5_title {
+        text-align: center;
+        font-size: 33px;
+    }
+
+    .m5_title-small {
+        text-align: center;
+    }
+
+    .m5_right_imghead {
+        align-items: center;
+    }
+
+    .m5_right_texts {
+        width: 100%;
+        font-size: 9px;
+        padding: 15px;
+    }
+
+    .m5_right_images {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .m6_img {
+        height: 400px;
+    }
+
+    .m6_mmm1 {
+        font-size: 33px;
+        text-align: center;
+    }
+
+    .overlay {
+        padding: 0;
+        align-items: center;
+        top: 27px;
+    }
+
+    .m6_mmm2 {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .footer_right {
+        text-align: center;
+        font-size: 11px;
+    }
+    .footer_cen{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        line-height: 50px;
+        font-size: 40px;
+        color: white;
+
+    }
+
 }
