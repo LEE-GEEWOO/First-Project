@@ -103,7 +103,7 @@ public class BoardDAO {
         try (PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, dto.getTitle());
             pstmt.setString(2, dto.getContent());
-            pstmt.setString(3, dto.getAuthor() != null ? dto.getAuthor() : "Anonymous"); // 기본값 설정
+            pstmt.setString(3, dto.getAuthor()); // 기본값 설정
             pstmt.setInt(4, dto.getType()); // 기본값 설정
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows == 0) {
@@ -119,15 +119,13 @@ public class BoardDAO {
         }
     }
 
-    public int updateArticle(BoardDTO dto, int userType) {
-        if (userType != 1) {
-            throw new RuntimeException("수정 권한이 없습니다.");
-        }
+    public int updateArticle(BoardDTO dto) {
+
         String sql = "UPDATE SCOTT.COMMUNITY SET TITLE = ?, CONTENT = ?, AUTHOR = ? WHERE IDX = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, dto.getTitle());
             pstmt.setString(2, dto.getContent());
-            pstmt.setString(3, dto.getAuthor() != null ? dto.getAuthor() : "Anonymous");
+            pstmt.setString(3, dto.getAuthor());
             pstmt.setInt(4, dto.getIdx());
             return pstmt.executeUpdate();
         } catch (SQLException e) {

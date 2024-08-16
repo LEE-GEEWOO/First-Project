@@ -1,17 +1,26 @@
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page import="com.example.common1.BoardDTO" %>
+<%@ page import="com.example.user.UserDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="adminCheck.jsp" %>
-//11
+
+<%
+    UserDTO user = (UserDTO) session.getAttribute("user");
+    String userName = (user != null) ? user.getName() : "";
+    Integer userType = (user != null) ? user.getType() : 0; // 로그인된 사용자의 타입
+%>
+
 <%
     request.setCharacterEncoding("UTF-8");
 
-    // 관리자 로그인 확인
-    String userID = (String) session.getAttribute("userID");
-    if (userID == null) {
+
+    // 디버깅 용도로 출력
+    out.println("userID: " + userName);
+    out.println("userType: " + userType);
+
+    if (userName == null || userType == null || userType != 1) {
         out.println("<script>");
         out.println("alert('관리자 로그인이 필요합니다.');");
-        out.println("location.href='../9999/login.jsp';");
+        out.println("location.href='../CreateProject/login.jsp';");
         out.println("</script>");
         return;
     }
@@ -72,13 +81,5 @@
         if (dao != null) {
             dao.close();
         }
-    }
-%>
-<%
-    // 관리자 권한 확인
-    Integer userType = (Integer) session.getAttribute("userType");
-    if (userType == null || userType != 1) {
-        out.println("<script>alert('관리자만 삭제할 수 있습니다.'); location.href='List.jsp';</script>");
-        return;
     }
 %>
