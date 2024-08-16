@@ -30,67 +30,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= dto != null ? dto.getTitle() : "게시글" %></title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/../css/styles.css">
+    <title><%= dto != null ? dto.getTitle() : "게시글" %>
+    </title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/../css/Article-styles.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="src/main/webapp/jpg/var_logo.png" alt style="height: 40px; width:40px">
+            <a class="navbar-brand" href="../html/index.html">
+                <img alt src="../jpg/var_logo.png" style="height: 40px; width:40px">
                 2024 부산 해산물 마켓
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="<%=request.getContextPath()%>/CreateProject/info.html">관람 안내</a>
+                        <a class="nav-link" href="../html/info.html" style="color: white">관람 안내</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="<%=request.getContextPath()%>/CreateProject/List.jsp">공지사항</a>
+                        <a class="nav-link" href="List.jsp" style="color: white">공지사항</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="QNA.html">Q&A</a>
+                        <a class="nav-link" href="QNA.html" style="color: white">Q&A</a>
                     </li>
                     <li class="nav-item dropdown" id="navbarUser">
                         <% if (userName != null && !userName.isEmpty()) { %>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
                             안녕하세요, <%= userName %>님
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/mypage.jsp">마이페이지</a>
-                            <a class="dropdown-item" href="<%=request.getContextPath()%>/CreateProject/logout.do">로그아웃</a>
+                            <a class="dropdown-item"
+                               href="<%=request.getContextPath()%>/CreateProject/mypage.jsp">마이페이지</a>
+                            <a class="dropdown-item"
+                               href="<%=request.getContextPath()%>/CreateProject/logout.do">로그아웃</a>
                         </div>
                         <% } else { %>
-                        <a class="nav-link" style="color: white" href="<%=request.getContextPath()%>/CreateProject/login.jsp">로그인</a>
+                        <a class="nav-link" style="color: white"
+                           href="<%=request.getContextPath()%>/CreateProject/login.jsp">로그인</a>
                         <% } %>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="var_bottom">
+        <p class="v_bot">일시 2024.08.23~25 (금-일)</p>
+        <p class="v_bot">시간 9AM - 5PM</p>
+        <p class="v_bot3">장소 부산 부산진구 중앙대로 708 <span class="v-bot3-del">부산파이낸스센터 4층</span></p>
+        <button class="right-button" name="myButton" onclick="button()">바로 예매하기</button>
+    </div>
+
+    <script>
+        function button() {
+            window.location.href = "../CreateProject/reservation.jsp";
+        }
+    </script>
+
+
 </header>
 
 <main class="container my-4">
     <section class="article">
         <% if (dto != null) { %>
-        <h1><%= dto.getTitle() %></h1>
-        <p><%= dto.getContent() %></p>
-        <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %></small>
+        <h1 class="article-title"><span class="article-ti">[공지]</span> <%= dto.getTitle() %>
+        </h1>
+        <p class="article-tm"><%= dto.getContent() %>
+        </p>
+        <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %>
+        </small>
+
 
         <div id="bbsView_footer" class="mt-3">
             <!-- 목록 버튼 추가 -->
-            <input type="button" value="목록" class="btn btn-primary" onclick="location.href='List.jsp'"/>
+            <input type="button" value="목록"
+                   class="btn btn-primary" onclick="location.href='List.jsp'"/>
 
             <% if (userType == 1) { %> <!-- 관리자일 때만 표시 -->
-            <input type="button" value="수정" class="btn btn-warning" onclick="location.href='Edit.jsp?idx=<%=dto.getIdx()%>'"/>
-            <form action="DeleteAction.jsp" method="post" style="display:inline;" onsubmit="return confirm('정말로 이 게시글을 삭제하시겠습니까?');">
+            <input type="button" value="수정" class="btn btn-warning"
+                   onclick="location.href='Edit.jsp?idx=<%=dto.getIdx()%>'"/>
+
+            <form action="DeleteAction.jsp" method="post" style="display:inline;"
+                  onsubmit="return confirm('정말로 이 게시글을 삭제하시겠습니까?');">
                 <input type="hidden" name="idx" value="<%=dto.getIdx()%>"/>
                 <input type="submit" value="삭제" class="btn btn-danger"/>
             </form>
@@ -107,9 +134,9 @@
 <footer>
     <div class="footer">
         <div class="footer_left">
-            <a href="info.html">관람안내</a>
-            <a href="post.html">공지사항</a>
-            <a href="http://localhost:8080/9999/reservation.jsp">예매하기</a>
+            <a href="../html/info.html">관람안내</a>
+            <a href="List.jsp">공지사항</a>
+            <a href="reservation.jsp">예매하기</a>
         </div>
         <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
         <div class="footer_right">
