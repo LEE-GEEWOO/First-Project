@@ -2,11 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Q&A</title>
-    <!-- Bootstrap CSS 링크 추가 -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/QNA-styles.css">
+    <link href="../css/QNA-styles.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -60,20 +59,20 @@
 
             if (user) {
                 // 로그인 상태일 때
-                navbarUser.innerHTML =
+                navbarUser.innerHTML = `
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
                         안녕하세요, ${user.userName}님
                     </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../CreateProject/mypage.jsp">마이페이지</a>
-                    <a class="dropdown-item" href="/CreateProject/logout.do">로그아웃</a>
-                </div>
-                ;
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../CreateProject/mypage.jsp">마이페이지</a>
+                        <a class="dropdown-item" href="/CreateProject/logout.do">로그아웃</a>
+                    </div>
+                `;
             } else {
                 // 로그인하지 않은 상태일 때
-                navbarUser.innerHTML =
+                navbarUser.innerHTML = `
                     <a class="nav-link" style="color: white" href="../CreateProject/login.jsp">로그인</a>
-                ;
+                `;
             }
         }
 
@@ -88,8 +87,6 @@
 </script>
 
 
-
-
 <main>
     <section class="qna">
         <div class="container">
@@ -97,11 +94,13 @@
             <div class="qna-list mt-4">
                 <div class="qna-item">
                     <p><strong>Q:</strong> 해산물 마켓 입장료는 얼마인가요?</p>
-                    <p class="answer"><strong>A:</strong> 현재 입장료에 대한 정보는 제공되지 않았습니다. 자세한 사항은 공식 웹사이트나 예매 페이지에서 확인해 주세요.</p>
+                    <p class="answer"><strong>A:</strong> 현재 입장료에 대한 정보는 제공되지 않았습니다. 자세한 사항은 공식 웹사이트나 예매 페이지에서 확인해 주세요.
+                    </p>
                 </div>
                 <div class="qna-item">
                     <p><strong>Q:</strong> 예매는 어떻게 하나요?</p>
-                    <p class="answer"><strong>A:</strong> 예매는 웹사이트의 '바로 예매하기' 버튼을 클릭하여 진행할 수 있습니다. 추가 정보는 공식 연락처로 문의해 주세요.</p>
+                    <p class="answer"><strong>A:</strong> 예매는 웹사이트의 '바로 예매하기' 버튼을 클릭하여 진행할 수 있습니다. 추가 정보는 공식 연락처로 문의해
+                        주세요.</p>
                 </div>
                 <div class="qna-item">
                     <p><strong>Q:</strong> 해산물 마켓에서 주차는 어떻게 하나요?</p>
@@ -113,21 +112,23 @@
                 </div>
                 <div class="qna-item">
                     <p><strong>Q:</strong> 식사나 음료는 어떻게 해결하나요?</p>
-                    <p class="answer"><strong>A:</strong> 마켓 내에서 제공되는 해산물 요리와 먹거리 프로그램을 통해 식사할 수 있으며, 별도의 음식 판매 부스도 마련될 수 있습니다.</p>
+                    <p class="answer"><strong>A:</strong> 마켓 내에서 제공되는 해산물 요리와 먹거리 프로그램을 통해 식사할 수 있으며, 별도의 음식 판매 부스도 마련될
+                        수 있습니다.</p>
                 </div>
                 <div class="qna-item">
                     <p><strong>Q:</strong> 가족 단위 방문 시 유아를 위한 편의시설이 있나요?</p>
                     <p class="answer"><strong>A:</strong> 유아를 위한 편의시설 정보는 공식 웹사이트에서 확인하거나, 사전 문의를 통해 확인할 수 있습니다.</p>
                 </div>
+                <div class="qna-item">
+                    <p><strong>Q:</strong> 물고기 잡기 체험은 어떻게 참여하나요?</p>
+                    <p class="answer"><strong>A:</strong> 물고기 잡기 체험은 현장에서 참가 신청 후, 제공되는 낚시 도구를 사용하여 진행됩니다. 가족과 친구들과 함께 팀을 이뤄 대결할 수도 있습니다.</p>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
 </main>
-
-
-
 
 
 <footer>
@@ -137,7 +138,7 @@
             <a href="../CreateProject/List.jsp">공지사항</a>
             <a href="http://localhost:8080/CreateProject/reservation.jsp">예매하기</a>
         </div>
-        <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
+        <div class="footer_cen">2024</br>붓싼 해산물 마켓</b></div>
         <div class="footer_right">
             <div>붓싼 해산물 마켓 | 대표자 김민주 | 123-45-6789 [사업자정보확인] | +82 2 123-4567</div>
             <p></p>

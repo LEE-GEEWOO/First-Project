@@ -113,7 +113,7 @@
                    class="btn btn-primary" onclick="location.href='List.jsp'"/>
 
             <% if (userType == 1) { %> <!-- 관리자일 때만 표시 -->
-            <input type="button" value="수정" class="btn btn-warning"
+            <input type="button" class="btn btn-warning"
                    onclick="location.href='Edit.jsp?idx=<%=dto.getIdx()%>'"/>
 
             <form action="DeleteAction.jsp" method="post" style="display:inline;"

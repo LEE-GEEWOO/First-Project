@@ -108,7 +108,7 @@
                         <a class="nav-link" href="List.jsp" style="color: white">공지사항</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="QNA.html" style="color: white">Q&A</a>
+                        <a class="nav-link" href="../html/QNA.html" style="color: white">Q&A</a>
                     </li>
                     <li class="nav-item dropdown" id="navbarUser">
                         <% if (userName != null && !userName.isEmpty()) { %>
