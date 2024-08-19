@@ -1221,7 +1221,9 @@ footer {
         line-height: 50px;
         font-size: 40px;
         color: white;
-
+    }
+    .floating-button {
+        right: 100px;
     }
 
 }
