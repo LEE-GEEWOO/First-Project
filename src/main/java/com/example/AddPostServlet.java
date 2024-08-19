@@ -1,6 +1,8 @@
 package com.example;
 
 import java.io.IOException;
+
+import com.example.common1.CommunityDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,4 +24,5 @@ public class AddPostServlet extends HttpServlet{
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "게시물 저장에 실패했습니다.");
         }
     }
+
 }

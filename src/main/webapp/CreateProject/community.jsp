@@ -1,23 +1,26 @@
-<%@ page import="com.example.common1.BoardDTO" %>
-<%@ page import="com.example.common1.BoardDAO" %>
+<%@ page import="com.example.common1.CommunityDAO" %>
+<%@ page import="com.example.common1.CommunityDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <%@ page import="com.example.user.UserDTO" %>
+
 <%
+    // 로그인 사용자 정보 가져오기
     UserDTO user = (UserDTO) session.getAttribute("user");
     String userName = (user != null) ? user.getName() : "";
-    Integer userType = (user != null) ? user.getType() : 0; // 로그인된 사용자의 타입
+    Integer userType = (user != null) ? user.getType() : 0;
 %>
-
-
 <%
+    // 요청 인코딩 설정
     request.setCharacterEncoding("UTF-8");
+
     String cp = request.getContextPath();
-    BoardDAO dao = null;
-    List<BoardDTO> lists = null;
+    CommunityDAO dao = new CommunityDAO();
+    List<CommunityDTO> lists = null;
+
     String pageNum = request.getParameter("pageNum");
     int currentPage = 1;
     if (pageNum != null) {
@@ -39,9 +42,9 @@
     }
 
     try {
-        dao = new BoardDAO();
+        dao = new CommunityDAO();
         int dataCount = dao.getDataCount(searchKey, searchValue);
-        int numPerPage = 10; // 페이지당 데이터 수
+        int numPerPage = 5; // 페이지당 데이터 수
         int totalPage = (int) Math.ceil((double) dataCount / numPerPage); // 전체 페이지 수 계산
 
         if (currentPage > totalPage) {
@@ -57,7 +60,7 @@
             param = "searchKey=" + searchKey + "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
         }
 
-        String listUrl = "List.jsp";
+        String listUrl = "community.jsp";
         if (!param.equals("")) {
             listUrl += "?" + param + "&";
         } else {
@@ -76,16 +79,17 @@
         int currentPageSetup = (currentPage / numPerBlock) * numPerBlock;
         if (currentPage % numPerBlock == 0) currentPageSetup = currentPageSetup - numPerBlock;
 %>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <title>커뮤니티</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<%=cp%>../css/list-styles.css">
+    <link rel="stylesheet" href="<%=cp%>../css/comm-styles.css">
 </head>
+
+
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-custom navbar-dark">
@@ -148,94 +152,138 @@
 </header>
 
 
-<main class="container">
-    <section class="notification-list">
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <form name="searchForm" method="get" action="">
-                    <div class="input-group">
-                        <select name="searchKey" class="form-control">
-                            <option value="title" <%= "title".equals(searchKey) ? "selected" : "" %>>제목</option>
-                            <option value="content" <%= "content".equals(searchKey) ? "selected" : "" %>>내용</option>
-                        </select>
-                        <input type="text" name="searchValue" class="form-control" value="<%= searchValue %>"/>
-                        <div class="input-group-append">
-                            <input type="submit" value=" 검색 " class="btn btn-primary"/>
-                        </div>
-                    </div>
-                </form>
+
+
+<main class="com-container">
+    <h1 class="text-center">붓싼 해물 이야기터: 바다와 함께하는 공간</h1>
+
+    <!-- 검색 폼 -->
+    <form action="community.jsp" method="get" class="mb-4">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="searchValue" value="<%= searchValue %>"
+                       placeholder="검색어를 입력하세요">
             </div>
-            <div class="col-md-6 text-right">
-                <% if (userType == 1) { %> <!-- 관리자 타입일 때만 글쓰기 버튼 표시 -->
-                <a class="btn btn-success" href="<%= cp %>/CreateProject/Write.jsp">글쓰기</a>
-                <% } %>
+            <div class="col">
+                <select class="form-control" name="searchKey">
+                    <option value="title" <%= "title".equals(searchKey) ? "selected" : "" %>>제목</option>
+                    <option value="content" <%= "content".equals(searchKey) ? "selected" : "" %>>내용</option>
+                </select>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">검색</button>
             </div>
         </div>
+    </form>
 
-        <div class="list-group">
-            <% if (lists != null && !lists.isEmpty()) { %>
-            <% for (BoardDTO dto : lists) { %>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><a href="<%= articleUrl %>&idx=<%= dto.getIdx() %>">
-                        <span class="article-ti" style="color: #950714">[공지] </span> <%= dto.getTitle() %>
-                    </a></h5>
-                    <small><%= dto.getPostdate() %>
-                    </small>
-                </div>
-                <p class="mb-1-1"><%= dto.getContent() %>
-                </p>
-                <small>작성자: <%= dto.getAuthor() != null ? dto.getAuthor() : "담당자" %> | 조회수: <%= dto.getViews() %>
-                </small>
-            </div>
-            <% } %>
-            <% } else { %>
-            <div class="alert alert-warning" role="alert">
-                게시물이 없습니다.
-            </div>
-            <% } %>
-        </div>
+    <!-- 글쓰기 버튼 (로그인 사용자만) -->
+    <% if (userName != null && !userName.isEmpty()) { %>
+    <a href="commview.jsp" class="btn btn-success mb-3">글쓰기</a>
+    <% } %>
 
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <%
-                    if (dataCount != 0) {
-                        // 페이지 네비게이션
-                        // 처음 페이지
-                        if (currentPageSetup > 0) {
-                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=1'>처음</a></li>");
-                        }
+    <!-- 게시물 목록 테이블 -->
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            <th>좋아요</th>
+            <th class="com-date">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if (lists != null && !lists.isEmpty()) {
+            for (CommunityDTO dto : lists) {
+                int idx = dto.getIdx();
+                String title = dto.getTitle();
+                String author = dto.getAuthor();
+                int views = dto.getViews();
+                int likes = dto.getLikes();
+                java.util.Date postdate = dto.getPostdate();
+                String formattedDate = new java.text.SimpleDateFormat("yyyy-MM-dd").format(postdate);
+        %>
+        <tr>
+            <td><%= idx %>
+            </td>
+            <td><a href="<%= cp %>/commview.jsp?idx=<%= idx %>&pageNum=<%= currentPage %>"><%= title %>
+            </a></td>
+            <td><%= author %>
+            </td>
+            <td><%= views %>
+            </td>
+            <td><%= likes %>
+            </td>
+            <td><%= formattedDate %>
+            </td>
+        </tr>
+        <%
+            }
+        } else {
+        %>
+        <tr>
+            <td colspan="6" class="text-center">게시물이 없습니다.</td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
+    </table>
 
-                        // 이전 블록
-                        int n = currentPage - numPerBlock;
-                        if (n > 0) {
-                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + n + "'>이전</a></li>");
-                        }
+    <!-- 페이징 -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <%
+                int startPage = Math.max(currentPage - numPerBlock / 2, 1);
+                int endPage = Math.min(startPage + numPerBlock - 1, totalPage);
 
-                        // 페이지 번호
-                        for (int i = currentPageSetup + 1; i <= currentPageSetup + numPerBlock && i <= totalPage; i++) {
-                            if (i == currentPage) {
-                                out.println("<li class='page-item active'><span class='page-link'>" + i + "</span></li>");
-                            } else {
-                                out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + i + "'>" + i + "</a></li>");
-                            }
-                        }
+                if (currentPage > 1) {
+            %>
+            <li class="page-item">
+                <a class="page-link" href="<%= listUrl %>pageNum=1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="<%= listUrl %>pageNum=<%= currentPage - 1 %>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <%
+                }
 
-                        // 다음 블록
-                        n = currentPage + numPerBlock;
-                        if (n <= totalPage) {
-                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + n + "'>다음</a></li>");
-                        }
-
-                        // 마지막 페이지
-                        if (totalPage - currentPageSetup > numPerBlock) {
-                            out.println("<li class='page-item'><a class='page-link' href='" + listUrl + "pageNum=" + totalPage + "'>끝</a></li>");
-                        }
+                for (int i = startPage; i <= endPage; i++) {
+                    if (i == currentPage) {
+            %>
+            <li class="page-item active"><a class="page-link" href="#"><%= i %>
+            </a></li>
+            <%
+            } else {
+            %>
+            <li class="page-item"><a class="page-link" href="<%= listUrl %>pageNum=<%= i %>"><%= i %>
+            </a></li>
+            <%
                     }
-                %>
-            </ul>
-        </nav>
-    </section>
+                }
+
+                if (currentPage < totalPage) {
+            %>
+            <li class="page-item">
+                <a class="page-link" href="<%= listUrl %>pageNum=<%= currentPage + 1 %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="<%= listUrl %>pageNum=<%= totalPage %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            <%
+                }
+            %>
+        </ul>
+    </nav>
 </main>
 
 <footer>
@@ -245,17 +293,20 @@
             <a href="List.jsp">공지사항</a>
             <a href="reservation.jsp">예매하기</a>
         </div>
-        <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
+        <div class="footer_cen">2024</br>붓싼 해산물 마켓</div>
         <div class="footer_right">
-            <div>붓싼 해산물 마켓 | 대표 이경민 | 123-45-6789 [사업자정보확인] | +82 2 123-4567</div>
+            <div>붓싼 해산물 마켓 | 대표자 김민주 | 123-45-6789 [사업자정보확인] | +82 2 123-4567</div>
             <p></p>
             <div>BusanSeaMarket@gmailmilk.com | 이용약관 | 개인정보처리방침</div>
         </div>
     </div>
 </footer>
 
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
