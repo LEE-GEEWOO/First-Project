@@ -245,7 +245,7 @@
             <a href="List.jsp">공지사항</a>
             <a href="reservation.jsp">예매하기</a>
         </div>
-        <div class="footer_cen"><b>2024</br>붓싼 해산물 마켓</b></div>
+        <div class="footer_cen">2024</br>붓싼 해산물 마켓</div>
         <div class="footer_right">
             <div>붓싼 해산물 마켓 | 대표 이경민 | 123-45-6789 [사업자정보확인] | +82 2 123-4567</div>
             <p></p>

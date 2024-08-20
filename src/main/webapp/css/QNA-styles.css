@@ -175,18 +175,22 @@ nav ul li a:hover {
 }
 
 /*             메인 시작                        */
-.qna{
-    padding-top: 200px;
-    height: 900px;
+.qna {
+    padding-top: 240px;
+    height: 100%;
+    padding-bottom: 50px;
 }
-.con-title{
+
+.con-title {
     font-family: '레시피코리아';
     font-size: 40px;
 }
-.con-que{
+
+.con-que {
     font-family: 'GmarketSansMedium';
 }
-.con-button{
+
+.con-button {
     font-family: 'GmarketSansMedium';
     padding: 7px 10px 5px;
     background-color: #3baee5;
@@ -194,31 +198,17 @@ nav ul li a:hover {
     border: none;
     border-radius: 8px;
 }
-.qna-item{
+
+.qna-item {
     font-family: 'Binggrae';
-    padding-left:40px;
+    padding-left: 40px;
     color: darkred;
 }
-.answer{
+
+.answer {
     color: black;
-    padding-left:40px;
+    padding-left: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* 푸터 (main과 동일) */
@@ -272,3 +262,119 @@ footer {
     text-align: right;
     flex: 1;
 }
+
+@media (max-width: 770px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: BLOCK !important;
+    }
+
+    .collapse:not(.show) {
+        display: none !important;
+    }
+
+    .navbar-expand-sm .navbar-toggler {
+        display: BLOCK !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .navbar-expand-sm .navbar-toggler {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 425px) {
+
+    .navbar-brand {
+        width: 5%;
+        right: 100px;
+    }
+
+    .nav ul {
+        padding-right: 20px;
+    }
+
+    .navbar-toggler {
+        float: right;
+        margin-top: 5px;
+    }
+
+    .navbar-nav {
+        width: 70%;
+        padding-right: 0;
+        flex-direction: column !important;
+    }
+
+    .v-bot3-del {
+        display: none;
+    }
+
+
+    .container-fluid {
+        padding-right: 60px;
+        display: block !important;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .v_bot {
+        font-size: 14px;
+    }
+
+    .v_bot3 {
+        font-size: 12px;
+    }
+
+    .v-bot3-del {
+        display: none;
+    }
+
+    .right-button {
+        margin-right: 41px;
+        padding: 3px 28px;
+        font-size: 11px;
+    }
+
+    .qna {
+        padding-top: 210px;
+        padding-bottom: 30px;
+    }
+
+    .con-title{
+        text-align: center;
+        font-size: 32px;
+    }
+    .qna-item{
+        padding-left: 10px;
+    }
+    .answer{
+        padding-left: 15px;
+        font-size: 13px;
+    }
+
+
+    .footer {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .footer_right {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .footer_cen {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        line-height: 50px;
+        font-size: 40px;
+        color: white;
+    }
+}
+

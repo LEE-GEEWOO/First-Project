@@ -354,7 +354,32 @@ footer {
 }
 
 @media (max-width: 425px) {
+    .v_bot {
+        font-size: 14px;
+    }
+
+    .v_bot3 {
+        font-size: 12px;
+    }
+
     .v-bot3-del {
         display: none;
     }
+    .footer {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .footer_right {
+        text-align: center;
+        font-size: 11px;
+    }
+    .footer_cen{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        line-height: 50px;
+        font-size: 40px;
+        color: white;
+    }
+
 }
