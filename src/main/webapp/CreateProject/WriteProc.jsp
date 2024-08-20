@@ -2,7 +2,6 @@
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page import="com.example.common.DBConnPool1" %>
-//44
 <%
     request.setCharacterEncoding("UTF-8");
     String title = request.getParameter("title");
