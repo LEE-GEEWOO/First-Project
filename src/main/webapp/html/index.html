@@ -6,6 +6,7 @@
     <title>부산 해산물 마켓</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <link rel="icon" href="/jpg/var_logo.png" type="image/x-icon">
 </head>
 <body>
 
@@ -84,11 +85,10 @@
         <button class="right-button" name="myButton" onclick="button()">바로 예매하기</button>
     </div>
 
-
     <script>
         document.addEventListener('scroll', function () {
             let navbar = document.querySelector('.navbar-custom');
-            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
@@ -96,22 +96,19 @@
         });
         document.addEventListener('scroll', function () {
             let navbar = document.querySelector('.var_bottom');
-            if (window.scrollY > 50) { // 스크롤 위치가 50px을 넘으면
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
-
     </script>
-
 
     <script>
         function button() {
             window.location.href = "../CreateProject/reservation.jsp";
         }
     </script>
-
 
 </header>
 

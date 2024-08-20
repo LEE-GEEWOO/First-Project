@@ -1,3 +1,33 @@
+/*폰트*/
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "레시피코리아";
+    src: url("../font/Recipekorea.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* 기본 리셋 및 레이아웃 설정 */
 * {
     margin: 0;
@@ -69,25 +99,10 @@ nav ul li a:hover {
     background-color: #3baee5;
     border-bottom: 1px solid #1f4284;
     transition: background-color 0.5s ease; /* 배경색 변화에 부드러운 애니메이션 */
-
-}
-
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 
 /* 관람안내 등등 공지사항 bar css*/
-@font-face {
-    font-family: "레시피코리아";
-    src: url("../font/Recipekorea.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
 .nav-item {
     font-family: "레시피코리아", sans-serif;
     font-size: 16px;
@@ -107,8 +122,6 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: flex-start;
     transition: background-color 0.5s ease; /* 배경색 변화에 부드러운 애니메이션 */
-
-
 }
 
 .v_bot {
@@ -243,12 +256,7 @@ form button:hover {
 }
 
 /* Hero 섹션 스타일 */
-@font-face {
-    font-family: 'HS-Regular';
-    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 #h_top {
     padding-top: 4rem;
@@ -593,12 +601,6 @@ table {
     width: 25%;
 }
 
-@font-face {
-    font-family: 'Binggrae';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .m4-font {
     font-family: 'Binggrae';
@@ -1215,15 +1217,17 @@ footer {
         text-align: center;
         font-size: 11px;
     }
-    .footer_cen{
+
+    .footer_cen {
         padding-top: 30px;
         padding-bottom: 30px;
         line-height: 50px;
         font-size: 40px;
         color: white;
     }
+
     .floating-button {
-        right: 100px;
+        right: 1rem;
     }
 
 }
