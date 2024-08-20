@@ -31,14 +31,17 @@
         }
     }
 %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title><%= isEditMode ? "공지사항 수정" : "공지사항 작성" %></title>
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/CreateProject/css/styles.css"/>
+    <title><%= isEditMode ? "공지사항 수정" : "공지사항 작성" %>
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="<%=cp%>../css/Write.css"/>
 </head>
-<body>
 <div id="bbs">
     <div id="bbs_title">
         <%= isEditMode ? "공지사항 수정" : "공지사항 작성" %>
@@ -69,8 +72,8 @@
         <div id="bbsCreated_footer">
             <input type="button" value="목록으로" class="btn2"
                    onclick="javascript:location.href='<%=cp%>/CreateProject/List.jsp'"/>
-            <input type="reset" value="다시 입력" class="btn2"/>
-            <input type="submit" value="<%= isEditMode ? "수정하기" : "저장" %>" class="btn2"/>
+            <input type="reset" value="다시 입력" class="btn3"/>
+            <input type="submit" value="<%= isEditMode ? "수정하기" : "저장" %>" class="btn4"/>
         </div>
     </form>
 </div>

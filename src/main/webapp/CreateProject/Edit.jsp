@@ -1,7 +1,6 @@
 <%@ page import="com.example.common1.BoardDTO" %>
 <%@ page import="com.example.common1.BoardDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-//11
 <%
     request.setCharacterEncoding("UTF-8");
     String cp = request.getContextPath();
@@ -39,7 +38,7 @@
 <head>
     <meta charset="UTF-8">
     <title>공지사항 수정</title>
-    <link rel="stylesheet" type="text/css" href="<%=cp%>/CreateProject/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=cp%>../css/Write.css"/>
 </head>
 <body>
 <div id="bbs">
