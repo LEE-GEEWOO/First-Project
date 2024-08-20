@@ -18,7 +18,7 @@
 
     try {
         dao = new BoardDAO();
-        dto = dao.getArticle(idx); // 게시물 데이터 가져오기
+        dto = dao.getArticleWithViewIncrement(idx); // 게시물 데이터 가져오기 및 조회수 증가
     } catch (Exception e) {
         e.printStackTrace();
     } finally {

@@ -20,8 +20,12 @@
         dto.setTitle(title);
         dto.setContent(content);
 
-        // 공지 삽입
-        dao.insertArticle(dto);
+        // userId와 userType 값을 실제로 가져오거나 설정해야 함
+        String userId = "userId";  // 실제로는 세션이나 다른 방식으로 userId를 가져와야 함
+        int userType = 1; // 예시로 관리자 유형 1 설정
+
+        // 게시글 삽입 호출 (수정된 부분)
+        int articleId = dao.insertArticle(dto.getTitle(), dto.getContent(), userId, userType);
 
         // 성공 시 목록 페이지로 리다이렉트
         response.sendRedirect("List.jsp");

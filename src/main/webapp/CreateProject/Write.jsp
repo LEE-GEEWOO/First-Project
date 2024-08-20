@@ -42,11 +42,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="<%=cp%>../css/Write.css"/>
 </head>
+<body>
 <div id="bbs">
     <div id="bbs_title">
         <%= isEditMode ? "공지사항 수정" : "공지사항 작성" %>
     </div>
-    <form action="<%= isEditMode ? "EditProcess.jsp" : "WriteProc.jsp" %>" method="post">
+    <form action="<%= isEditMode ? "EditProcess.jsp" : "/CreateProject/WriteProc.jsp" %>" method="post">
         <% if (isEditMode) { %>
         <input type="hidden" name="id" value="<%= dto.getIdx() %>">
         <% } %>

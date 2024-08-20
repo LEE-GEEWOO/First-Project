@@ -6,7 +6,7 @@ public class BoardDTO {
     private int idx;         // 게시글 ID
     private String title;    // 게시글 제목
     private String content;  // 게시글 내용
-    private String author;   // 게시글 작성자
+    private String author = "담당자";   // 게시글 작성자
     private Date postdate;   // 게시글 작성일
     private int views;       // 게시글 조회수
     private int likes;       // 게시글 좋아요 수

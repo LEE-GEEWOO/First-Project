@@ -12,6 +12,7 @@ import java.util.List;
 public class BoardDAO {
     private Connection conn;
 
+    // 생성자: DB 연결 설정
     public BoardDAO() {
         this.conn = DBConnPool1.getConnection();
         if (this.conn == null) {
@@ -19,6 +20,7 @@ public class BoardDAO {
         }
     }
 
+    // ResultSet을 BoardDTO로 매핑
     private BoardDTO mapResultSetToBoardDTO(ResultSet rs) throws SQLException {
         BoardDTO dto = new BoardDTO();
         dto.setIdx(rs.getInt("IDX"));
@@ -32,6 +34,7 @@ public class BoardDAO {
         return dto;
     }
 
+    // 특정 검색 조건에 맞는 데이터 개수 조회
     public int getDataCount(String searchKey, String searchValue) {
         String sql = "SELECT COUNT(*) FROM SCOTT.COMMUNITY WHERE " + searchKey + " LIKE ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -49,6 +52,7 @@ public class BoardDAO {
         }
     }
 
+    // 특정 조건에 맞는 데이터 리스트 조회 (페이징 처리 포함)
     public List<BoardDTO> getDataList(int start, int end, String searchKey, String searchValue) {
         String sql = "SELECT * FROM (SELECT ROWNUM rnum, data.* FROM (SELECT * FROM SCOTT.COMMUNITY WHERE "
                 + searchKey + " LIKE ? ORDER BY IDX ASC) data) WHERE rnum BETWEEN ? AND ?";
@@ -69,6 +73,7 @@ public class BoardDAO {
         }
     }
 
+    // 특정 게시물 조회
     public BoardDTO getArticle(int idx) {
         String sql = "SELECT * FROM SCOTT.COMMUNITY WHERE IDX=?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -86,6 +91,7 @@ public class BoardDAO {
         }
     }
 
+    // DB 연결 종료
     public void close() {
         try {
             if (conn != null && !conn.isClosed()) {
@@ -98,13 +104,16 @@ public class BoardDAO {
         }
     }
 
-    public int insertArticle(BoardDTO dto) throws SQLException {
-        String sql = "INSERT INTO SCOTT.COMMUNITY (TITLE, CONTENT, AUTHOR, POSTDATE, TYPE) VALUES (?, ?, ?, SYSDATE, ?)";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
-            pstmt.setString(1, dto.getTitle());
-            pstmt.setString(2, dto.getContent());
-            pstmt.setString(3, dto.getAuthor()); // 기본값 설정
-            pstmt.setInt(4, dto.getType()); // 기본값 설정
+    // 새 게시물 삽입
+    public int insertArticle(String title, String content, String userId, int userType) {
+        String sql = "INSERT INTO SCOTT.COMMUNITY (IDX, TITLE, CONTENT, AUTHOR, POSTDATE, TYPE) " +
+                "VALUES (SCOTT.COMMUNITY_SEQ.NEXTVAL, ?, ?, ?, SYSDATE, ?)";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql, new String[]{"IDX"})) {
+            pstmt.setString(1, title);
+            pstmt.setString(2, content);
+            pstmt.setString(3, userId); // userId를 AUTHOR로 사용
+            pstmt.setInt(4, userType); // userType 사용
+
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows == 0) {
                 throw new SQLException("게시글 생성 실패, 영향받은 행이 없습니다.");
@@ -116,11 +125,14 @@ public class BoardDAO {
                     throw new SQLException("게시글 생성 실패, ID를 가져올 수 없습니다.");
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("insertArticle 오류: " + e.getMessage(), e);
         }
     }
 
+    // 게시물 업데이트
     public int updateArticle(BoardDTO dto) {
-
         String sql = "UPDATE SCOTT.COMMUNITY SET TITLE = ?, CONTENT = ?, AUTHOR = ? WHERE IDX = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, dto.getTitle());
@@ -134,6 +146,7 @@ public class BoardDAO {
         }
     }
 
+    // 게시물 삭제 (관리자 권한 필요)
     public int delete(int idx, int userType) {
         if (userType != 1) {
             throw new RuntimeException("삭제 권한이 없습니다.");
@@ -148,6 +161,7 @@ public class BoardDAO {
         }
     }
 
+    // 특정 게시물의 조회수 조회
     public int getViews(int idx) {
         String sql = "SELECT VIEWS FROM SCOTT.COMMUNITY WHERE IDX = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -163,6 +177,7 @@ public class BoardDAO {
         return 0;
     }
 
+    // 특정 게시물의 조회수 1 증가
     public void incrementViews(int idx) {
         String sql = "UPDATE SCOTT.COMMUNITY SET VIEWS = VIEWS + 1 WHERE IDX = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -173,13 +188,15 @@ public class BoardDAO {
         }
     }
 
+    // 조회수 증가 후 게시물 조회
     public BoardDTO getArticleWithViewIncrement(int idx) {
         incrementViews(idx);
         return getArticle(idx);
     }
 
-    // 사용자 권한 검사 메서드 추가
+    // 사용자 권한 검사 (편집 권한 여부 확인)
     public boolean hasEditPermission(int userType) {
         return userType == 1;
     }
+
 }
