@@ -11,7 +11,7 @@ import java.util.List;
 
 public class BoardDAO {
     private Connection conn;
-
+//11
     // 생성자: DB 연결 설정
     public BoardDAO() {
         this.conn = DBConnPool1.getConnection();
