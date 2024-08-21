@@ -61,28 +61,12 @@ h2 {
 
 
 /* 마이페이지 */
+/* 마이페이지 중앙 컨테이너 스타일 */
 .container-central {
-    text-align: center; /* 제목과 버튼을 중앙 정렬 */
+    text-align: center; /* 제목과 폼을 중앙 정렬 */
 }
 
-.container-central .btn {
-    display: inline-block;
-    margin-top: 20px; /* 버튼과 위 문단 사이 간격 */
-    padding: 10px 20px;
-    background-color: #3baee5;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.container-central .btn:hover {
-    background-color: #1f4284;
-}
-
-    /* 마이페이지 정보 영역을 왼쪽 정렬 */
+/* 마이페이지 정보 영역을 왼쪽 정렬 */
 .container-left-align {
     text-align: left; /* 텍스트 왼쪽 정렬 */
     padding: 20px; /* 추가적인 패딩 */
@@ -90,7 +74,45 @@ h2 {
     max-width: 500px; /* 흰색 박스의 최대 너비를 설정 */
 }
 
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    justify-content: center; /* 버튼들을 중앙에 배치 */
+    gap: 10px; /* 버튼들 사이의 간격 */
+    margin-top: 20px;
+}
 
+/* 버튼 스타일 */
+.button-container .btn {
+    padding: 10px 20px;
+    background-color: #3baee5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, border 0.3s;
+    width: auto; /* 버튼이 내용에 맞게 크기가 조정되도록 설정 */
+    display: inline-block; /* 블록 요소가 아닌 인라인 블록 요소로 설정 */
+    font-family: 'GmarketSansMedium', 'HS-Regular', sans-serif;
+}
+
+/* 마우스를 올렸을 때 버튼 색상 변경 */
+.button-container .btn:hover {
+    background-color: #1f4284;
+    border: 1px solid #3baee5;
+}
+
+/* 기본적으로 input을 숨김 */
+.input-hidden {
+    display: none;
+}
+
+/* 저장 버튼을 숨김 */
+.hidden {
+    display: none !important;
+}
 /* 회원가입 페이지*/
 input[type="text"], input[type="password"], input[type="email"] {
     width: calc(100% - 20px);
