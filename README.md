@@ -7,6 +7,7 @@
 ・Project Member : タク・ソンミン、イ・ギョンミン、イ・ジウ（本人）
 
 ・Test id : admin
+
 ・Test pw : 1111
 
 프로젝트 소개
