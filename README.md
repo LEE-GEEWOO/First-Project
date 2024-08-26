@@ -7,9 +7,7 @@
 ![image](https://github.com/user-attachments/assets/a54f1312-6971-453a-9898-ca21a436b0fd)
 
   -Project member : 탁성민 , 이경민 , 이지우 (본인)
-  
-  
-・Project Member : タク・ソンミン、イ・ギョンミン、イ・ジウ（本人）
+  ・ タク・ソンミン、イ・ギョンミン、イ・ジウ（本人）
 
 ・Test id : admin
 
