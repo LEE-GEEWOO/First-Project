@@ -13,11 +13,8 @@ public class CommunityDTO {
     private String userId;   // 사용자 ID
     private int type;        // 게시글 타입 (관리자, 일반 등)
 
-    // 기본 생성자
-    public CommunityDTO() {
-    }
+    public CommunityDTO() {}
 
-    // 모든 필드를 초기화하는 생성자
     public CommunityDTO(int idx, String title, String content, Date postdate, int views, int likes, String author, String userId, int type) {
         this.idx = idx;
         this.title = title;
@@ -30,7 +27,6 @@ public class CommunityDTO {
         this.type = type;
     }
 
-    // Getter 및 Setter 메서드
     public int getIdx() {
         return idx;
     }
@@ -83,7 +79,7 @@ public class CommunityDTO {
         return author;
     }
 
-    public void setAuthorName(String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -105,6 +101,6 @@ public class CommunityDTO {
 
     @Override
     public String toString() {
-        return "CommunityDTO [idx=" + idx + ", title=" + title + ", content=" + content + ", postdate=" + postdate + ", views=" + views + ", likes=" + likes + ", authorName=" + author + ", userId=" + userId + ", type=" + type + "]";
+        return "CommunityDTO [idx=" + idx + ", title=" + title + ", content=" + content + ", postdate=" + postdate + ", views=" + views + ", likes=" + likes + ", author=" + author + ", userId=" + userId + ", type=" + type + "]";
     }
 }

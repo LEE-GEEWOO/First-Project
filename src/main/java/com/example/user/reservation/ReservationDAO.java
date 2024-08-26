@@ -14,7 +14,7 @@ public class ReservationDAO extends DBConnPool {
     // 예약 추가 메서드
     public int addReservation(ReservationDTO reservation) {
         int result = 0;
-        String query = "INSERT INTO ATTENDLIST (IDX, ID, TEL, ATTEND_DATE) VALUES (SEQ_ATTENDLIST.NEXTVAL, ?, ?, ?)";
+        String query = "INSERT INTO SCOTT.ATTENDLIST (IDX, ID, TEL, ATTEND_DATE) VALUES (SCOTT.SEQ_ATTENDLIST.NEXTVAL, ?, ?, ?)";
 
         try {
             PreparedStatement psmt = conn.prepareStatement(query);

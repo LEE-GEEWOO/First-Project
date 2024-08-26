@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: '레시피코리아';
-    src: url('/font/recipeKorea.ttf') format('truetype');
+    src: url('/font/Recipekorea.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -375,6 +375,15 @@ footer {
         line-height: 50px;
         font-size: 40px;
         color: white;
+    }
+    .qna-item.dropdown .dropdown-menu {
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .qna-item.dropdown .dropdown-toggle::after {
+        display: none;
     }
 }
 

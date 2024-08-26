@@ -14,7 +14,7 @@ public class UserDAO extends DBConnPool {
     // 사용자 추가 메서드
     public int addUser(UserDTO user) {
         int result = 0;
-        String query = "INSERT INTO USERS (ID, PWD, NAME, EMAIL, type) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO SCOTT.USERS (ID, PWD, NAME, EMAIL, type) VALUES (?, ?, ?, ?, ?)";
 
         try {
             // PreparedStatement 객체 생성
@@ -39,7 +39,7 @@ public class UserDAO extends DBConnPool {
     // 사용자 인증 메서드
     public UserDTO getUser(String userId, String password) {
         UserDTO user = null;
-        String query = "SELECT * FROM USERS WHERE ID = ? AND PWD = ?";
+        String query = "SELECT * FROM SCOTT.USERS WHERE ID = ? AND PWD = ?";
 
         try {
             psmt = conn.prepareStatement(query);
@@ -69,7 +69,7 @@ public class UserDAO extends DBConnPool {
     // ID 중복 검사
     public boolean checkIdExists(String id) {
         boolean exists = false;
-        String query = "SELECT COUNT(*) FROM USERS WHERE ID = ?";
+        String query = "SELECT COUNT(*) FROM SCOTT.USERS WHERE ID = ?";
 
         try {
             PreparedStatement psmt = conn.prepareStatement(query);
@@ -92,7 +92,7 @@ public class UserDAO extends DBConnPool {
     // 이메일 중복 검사
     public boolean checkEmailExists(String email) {
         boolean exists = false;
-        String query = "SELECT COUNT(*) FROM USERS WHERE EMAIL = ?";
+        String query = "SELECT COUNT(*) FROM SCOTT.USERS WHERE EMAIL = ?";
 
         try {
             PreparedStatement psmt = conn.prepareStatement(query);
