@@ -1,3 +1,6 @@
-小規模開発日知
+小規模　Team Project 開発日知
+釜山海産物マーケットのREADME
 
-釜山海産物マーケットの　
+![image](https://github.com/user-attachments/assets/a54f1312-6971-453a-9898-ca21a436b0fd)
+
+
