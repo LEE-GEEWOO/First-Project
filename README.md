@@ -5,6 +5,7 @@
 
   Project member : 탁성민 , 이경민 , 이지우 (본인)
 ・Project Member : タク・ソンミン、イ・ギョンミン、イ・ジウ（本人）
+
 ・Test id : admin
 ・Test pw : 1111
 
