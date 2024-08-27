@@ -44,7 +44,7 @@
 1. 개발환경（開発環境）
 
  - Program : IntelliJ IDEA Ultimate
- - Front-end : HTML , JSP , CSS
+ - Front-end : HTML , JSP , CSS , JAVASCRIPT
  - Back-end : DBeaver , 제공된 API활용
  - 버전 관리 (version管理) : Github
  - 협업 툴 (協業 Tool) : Discord
