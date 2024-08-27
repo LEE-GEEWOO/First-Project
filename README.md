@@ -58,8 +58,14 @@
   src
    └── main/
    │     └── java/
-   │           └──com.example/
+   │           └── com.example/
+   │               │        
    │               └── common/
+   │               │      ├── DBConnPool
+   │               │      ├── DBConnPool1
+   │               │      ├── DBConnPool2
+   │               │      ├── JDBCConnect
+   │               │      └── Person
    │               ├── common1/
    │               ├── user/
    │               └── util/
