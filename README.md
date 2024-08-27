@@ -52,18 +52,23 @@
  - Refrence Program : Chat GPT , Claude
 -----------------------------
 2. 프로젝트 구조
-   ---
+
    project
    │
   src
    └── main/
    │     └── java/
    │           └──com.example/
-   │               └── common
-   │               ├── common1
-   │               ├── user
-   │               └── util
+   │               └── common/
+   │               ├── common1/
+   │               ├── user/
+   │               └── util/
    │     
    │          
-   └── webapp
-   ├── 
+   └── webapp/
+         └── CreateProject
+         ├── css
+         ├── font
+         ├── html
+         ├── jpg
+         └── js
