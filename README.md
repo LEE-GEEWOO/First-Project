@@ -50,6 +50,19 @@
  - 협업 툴 (協業 Tool) : Discord
  - Design and Nav : Bootstrap
  - Refrence Program : Chat GPT , Claude
-
----
-
+-----------------------------
+2. 프로젝트 구조
+project
+   │
+  src
+   └── main/
+   │     └── java/
+   │           └──com.example/
+   │               └── common
+   │               ├── common1
+   │               ├── user
+   │               └── util
+   │     
+   │          
+   └── webapp
+   ├── 
