@@ -4,7 +4,8 @@
 소규모 팀 프로젝트 (小規模　Team Project 開発日知)　
 
 
-![image](https://github.com/user-attachments/assets/a54f1312-6971-453a-9898-ca21a436b0fd)
+![image](https://github.com/user-attachments/assets/0cc6191b-ee60-43b5-9660-dca814e5bfba)
+
 
   -Project member : 탁성민 , 이경민 , 이지우 (본인) / 3명
   
