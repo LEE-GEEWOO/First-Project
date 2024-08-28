@@ -43,13 +43,13 @@
 ----
 1. 개발환경（開発環境）
 
- - Program : IntelliJ IDEA Ultimate
- - Front-end : HTML , JSP , CSS , JAVASCRIPT
- - Back-end : DBeaver , 제공된 API활용
+ - DevTools : IntelliJ IDEA Ultimate
+ -  HTML , JSP , CSS , JAVASCRIPT
+ -  DB(DBeaver 24.1.3)사용 , 제공된 API활용
  - 버전 관리 (Version管理) : Github
  - 협업 툴 (協業 Tool) : Discord
  - Design and Nav : Bootstrap
- - Refrence Program : Chat GPT , Claude
+   
 -----------------------------
 2. 프로젝트 구조
 ```
