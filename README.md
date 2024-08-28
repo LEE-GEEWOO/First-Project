@@ -67,6 +67,10 @@
    │               │      ├── JDBCConnect
    │               │      └── Person
    │               ├── common1/
+   │               │       ├── BoardDAO
+   │               │       └── BoardDTO
+   │               ├── project       
+   │               │      └── HelloServlet
    │               ├── user/
    │               └── util/
    │     
