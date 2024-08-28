@@ -52,7 +52,7 @@
  - Refrence Program : Chat GPT , Claude
 -----------------------------
 2. 프로젝트 구조
-
+```
    project
    │
   src
@@ -92,3 +92,4 @@
          ├── jpg
          └── js
 
+```
