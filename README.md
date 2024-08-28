@@ -72,6 +72,16 @@
    │               ├── project       
    │               │      └── HelloServlet
    │               ├── user/
+                        └──reservation
+                                └── CheckEmailServlet
+                                ├── CheckIdServlet
+                                ├── LoginServlet
+                                ├── LogoutServlet
+                                ├── RegisterServlet
+                                ├── SessionCheckServlet
+                                ├── SuccessServlet
+                                ├──
+                                
    │               └── util/
    │     
    │          
