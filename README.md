@@ -53,43 +53,98 @@
 -----------------------------
 2. 프로젝트 구조
 ```
-   project
-   │
-  src
-   └── main/
-   │     └── java/
-   │           └── com.example/
-   │               │        
-   │               └── common/
-   │               │      ├── DBConnPool
-   │               │      ├── DBConnPool1
-   │               │      ├── DBConnPool2
-   │               │      ├── JDBCConnect
-   │               │      └── Person
-   │               ├── common1/
-   │               │       ├── BoardDAO
-   │               │       └── BoardDTO
-   │               ├── project       
-   │               │      └── HelloServlet
-   │               ├── user/
-                        └──reservation
-                                └── CheckEmailServlet
-                                ├── CheckIdServlet
-                                ├── LoginServlet
-                                ├── LogoutServlet
-                                ├── RegisterServlet
-                                ├── SessionCheckServlet
-                                ├── SuccessServlet
-                                ├──            
-   │               └── util/
-   │     
-   │          
-   └── webapp/
-         └── CreateProject
-         ├── css
-         ├── font
-         ├── html
-         ├── jpg
-         └── js
+  ├─src
+│  └─main
+│      ├─java
+│      │  └─com
+│      │      └─example
+│      │          ├─common
+│      │          ├─common1
+│      │          ├─project
+│      │          ├─user
+│      │          │  └─reservation
+│      │          └─util
+│      └─webapp
+│          ├─01
+│          ├─CreateProject
+│          │  └─css
+│          ├─css
+│          ├─font
+│          ├─html
+│          │  └─.idea
+│          ├─jpg
+│          ├─js
+│          └─WEB-INF
+└─target
+    ├─classes
+    │  └─com
+    │      └─example
+    │          ├─common
+    │          ├─common1
+    │          ├─project
+    │          ├─user
+    │          │  └─reservation
+    │          └─util
+    ├─generated-sources
+    │  └─annotations
+    ├─jsp-1.0-SNAPSHOT
+    │  ├─CreateProject
+    │  │  └─css
+    │  ├─css
+    │  ├─font
+    │  ├─jpg
+    │  ├─META-INF
+    │  └─WEB-INF
+    │      ├─classes
+    │      │  └─com
+    │      │      └─example
+    │      │          ├─common
+    │      │          ├─common1
+    │      │          └─util
+    │      └─lib
+    ├─Project-1.0-SNAPSHOT
+    │  ├─9999
+    │  ├─completeapp
+    │  ├─CreateProject
+    │  │  └─css
+    │  ├─css
+    │  ├─font
+    │  ├─jpg
+    │  ├─js
+    │  ├─META-INF
+    │  └─WEB-INF
+    │      ├─classes
+    │      │  └─com
+    │      │      └─example
+    │      │          ├─common
+    │      │          ├─common1
+    │      │          ├─project
+    │      │          ├─user
+    │      │          │  └─reservation
+    │      │          └─util
+    │      └─lib
+    └─teamPjt2-1.0-SNAPSHOT
+        ├─01
+        ├─9999
+        ├─completeapp
+        ├─CreateProject
+        ├─css
+        ├─font
+        ├─html
+        │  └─.idea
+        ├─jpg
+        ├─js
+        ├─META-INF
+        └─WEB-INF
+            ├─classes
+            │  └─com
+            │      └─example
+            │          ├─common
+            │          ├─common1
+            │          ├─project
+            │          ├─user
+            │          │  └─reservation
+            │          └─util
+            └─lib
 
 ```
