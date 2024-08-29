@@ -170,7 +170,7 @@ ERD 구성(構成)
 
   (Main Page 担当
   
-　 Header , footer等全般的なメインページを始め各ページのCSSを担当
+　Header , footer等全般的なメインページを始め各ページのCSSを担当
   Fade in　機能を使用しホームページを形成)
 
 
