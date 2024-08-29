@@ -226,3 +226,5 @@ ERD 구성(構成)
  --------
  6. 페이지별 기능
    ページ別機能
+![chrome-capture-2024-8-29](https://github.com/user-attachments/assets/98fea753-4e43-4343-b529-61b4d622bf20)
+
