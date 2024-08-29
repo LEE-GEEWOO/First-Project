@@ -231,5 +231,5 @@ ERD 구성(構成)
 ![chrome-capture-2024-8-29 (1)](https://github.com/user-attachments/assets/93e9c3aa-0963-4d6f-af85-842ea9596341)
 
 App page
-![image](https://github.com/user-attachments/assets/7903d4c7-bd81-4b99-a690-ba19d1026eab)
+![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
