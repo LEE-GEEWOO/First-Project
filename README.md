@@ -164,7 +164,7 @@ ERD 구성(構成)
    
 　- 탁성민 タク・ソンミン
  
-- CSS
+  - CSS
 
   Main Page 담당
   Header , footer등 메인페이지를 비롯하여 전체 페이지의 CSS 담당
@@ -174,9 +174,10 @@ ERD 구성(構成)
 　Header , footer等全般的なメインページを始め各ページのCSSを担当
   Fade in　機能を使用しホームページを形成
 
+
   - 이경민 イ・ギョンミン
   
-- Login
+  - Login
   
   Login 담당 
   DB와 Login 부분을 담당하였으며 Servlet을 사용하여 관리자 및 일반 유저가 로그인 하였을때
