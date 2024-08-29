@@ -230,3 +230,5 @@ ERD 구성(構成)
 메인페이지 Fade in
 ![chrome-capture-2024-8-29 (1)](https://github.com/user-attachments/assets/93e9c3aa-0963-4d6f-af85-842ea9596341)
 
+App page
+![image](https://github.com/user-attachments/assets/6194c930-d7ad-4ac3-b769-aeab6b9c79ec)
