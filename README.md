@@ -227,11 +227,11 @@ ERD 구성(構成)
  6. 페이지별 기능
    ページ別機能
 
-   Main Page
+     Main Page
 
 ![chrome-capture-2024-8-29](https://github.com/user-attachments/assets/8f697961-b8b0-4084-9ca0-5c203dae668f)
 
-   App page
+     App page
 
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
