@@ -229,7 +229,7 @@ ERD 구성(構成)
 
 Main Page
 
-![chrome-capture-2024-8-29 (1)](https://github.com/user-attachments/assets/93e9c3aa-0963-4d6f-af85-842ea9596341)
+![chrome-capture-2024-8-29](https://github.com/user-attachments/assets/8f697961-b8b0-4084-9ca0-5c203dae668f)
 
 App page
 
