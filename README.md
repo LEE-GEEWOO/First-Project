@@ -232,6 +232,7 @@ ERD 구성(構成)
    (ページ別機能)
 
    [Main Web Page]
+  -반응형 웹 페이지로 구성-
    index.html 화면 접속시 왼쪽 2024 부산 해산물 마켓 로고를 클릭하면 Main Page로 돌아갈 수 있게 
    설정하였고 우측 상단의 관람 안내 , 공지사항, Q&A ,로그인 BootStrap Navbar 구성과 마켓 참가 예
    매를 할 수 있는 예매 버튼과 화면을 줄일 시 우측 상단의 목록들이 햄버거바로 전환될 수 있도록 
@@ -243,7 +244,9 @@ ERD 구성(構成)
 ![chrome-capture-2024-8-30](https://github.com/user-attachments/assets/8515c28b-318e-4140-b58a-4738e9afc4c2)
 
 
-     App page
+    [App page]
+
+    App에서도 사이트 화면을 볼 수 있게끔 형성하였으며 
 
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
