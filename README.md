@@ -227,8 +227,8 @@ ERD 구성(構成)
 
  --------
  
-    초기페이지(初期ページ)
-    ![image](https://github.com/user-attachments/assets/14cfe5b9-4e45-47c7-9b42-c69a9d068fc4)
+초기 페이지
+![image](https://github.com/user-attachments/assets/b785a4e0-79ee-4f61-84ee-90c3a31e4321)
 
 
  
