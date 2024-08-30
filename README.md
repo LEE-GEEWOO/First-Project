@@ -226,6 +226,12 @@ ERD 구성(構成)
   (メインページ)
 
  --------
+ 
+    초기페이지(初期ページ)
+    ![image](https://github.com/user-attachments/assets/14cfe5b9-4e45-47c7-9b42-c69a9d068fc4)
+
+
+ 
  6. 페이지별 기능
    (ページ別機能)
 
