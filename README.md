@@ -258,3 +258,11 @@ ERD 구성(構成)
 
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
+
+--
+   관람안내 
+ （観覧案内）
+ 
+![chrome-capture-2024-9-1](https://github.com/user-attachments/assets/b1715feb-3bed-4394-9ced-7505c8dc1836)
+
+ 
