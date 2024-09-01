@@ -268,5 +268,6 @@ ERD 구성(構成)
 
    [App page]
 
-![관람안내APP](https://github.com/user-attachments/assets/4ac68fe6-a3bd-47bc-9b85-7df85335a396)
+![image](https://github.com/user-attachments/assets/76c07192-057d-4c0c-9cf7-56dcfc94c61f)
+
 
