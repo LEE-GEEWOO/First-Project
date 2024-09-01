@@ -265,4 +265,8 @@ ERD 구성(構成)
  
 ![chrome-capture-2024-9-1](https://github.com/user-attachments/assets/b1715feb-3bed-4394-9ced-7505c8dc1836)
 
- 
+
+   [App page]
+
+![관람안내APP](https://github.com/user-attachments/assets/4ac68fe6-a3bd-47bc-9b85-7df85335a396)
+
