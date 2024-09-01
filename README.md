@@ -166,12 +166,12 @@ ERD 구성(構成)
  
   - CSS
 
-  Main Page 담당
+  Main Page, 관람안내 담당
   
   Header , footer등 메인페이지를 비롯하여 전체 페이지의 CSS 담당
   Fade in 기능을 사용하여 홈페이지 형성
 
-  (Main Page 担当
+  (Main Page、観覧案内担当
   
 　Header , footer等全般的なメインページを始め各ページのCSSを担当
   Fade in　機能を使用しホームページを形成)
