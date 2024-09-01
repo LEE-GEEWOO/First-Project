@@ -245,7 +245,7 @@ ERD 구성(構成)
 
     [App page]
 
-    App에서도 사이트 화면을 볼 수 있게끔 형성하였으며 
+    App에서도 사이트 화면을 볼 수 있게 형성 
 
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
