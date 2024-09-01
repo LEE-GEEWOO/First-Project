@@ -277,4 +277,14 @@ ERD 구성(構成)
 ![관람안내APP](https://github.com/user-attachments/assets/b1e56675-1338-401b-95a3-bb04ec81ce0e)
 
 
+--
+
+  [공지사항] - (Image,GIF 포함) 
+  
+ （おしらせ）
+
+ ![image](https://github.com/user-attachments/assets/9e3d26c4-3adf-434f-bf04-7fd01e8539d3)
+ 
+ 방문객 이미지 （訪問客のイメージ）
+ 
 
