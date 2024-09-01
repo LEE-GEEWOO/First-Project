@@ -260,7 +260,7 @@ ERD 구성(構成)
 
 
 --
-   관람안내 
+  [관람안내] - (GIF) 
  （観覧案内）
  
 ![chrome-capture-2024-9-1](https://github.com/user-attachments/assets/b1715feb-3bed-4394-9ced-7505c8dc1836)
