@@ -256,5 +256,7 @@ ERD 구성(構成)
 
     App에서도 사이트 화면을 볼 수 있게 형성 
 
+    アップで接続した時も画面を見れるよう形成
+
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
