@@ -279,12 +279,15 @@ ERD 구성(構成)
 
 --
 
-  [공지사항] - (Image,GIF 포함) 
+  [공지사항] - (GIF) 
   
  （おしらせ）
 
- ![image](https://github.com/user-attachments/assets/9e3d26c4-3adf-434f-bf04-7fd01e8539d3)
+ ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
+
  
- 방문객 이미지 （訪問客のイメージ）
+　 방문객과 일반유저 화면
+
+ （訪問客と一般ユーザーの画面）
  
 
