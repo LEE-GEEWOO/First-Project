@@ -281,7 +281,7 @@ ERD 구성(構成)
 
   [공지사항] - (GIF) 
   
- （おしらせ）
+ （お知らせ）
 
  ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
 
