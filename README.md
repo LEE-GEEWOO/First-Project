@@ -273,12 +273,12 @@ ERD 구성(構成)
 
 ![관람안내APP](https://github.com/user-attachments/assets/b1e56675-1338-401b-95a3-bb04ec81ce0e)
 
+------------------------
 
---
-  [공지사항] - (GIF) 
---  
+  [공지사항] - (GIF)   
  （お知らせ）
-
+ 
+  -반응형 웹
  ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
  
 　  1.방문객과 일반유저 화면 및 조회수 기능
