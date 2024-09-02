@@ -295,5 +295,12 @@ ERD 구성(構成)
  
  （localhost:8080/CreateProject/Write.jsp の左側から目録に・再入力・保存順）
 
- 
+ --
 
+ ![chrome-capture-2024-9-2 (1)](https://github.com/user-attachments/assets/ea81c014-da16-4584-8444-6ffac309ef92)
+
+    ３.관리자 글 수정 권한 
+
+ （管理者の文修正機能）
+ 
+ （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
