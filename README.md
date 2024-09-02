@@ -306,8 +306,8 @@ ERD 구성(構成)
  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
  
  --
-
- ![Uploading chrome-capture-2024-9-2 (2).gif…]()
+ 
+![chrome-capture-2024-9-2 (2)](https://github.com/user-attachments/assets/244917a1-3bad-4a16-be10-470dec05d6d4)
 
     ４.관리자 글 삭제 권한 
 
