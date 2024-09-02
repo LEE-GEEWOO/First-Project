@@ -290,4 +290,9 @@ ERD 구성(構成)
 
  （訪問客と一般ユーザーの画面）
  
+ ![chrome-capture-2024-9-2](https://github.com/user-attachments/assets/a92630b3-8aa4-480a-813a-660ef0e3c844)
+
+ 관리자 글쓰기 권한 및 다시 입력과 저장
+
+ 
 
