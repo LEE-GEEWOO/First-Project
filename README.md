@@ -248,7 +248,6 @@ ERD 구성(構成)
   
 ![chrome-capture-2024-8-30](https://github.com/user-attachments/assets/8515c28b-318e-4140-b58a-4738e9afc4c2)
 
-
     [App page]
 
     App에서도 사이트 화면을 볼 수 있게 형성 
