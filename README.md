@@ -294,7 +294,7 @@ ERD 구성(構成)
  
  ![chrome-capture-2024-9-2](https://github.com/user-attachments/assets/656a5777-9478-4aa9-b10c-ce0c6b31d086)
 
-   2.관리자 글쓰기 권한 및 다시 입력과 저장
+    2.관리자 글쓰기 권한 및 다시 입력과 저장
 
  （管理者の文作成権限及び再入力機能と保存機能）
  （http://localhost:8080/CreateProject/Write.jspの左側から目録に・再入力・保存順）
