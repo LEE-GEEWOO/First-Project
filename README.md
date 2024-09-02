@@ -275,8 +275,8 @@ ERD 구성(構成)
 
 ------------------------
 
-  [공지사항] - (GIF)   
- （お知らせ）
+   [공지사항] - (GIF) 
+  （お知らせ）
  
   -반응형 웹
  ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
