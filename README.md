@@ -286,15 +286,18 @@ ERD 구성(構成)
  ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
 
  
-　 1.방문객과 일반유저 화면
+　 1.방문객과 일반유저 화면 및 조회수 기능
 
- （訪問客と一般ユーザーの画面）
+ （訪問客と一般ユーザーの画面及び再生数機能）
 
  --
  
  ![chrome-capture-2024-9-2](https://github.com/user-attachments/assets/a92630b3-8aa4-480a-813a-660ef0e3c844)
 
   2.관리자 글쓰기 권한 및 다시 입력과 저장
+
+（管理者の文作成権限及び再入力機能と保存機能）
+（http://localhost:8080/CreateProject/Write.jspの左側から目録に・再入力・保存順）
 
  
 
