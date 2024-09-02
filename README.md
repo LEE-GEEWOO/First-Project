@@ -316,6 +316,8 @@ ERD 구성(構成)
  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
  
  --
+ 
+![chrome-capture-2024-9-2 (4)](https://github.com/user-attachments/assets/908c5538-1565-4b17-8f12-e013894f3e79)
 
     5.제목 및 내용 검색 
 
