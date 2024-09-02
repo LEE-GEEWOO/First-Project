@@ -307,7 +307,7 @@ ERD 구성(構成)
  
  --
 
- っっｆ
+ ![Uploading chrome-capture-2024-9-2 (2).gif…]()
 
     ４.관리자 글 삭제 권한 
 
