@@ -258,7 +258,7 @@ ERD 구성(構成)
 ![image](https://github.com/user-attachments/assets/117f80ad-dd9b-47d5-baea-d82f0bc6f842)
 
 --------------------------
---
+
    [관람안내] - (GIF) 
   （観覧案内）
 
