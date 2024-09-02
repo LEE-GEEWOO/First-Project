@@ -298,7 +298,7 @@ ERD 구성(構成)
 
  （管理者の文作成権限及び再入力機能と保存機能）
  
- （http://localhost:8080/CreateProject/Write.jspの左側から目録に・再入力・保存順）
+ （http://localhost:8080/CreateProject/Write.jsp の左側から目録に・再入力・保存順）
 
  
 
