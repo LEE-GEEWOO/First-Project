@@ -304,3 +304,14 @@ ERD 구성(構成)
  （管理者の文修正機能）
  
  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+ 
+ --
+
+ っっｆ
+
+    ４.관리자 글 삭제 권한 
+
+ （管理者の文削除機能）
+ 
+ （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+ 
