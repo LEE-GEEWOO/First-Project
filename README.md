@@ -327,15 +327,19 @@ ERD 구성(構成)
 ------------------------
 
    [Login] - (GIF) 
+
+   ![chrome-capture-2024-9-4 (2)](https://github.com/user-attachments/assets/1ce89414-6204-4852-a098-744cb7ed7a38)
    
+    1.중복 회원가입 불가 
+
 ![chrome-capture-2024-9-4 (1)](https://github.com/user-attachments/assets/c0ada501-e5bb-43fc-b570-43f07b00f711)
 
-    1.형식에 맞게 회원가입
+    2.형식에 맞게 회원가입
     
 
 ![chrome-capture-2024-9-4](https://github.com/user-attachments/assets/3ec5d62d-f94a-4752-8bc4-69efc1bbeb87)
 
-    2.유저 및 담당자의 회원정보 수정 
+    3.유저 및 담당자의 회원정보 수정 
 
 
 
