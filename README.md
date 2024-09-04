@@ -327,10 +327,15 @@ ERD 구성(構成)
 ------------------------
 
    [Login] - (GIF) 
+   
+![chrome-capture-2024-9-4 (1)](https://github.com/user-attachments/assets/c0ada501-e5bb-43fc-b570-43f07b00f711)
+
+    1.형식에 맞게 회원가입
+    
 
 ![chrome-capture-2024-9-4](https://github.com/user-attachments/assets/3ec5d62d-f94a-4752-8bc4-69efc1bbeb87)
 
-    1.유저 및 담당자의 회원정보 수정 
+    2.유저 및 담당자의 회원정보 수정 
 
 
 
