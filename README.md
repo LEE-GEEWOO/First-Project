@@ -330,9 +330,9 @@ ERD 구성(構成)
  
 ![chrome-capture-2024-9-2 (4)](https://github.com/user-attachments/assets/908c5538-1565-4b17-8f12-e013894f3e79)
 
-    5.제목 및 내용 검색 
-
- （タイトル及び内容検索）
+    5.제목 및 내용 검색
+    
+　（タイトル及び内容検索）
  
  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
  
@@ -343,11 +343,11 @@ ERD 구성(構成)
    ![chrome-capture-2024-9-4 (2)](https://github.com/user-attachments/assets/1ce89414-6204-4852-a098-744cb7ed7a38)
    
     1.중복 회원가입 불가 
-
+　（中腹会員加入不可）
 ![chrome-capture-2024-9-4 (1)](https://github.com/user-attachments/assets/c0ada501-e5bb-43fc-b570-43f07b00f711)
 
     2.형식에 맞게 회원가입
-    
+  （形式に合う加入）
 
 ![chrome-capture-2024-9-4](https://github.com/user-attachments/assets/3ec5d62d-f94a-4752-8bc4-69efc1bbeb87)
 
