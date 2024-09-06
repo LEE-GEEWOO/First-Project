@@ -334,7 +334,7 @@ ERD 구성(構成)
     
 　（タイトル及び内容検索）
  
- （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
  
 ------------------------
 
