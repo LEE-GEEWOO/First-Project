@@ -178,18 +178,20 @@ ERD 구성(構成)
   --
 
   - 이경민 イ・ギョンミン
-  
+
   - Login
-  
+
+  Login 담당 
   Login 예약관리 담당 
-  
+
   DB와 Login 부분을 담당하였으며 Servlet을 사용하여 관리자 및 일반 유저가 로그인 했을때
   각각의 권한을 분리 되도록 형성
 
+  (Login 担当
   (Login 予約管理担当
-  
-  Login DB及びLogin部分の担当でServletを使用し管理者又は一般ユーザーがLoginした際、各権限を分離するようにし、イベント予約はWEBを訪問する全ての人が申し込み可能に形成)
 
+  Login DB及びLogin部分の担当でServletを使用し管理者又は一般ユーザーがLoginした際、各権限を分離するよう形成)
+  Login DB及びLogin部分の担当でServletを使用し管理者又は一般ユーザーがLoginした際、各権限を分離するようにし、イベント予約はWEBを訪問する全ての人が申し込み可能に形成)
   --
 
   - 이지우 イ・ジウ
@@ -336,6 +338,7 @@ ERD 구성(構成)
 ------------------------
 
    [Login] - (GIF) 
+   
 
    ![chrome-capture-2024-9-4 (2)](https://github.com/user-attachments/assets/1ce89414-6204-4852-a098-744cb7ed7a38)
    
