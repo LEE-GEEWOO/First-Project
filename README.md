@@ -264,9 +264,8 @@ ERD 구성(構成)
   （観覧案内）
 
 　-반응형 웹 페이지로 구성
-  info.html 화면 접속시 마켓 참여에 관한 지도와 다이나믹한 화면을 구성하였습니다.
-
-   info.html画面接続後メーケット参加に関する地図とダイナミックな画面を構成しました。
+  info.html 화면 접속시 마켓 참여에 관한 지도와 다이나믹한 화면 구성을 구성하였습니다.
+  
  
 ![chrome-capture-2024-9-1](https://github.com/user-attachments/assets/b1715feb-3bed-4394-9ced-7505c8dc1836)
 
@@ -280,13 +279,13 @@ ERD 구성(構成)
    [공지사항] - (GIF) 
   （お知らせ）
 
-  -공지사항 페이지는 DBConn1 BoardDAO,DTO를 사용하여 Article, DeleteAction, Edit / EditProcess, Write / WriteProc를 구성으로 List.jsp 접속시
-  방문객 및 일반 유저들이 공지사항을 읽었을때 조회수가 올라가도록 설정하였으며 관리자 이외의 삭제 및 수정을 못 하도록 하였습니다. 
-  반면 관리자는 글쓰기, 수정, 삭제를 할 수 있으며 제목과 내용을 검색하는 기능과 페이징 개선 또한 추가하였습니다.
+  -공지사항 페이지는 jsp로 구성 List.jsp 접속시 방문객 및 일반 유저들이 공지사항을 읽었을때 조회수가 올라가도록
+  설정하였으며 관리자 이외의 삭제 및 수정을 못 하도록 하였습니다. 반면 관리자는 글쓰기, 수정, 삭제를 할 수 있으며 제목과 
+  내용을 검색하는 기능과 페이징 개선 또한 추가하였습니다.
 
-  -お知らせページはJSPで構成、DBConn1 BoardDAO,DTOを使用し Article, DeleteAction, Edit / EditProcess, Write / WriteProcを構成後
-  List.JSPに接続した訪問客及び一般ユーザー達がお知らせを読んだ際再生数が上がるよう設定し管理者以外に削除及び修正が出来ないよう設定しました。
-  反面管理者は作成・修正・削除の権限が有り、タイトルと内容を検索可能な機能とページング改善を追加しました。
+  -お知らせページはjspで構成、List.jspに接続した訪問客及び一般ユーザー達がお知らせを読んだ際再生数が上がるよう設定し
+  管理者以外に削除及び修正が出来ないよう設定しました。片面管理者は作成・修正・削除の権限が有り、タイトルと内容を検索
+  可能な機能とページング改善を追加しました。
  
  ![chrome-capture-2024-9-1 (1)](https://github.com/user-attachments/assets/909030d2-1d32-41b1-8aad-d2d63aa50210)
  
@@ -308,12 +307,61 @@ ERD 구성(構成)
 
  ![chrome-capture-2024-9-2 (1)](https://github.com/user-attachments/assets/ea81c014-da16-4584-8444-6ffac309ef92)
 
-    3.관리자 수정 기능
+    ３.관리자 글 수정 권한 
 
-    管理者の修正権限
+ （管理者の文修正機能）
+ 
+ （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+ 
+ --
+ 
+![chrome-capture-2024-9-2 (2)](https://github.com/user-attachments/assets/244917a1-3bad-4a16-be10-470dec05d6d4)
 
+    ４.관리자 글 삭제 권한 
 
+ （管理者の文削除機能）
+ 
+ （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+ 
+ --
+ 
+![chrome-capture-2024-9-2 (4)](https://github.com/user-attachments/assets/908c5538-1565-4b17-8f12-e013894f3e79)
 
+    5.제목 및 내용 검색
+    
+　（タイトル及び内容検索）
+ 
+  （localhost:8080/CreateProject/Article.jsp?pageNum=1&idx=94) の左側から目録・修正・削除順）
+ 
+------------------------
+
+   [Login] - (GIF) 
+
+   ![chrome-capture-2024-9-4 (2)](https://github.com/user-attachments/assets/1ce89414-6204-4852-a098-744cb7ed7a38)
+   
+    1.중복 회원가입 불가 
+    
+　（中腹会員加入不可）
+![chrome-capture-2024-9-4 (1)](https://github.com/user-attachments/assets/c0ada501-e5bb-43fc-b570-43f07b00f711)
+
+    2.형식에 맞게 회원가입
+    
+  （形式に合う加入）
+
+![chrome-capture-2024-9-4](https://github.com/user-attachments/assets/3ec5d62d-f94a-4752-8bc4-69efc1bbeb87)
+
+    3.유저 및 담당자의 회원정보 수정
+    
+  （ユーザー及び管理者の会員情報修正）
+
+--------------------------
+
+   [이벤트 예약] - (GIF) 
+  （イベント予約）
+
+  ![chrome-capture-2024-9-9](https://github.com/user-attachments/assets/10a5c3e9-e259-4421-b103-b99a3dcbbc1d)
+
+  ![image](https://github.com/user-attachments/assets/7dafc8f7-3efd-4120-8a79-0af506dfe122)
 
 
 
