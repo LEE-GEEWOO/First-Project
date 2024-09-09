@@ -361,7 +361,8 @@ ERD 구성(構成)
 
   ![chrome-capture-2024-9-9](https://github.com/user-attachments/assets/10a5c3e9-e259-4421-b103-b99a3dcbbc1d)
 
-  ![image](https://github.com/user-attachments/assets/7dafc8f7-3efd-4120-8a79-0af506dfe122)
+  ![image](https://github.com/user-attachments/assets/ce79d570-706c-4461-81a5-3f9d5af4f9f4)
+
 
 
 
