@@ -362,6 +362,10 @@ ERD 구성(構成)
    [이벤트 예약] - (GIF) 
   （イベント予約）
 
+  행사 예매는 웹페이지를 방문하는 모든 사람들이 신청가능하게 하였습니다.
+
+  イベント予約はWEB Pageを訪問する全ての人々が申し込み出来るようにしました。
+
   ![chrome-capture-2024-9-9](https://github.com/user-attachments/assets/10a5c3e9-e259-4421-b103-b99a3dcbbc1d)
 
   ![image](https://github.com/user-attachments/assets/7dafc8f7-3efd-4120-8a79-0af506dfe122)
