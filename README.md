@@ -308,6 +308,9 @@ ERD 구성(構成)
 
  ![chrome-capture-2024-9-2 (1)](https://github.com/user-attachments/assets/ea81c014-da16-4584-8444-6ffac309ef92)
 
+    3.관리자 
+
+    管理者の作成権限及び再入力と保存
 
 
 
