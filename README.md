@@ -264,8 +264,9 @@ ERD 구성(構成)
   （観覧案内）
 
 　-반응형 웹 페이지로 구성
-  info.html 화면 접속시 마켓 참여에 관한 지도와 다이나믹한 화면 구성을 구성하였습니다.
-  
+  info.html 화면 접속시 마켓 참여에 관한 지도와 다이나믹한 화면을 구성하였습니다.
+
+   info.html画面接続後メーケット参加に関する地図とダイナミックな画面を構成しました。
  
 ![chrome-capture-2024-9-1](https://github.com/user-attachments/assets/b1715feb-3bed-4394-9ced-7505c8dc1836)
 
@@ -307,7 +308,7 @@ ERD 구성(構成)
 
  ![chrome-capture-2024-9-2 (1)](https://github.com/user-attachments/assets/ea81c014-da16-4584-8444-6ffac309ef92)
 
-장
+
 
 
 
