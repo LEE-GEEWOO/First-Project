@@ -354,5 +354,14 @@ ERD 구성(構成)
     
   （ユーザー及び管理者の会員情報修正）
 
+--------------------------
+
+   [이벤트 예약] - (GIF) 
+  （イベント予約）
+
+  ![chrome-capture-2024-9-9](https://github.com/user-attachments/assets/10a5c3e9-e259-4421-b103-b99a3dcbbc1d)
+
+  ![image](https://github.com/user-attachments/assets/7dafc8f7-3efd-4120-8a79-0af506dfe122)
+
 
 
