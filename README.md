@@ -45,7 +45,7 @@
 
  - DevTools : IntelliJ IDEA Ultimate
  -  HTML , JSP , CSS , JAVASCRIPT
- -  DB(DBeaver 24.1.3)사용（使用） , ERD설계（設計） , 제공된（提供された） API활용（活用
+ -  DB Oracle (DBeaver 24.1.3)사용（使用） , ERD설계（設計） , 제공된（提供された） API활용（活用
  - 버전 관리 (Version管理) : Github
  - 협업 툴 (協業 Tool) : Discord
  - Design and Nav : Bootstrap
